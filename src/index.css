@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-bg-primary text-text-primary font-sans;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  
+  * {
+    @apply border-border;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-mono font-semibold text-text-primary;
+  }
+
+  h1 {
+    @apply text-4xl mb-8;
+    color: #ff5c53 !important;
+  }
+
+  h2 {
+    @apply text-3xl mb-6 mt-12;
+    color: #ff5c53 !important;
+  }
+
+  h3 {
+    @apply text-2xl mb-4 mt-8;
+  }
+
+  h4 {
+    @apply text-xl mb-3 mt-6;
+  }
+
+  p {
+    @apply leading-relaxed mb-6;
+    color: #cbcbcb !important;
+  }
+
+  a {
+    @apply text-accent hover:text-accent-hover transition-colors duration-200;
+  }
+
+  code {
+    @apply font-mono text-sm bg-code-bg border border-code-border px-2 py-1 rounded text-accent;
+  }
+
+  pre {
+    @apply bg-code-bg border border-code-border rounded-lg p-4 overflow-x-auto;
+  }
+
+  pre code {
+    @apply bg-transparent border-none p-0;
+  }
+
+  blockquote {
+    @apply border-l-4 border-accent pl-4 italic text-text-secondary;
+  }
+
+  ul, ol {
+    @apply mb-6;
+    color: #cbcbcb !important;
+  }
+
+  li {
+    @apply mb-2;
+  }
+
+  table {
+    @apply w-full border-collapse mb-6;
+  }
+
+  th, td {
+    @apply border border-border px-4 py-2 text-left;
+  }
+
+  th {
+    @apply bg-bg-secondary font-mono text-text-primary;
+  }
+
+  td {
+    color: #cbcbcb !important;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-4xl mx-auto px-6;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg font-mono text-sm transition-colors duration-200 text-text-secondary hover:text-accent hover:border-accent;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-bg-primary border-accent hover:bg-accent-hover hover:border-accent-hover;
+  }
+
+  .card {
+    @apply bg-bg-secondary border border-border rounded-lg p-6 transition-all duration-200 hover:border-accent hover:shadow-lg;
+  }
+
+  .form-label {
+    @apply block text-sm font-mono text-text-secondary mb-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 bg-bg-primary border border-border rounded-lg text-text-primary font-mono text-sm transition-colors duration-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent;
+  }
+
+  .form-input::placeholder {
+    @apply text-text-muted;
+  }
+}
+
+@layer utilities {
+  .prose {
+    color: #cbcbcb !important;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply font-mono font-semibold;
+    color: #ffffff;
+  }
+  
+  .prose h1,
+  .prose h2 {
+    color: #ff5c53 !important;
+  }
+
+  .prose a {
+    @apply text-accent hover:text-accent-hover;
+  }
+
+  .prose code {
+    @apply font-mono text-sm bg-code-bg border border-code-border px-2 py-1 rounded text-accent;
+  }
+
+  .prose pre {
+    @apply bg-code-bg border border-code-border rounded-lg p-4 overflow-x-auto;
+  }
+
+  .prose pre code {
+    @apply bg-transparent border-none p-0;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-accent pl-4 italic text-text-secondary;
+  }
+
+  .prose table {
+    @apply w-full border-collapse;
+  }
+
+  .prose th,
+  .prose td {
+    @apply border border-border px-4 py-2 text-left;
+  }
+
+  .prose th {
+    @apply bg-bg-secondary font-mono text-text-primary;
+  }
+
+  .prose td {
+    color: #cbcbcb !important;
+  }
+} 
