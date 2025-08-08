@@ -1,89 +1,170 @@
+/* Import WebTUI base styles */
+@import "@webtui/css/base.css";
+
+/* Import WebTUI components */
+@import "@webtui/css/components/typography.css";
+@import "@webtui/css/components/button.css";
+@import "@webtui/css/components/badge.css";
+@import "@webtui/css/components/input.css";
+@import "@webtui/css/components/table.css";
+
+/* Import Catppuccin theme */
+@import "@webtui/theme-catppuccin";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom terminal styling */
 @layer base {
   html {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
   body {
-    @apply bg-bg-primary text-text-primary font-sans;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
     line-height: 1.7;
     font-size: 16px;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    overflow-x: hidden;
   }
   
   * {
-    @apply border-border;
+    border-color: #313244;
   }
 
   /* Typography */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-mono font-semibold text-text-primary;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: #cdd6f4;
   }
 
   h1 {
-    @apply text-4xl mb-8;
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
     color: #ff5c53 !important;
+  }
+
+  @media (min-width: 640px) {
+    h1 {
+      font-size: 2.25rem;
+      margin-bottom: 2rem;
+    }
   }
 
   h2 {
-    @apply text-3xl mb-6 mt-12;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
     color: #ff5c53 !important;
   }
 
+  @media (min-width: 640px) {
+    h2 {
+      font-size: 1.875rem;
+      margin-bottom: 1.5rem;
+      margin-top: 3rem;
+    }
+  }
+
   h3 {
-    @apply text-2xl mb-4 mt-8;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    color: #29ffff;
   }
 
   h4 {
-    @apply text-xl mb-3 mt-6;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+    color: #29ffff;
   }
 
   p {
-    @apply leading-relaxed mb-6;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
     color: #cbcbcb !important;
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 640px) {
+    p {
+      font-size: 1rem;
+    }
   }
 
   a {
-    @apply text-accent hover:text-accent-hover transition-colors duration-200;
+    color: #29ffff;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: #89dceb;
   }
 
   code {
-    @apply font-mono text-sm bg-code-bg border border-code-border px-2 py-1 rounded text-accent;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    background-color: #313244;
+    border: 1px solid #45475a;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    color: #29ffff;
   }
 
   pre {
-    @apply bg-code-bg border border-code-border rounded-lg p-4 overflow-x-auto;
+    background-color: #313244;
+    border: 1px solid #45475a;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
   }
 
   pre code {
-    @apply bg-transparent border-none p-0;
+    background-color: transparent;
+    border: none;
+    padding: 0;
   }
 
   blockquote {
-    @apply border-l-4 border-accent pl-4 italic text-text-secondary;
+    border-left: 4px solid #29ffff;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #a6adc8;
   }
 
   ul, ol {
-    @apply mb-6;
+    margin-bottom: 1.5rem;
     color: #cbcbcb !important;
   }
 
   li {
-    @apply mb-2;
+    margin-bottom: 0.5rem;
   }
 
   table {
-    @apply w-full border-collapse mb-6;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
   }
 
   th, td {
-    @apply border border-border px-4 py-2 text-left;
+    border: 1px solid #45475a;
+    padding: 0.5rem 1rem;
+    text-align: left;
   }
 
   th {
-    @apply bg-bg-secondary font-mono text-text-primary;
+    background-color: #313244;
+    font-family: 'JetBrains Mono', monospace;
+    color: #cdd6f4;
   }
 
   td {
@@ -93,31 +174,104 @@
 
 @layer components {
   .container {
-    @apply max-w-4xl mx-auto px-6;
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
   }
 
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg font-mono text-sm transition-colors duration-200 text-text-secondary hover:text-accent hover:border-accent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #45475a;
+    border-radius: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    color: #a6adc8;
+  }
+
+  .btn:hover {
+    color: #29ffff;
+    border-color: #29ffff;
   }
 
   .btn-primary {
-    @apply bg-accent text-bg-primary border-accent hover:bg-accent-hover hover:border-accent-hover;
+    background-color: #29ffff;
+    color: #1e1e2e;
+    border-color: #29ffff;
+  }
+
+  .btn-primary:hover {
+    background-color: #89dceb;
+    border-color: #89dceb;
   }
 
   .card {
-    @apply bg-bg-secondary border border-border rounded-lg p-6 transition-all duration-200 hover:border-accent hover:shadow-lg;
+    background-color: #313244;
+    border: 1px solid #45475a;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: all 0.2s;
+  }
+
+  .card:hover {
+    border-color: #29ffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
 
   .form-label {
-    @apply block text-sm font-mono text-text-secondary mb-2;
+    display: block;
+    font-size: 0.875rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: #a6adc8;
+    margin-bottom: 0.5rem;
   }
 
   .form-input {
-    @apply w-full px-4 py-3 bg-bg-primary border border-border rounded-lg text-text-primary font-mono text-sm transition-colors duration-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #1e1e2e;
+    border: 1px solid #45475a;
+    border-radius: 0.5rem;
+    color: #cdd6f4;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: #29ffff;
+    box-shadow: 0 0 0 1px #29ffff;
   }
 
   .form-input::placeholder {
-    @apply text-text-muted;
+    color: #6c7086;
+  }
+
+  .nav-link {
+    color: #cdd6f4;
+    transition: color 0.2s;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .nav-link:hover {
+    color: #29ffff;
+  }
+
+  .nav-link.active {
+    color: #29ffff;
   }
 }
 
@@ -132,8 +286,9 @@
   .prose h4,
   .prose h5,
   .prose h6 {
-    @apply font-mono font-semibold;
-    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: #cdd6f4;
   }
   
   .prose h1,
@@ -142,39 +297,75 @@
   }
 
   .prose a {
-    @apply text-accent hover:text-accent-hover;
+    color: #29ffff;
+  }
+
+  .prose a:hover {
+    color: #89dceb;
   }
 
   .prose code {
-    @apply font-mono text-sm bg-code-bg border border-code-border px-2 py-1 rounded text-accent;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    background-color: #313244;
+    border: 1px solid #45475a;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    color: #29ffff;
   }
 
   .prose pre {
-    @apply bg-code-bg border border-code-border rounded-lg p-4 overflow-x-auto;
+    background-color: #313244;
+    border: 1px solid #45475a;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
   }
 
   .prose pre code {
-    @apply bg-transparent border-none p-0;
+    background-color: transparent;
+    border: none;
+    padding: 0;
   }
 
   .prose blockquote {
-    @apply border-l-4 border-accent pl-4 italic text-text-secondary;
+    border-left: 4px solid #29ffff;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #a6adc8;
   }
 
   .prose table {
-    @apply w-full border-collapse;
+    width: 100%;
+    border-collapse: collapse;
   }
 
   .prose th,
   .prose td {
-    @apply border border-border px-4 py-2 text-left;
+    border: 1px solid #45475a;
+    padding: 0.5rem 1rem;
+    text-align: left;
   }
 
   .prose th {
-    @apply bg-bg-secondary font-mono text-text-primary;
+    background-color: #313244;
+    font-family: 'JetBrains Mono', monospace;
+    color: #cdd6f4;
   }
 
   .prose td {
+    color: #cbcbcb !important;
+  }
+
+  .text-accent {
+    color: #29ffff !important;
+  }
+  
+  .text-red-500 {
+    color: #ff5c53 !important;
+  }
+  
+  .text-gray-300 {
     color: #cbcbcb !important;
   }
 } 

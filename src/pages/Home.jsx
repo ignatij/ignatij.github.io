@@ -7,25 +7,25 @@ export default function Home() {
       <Title>ignatij - Software Engineer & Developer</Title>
       
       {/* Hero Section */}
-      <section class="py-20">
+      <section class="py-12 sm:py-20">
         <div class="container">
-          <div class="flex items-center justify-center mb-8">
-            <div class="flex items-start space-x-8">
+          <div class="flex flex-col sm:flex-row items-center justify-center mb-8">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8">
               {/* Left part - Avatar */}
               <div class="flex-shrink-0">
                 <img 
                   src="/avatar.png" 
                   alt="ignatij" 
-                  class="w-24 h-32 border-2 border-border"
+                  class="w-20 h-24 sm:w-24 sm:h-32 border-2 border-border"
                 />
               </div>
               
               {/* Right part - Name and Description */}
-              <div class="text-left">
-                <h1 class="text-6xl font-mono font-bold text-accent leading-none mb-4">
+              <div class="text-center sm:text-left">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-mono font-bold text-accent leading-none mb-4">
                   ignatij
                 </h1>
-                <p class="text-2xl text-text-secondary font-mono">
+                <p class="text-lg sm:text-xl lg:text-2xl text-text-secondary font-mono max-w-sm sm:max-w-none">
                   software engineer & developer. building things that matter.
                 </p>
               </div>
@@ -44,12 +44,12 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section class="py-16 border-t border-border">
+      <section class="py-12 sm:py-16 border-t border-border">
         <div class="container">
-          <h2 class="text-4xl font-mono font-bold text-text-primary mb-8">
+          <h2 class="text-3xl sm:text-4xl font-mono font-bold text-text-primary mb-6 sm:mb-8">
             about
           </h2>
-          <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
             <div>
               <p class="text-text-secondary leading-relaxed mb-6">
                 i'm a software engineer passionate about building efficient, scalable systems. 
@@ -60,16 +60,16 @@ export default function Home() {
                 performance and developer experience.
               </p>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-bg-secondary border border-border rounded text-accent font-mono text-sm">
+                <span is="badge" variant="blue" class="font-mono text-sm">
                   solid.js
                 </span>
-                <span class="px-3 py-1 bg-bg-secondary border border-border rounded text-accent font-mono text-sm">
+                <span is="badge" variant="cyan" class="font-mono text-sm">
                   typescript
                 </span>
-                <span class="px-3 py-1 bg-bg-secondary border border-border rounded text-accent font-mono text-sm">
+                <span is="badge" variant="red" class="font-mono text-sm">
                   rust
                 </span>
-                <span class="px-3 py-1 bg-bg-secondary border border-border rounded text-accent font-mono text-sm">
+                <span is="badge" variant="green" class="font-mono text-sm">
                   go
                 </span>
               </div>
@@ -102,17 +102,17 @@ export default function Home() {
       </section>
 
       {/* Featured Projects */}
-      <section class="py-16 border-t border-border">
+      <section class="py-12 sm:py-16 border-t border-border">
         <div class="container">
-          <div class="flex justify-between items-center mb-8">
-            <h2 class="text-4xl font-mono font-bold text-text-primary">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-4">
+            <h2 class="text-3xl sm:text-4xl font-mono font-bold text-text-primary">
               featured projects
             </h2>
             <A href="/projects" class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm">
               view all →
             </A>
           </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 title: "competitive intelligence tool",
@@ -142,7 +142,7 @@ export default function Home() {
                 </p>
                 <div class="flex flex-wrap gap-2">
                   {project.tech.map(tech => (
-                    <span class="px-2 py-1 bg-bg-tertiary border border-border rounded text-accent font-mono text-xs">
+                    <span is="badge" variant="muted" class="font-mono text-xs">
                       {tech}
                     </span>
                   ))}
@@ -154,17 +154,17 @@ export default function Home() {
       </section>
 
       {/* Recent Blog Posts */}
-      <section class="py-16 border-t border-border">
+      <section class="py-12 sm:py-16 border-t border-border">
         <div class="container">
-          <div class="flex justify-between items-center mb-8">
-            <h2 class="text-4xl font-mono font-bold text-text-primary">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-4">
+            <h2 class="text-3xl sm:text-4xl font-mono font-bold text-text-primary">
               recent posts
             </h2>
             <A href="/blog" class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm">
               view all →
             </A>
           </div>
-          <div class="space-y-8">
+          <div class="space-y-6 sm:space-y-8">
             {[
               {
                 title: "building competitive intelligence tools",
@@ -191,15 +191,15 @@ export default function Home() {
                   <p class="text-text-secondary mb-4 leading-relaxed">
                     {post.excerpt}
                   </p>
-                  <div class="flex items-center justify-between">
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div class="flex items-center space-x-4 text-text-muted font-mono text-sm">
                       <span>{post.date}</span>
                       <span>•</span>
                       <span>{post.readTime}</span>
                     </div>
-                    <div class="flex gap-2">
+                    <div class="flex flex-wrap gap-2">
                       {post.tags.map(tag => (
-                        <span class="px-2 py-1 bg-bg-tertiary border border-border rounded text-accent font-mono text-xs">
+                        <span is="badge" variant="muted" class="font-mono text-xs">
                           {tag}
                         </span>
                       ))}

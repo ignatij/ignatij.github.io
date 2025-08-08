@@ -7,39 +7,47 @@ export default function Header() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen());
 
+  // Helper function to determine if a link is active
+  const isActive = (path) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <header class="bg-bg-primary border-b border-border sticky top-0 z-50">
-      <div class="container mx-auto px-6">
+      <div class="container">
         <div class="flex items-center justify-between h-16">
           {/* Logo */}
-          <A href="/" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
+          <A href="/" class="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity duration-200">
             <img 
               src="/avatar.png" 
               alt="ignatij" 
-              class="w-8 h-8 rounded-full border border-border"
+              class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-border"
             />
-            <span class="text-xl font-mono font-bold text-accent">
+            <span class="text-lg sm:text-xl font-mono font-bold text-accent">
               ignatij
             </span>
           </A>
 
           {/* Desktop Navigation */}
-          <nav class="hidden md:flex space-x-8">
+          <nav class="hidden md:flex space-x-6 lg:space-x-8">
             <A 
               href="/" 
-              class={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+              class={`nav-link ${isActive('/') ? 'active' : ''}`}
             >
               home
             </A>
             <A 
               href="/blog" 
-              class={`nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}
+              class={`nav-link ${isActive('/blog') ? 'active' : ''}`}
             >
               blog
             </A>
             <A 
               href="/projects" 
-              class={`nav-link ${location.pathname.startsWith('/projects') ? 'active' : ''}`}
+              class={`nav-link ${isActive('/projects') ? 'active' : ''}`}
             >
               projects
             </A>
@@ -67,21 +75,21 @@ export default function Header() {
             <div class="flex flex-col space-y-4">
               <A 
                 href="/" 
-                class={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+                class={`nav-link ${isActive('/') ? 'active' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 home
               </A>
               <A 
                 href="/blog" 
-                class={`nav-link ${location.pathname.startsWith('/blog') ? 'active' : ''}`}
+                class={`nav-link ${isActive('/blog') ? 'active' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 blog
               </A>
               <A 
                 href="/projects" 
-                class={`nav-link ${location.pathname.startsWith('/projects') ? 'active' : ''}`}
+                class={`nav-link ${isActive('/projects') ? 'active' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 projects

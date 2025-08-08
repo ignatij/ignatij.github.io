@@ -6,72 +6,72 @@ export default {
   ],
   theme: {
     extend: {
-                fontFamily: {
-            'mono': ['JetBrains Mono', 'monospace'],
-            'sans': ['Inter', 'system-ui', 'sans-serif'],
-          },
-                colors: {
-            'bg-primary': '#0a0a0a',
-            'bg-secondary': '#1a1a1a',
-            'bg-tertiary': '#2a2a2a',
-            'text-primary': '#ffffff',
-            'text-secondary': '#a0a0a0',
-            'text-muted': '#666666',
-            'accent': '#29ffff',
-            'accent-hover': '#1acccc',
-            'border': '#333333',
-            'code-bg': '#1e1e1e',
-            'code-border': '#404040',
-          },
+      fontFamily: {
+        'mono': ['JetBrains Mono', 'monospace'],
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        'bg-primary': '#1e1e2e',
+        'bg-secondary': '#313244',
+        'bg-tertiary': '#45475a',
+        'text-primary': '#cdd6f4',
+        'text-secondary': '#a6adc8',
+        'text-muted': '#6c7086',
+        'accent': '#29ffff',
+        'accent-hover': '#89dceb',
+        'border': '#45475a',
+        'code-bg': '#313244',
+        'code-border': '#45475a',
+      },
       typography: {
         DEFAULT: {
           css: {
             color: '#cbcbcb !important',
-                            h1: {
-                  color: '#ff5c53 !important',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontWeight: '600',
-                },
-                h2: {
-                  color: '#ff5c53 !important',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontWeight: '600',
-                },
-                h3: {
-                  color: '#ffffff',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontWeight: '600',
-                },
-                h4: {
-                  color: '#ffffff',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontWeight: '600',
-                },
-                h5: {
-                  color: '#ffffff',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontWeight: '600',
-                },
-                h6: {
-                  color: '#ffffff',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontWeight: '600',
-                },
-                            a: {
-                  color: '#29ffff',
-                  '&:hover': {
-                    color: '#1acccc',
-                  },
-                },
-                            code: {
-                  color: '#29ffff',
-                  backgroundColor: '#1e1e1e',
-                  border: '1px solid #404040',
-                  borderRadius: '0.25rem',
-                  padding: '0.125rem 0.25rem',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  fontSize: '0.875rem',
-                },
+            h1: {
+              color: '#ff5c53 !important',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontWeight: '600',
+            },
+            h2: {
+              color: '#ff5c53 !important',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontWeight: '600',
+            },
+            h3: {
+              color: '#29ffff',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontWeight: '600',
+            },
+            h4: {
+              color: '#29ffff',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontWeight: '600',
+            },
+            h5: {
+              color: '#29ffff',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontWeight: '600',
+            },
+            h6: {
+              color: '#29ffff',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontWeight: '600',
+            },
+            a: {
+              color: '#29ffff',
+              '&:hover': {
+                color: '#89dceb',
+              },
+            },
+            code: {
+              color: '#29ffff',
+              backgroundColor: '#313244',
+              border: '1px solid #45475a',
+              borderRadius: '0.25rem',
+              padding: '0.125rem 0.25rem',
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.875rem',
+            },
             'code::before': {
               content: '""',
             },
@@ -79,8 +79,8 @@ export default {
               content: '""',
             },
             pre: {
-              backgroundColor: '#1e1e1e',
-              border: '1px solid #404040',
+              backgroundColor: '#313244',
+              border: '1px solid #45475a',
               borderRadius: '0.5rem',
               padding: '1rem',
               overflowX: 'auto',
@@ -89,34 +89,34 @@ export default {
               backgroundColor: 'transparent',
               border: 'none',
               padding: '0',
-              color: '#ffffff',
+              color: '#cdd6f4',
             },
-                            blockquote: {
-                  borderLeftColor: '#29ffff',
-                  color: '#ffffff',
-                  fontStyle: 'italic',
-                },
+            blockquote: {
+              borderLeftColor: '#29ffff',
+              color: '#a6adc8',
+              fontStyle: 'italic',
+            },
             strong: {
-              color: '#ffffff',
+              color: '#29ffff',
               fontWeight: '600',
             },
             table: {
               width: '100%',
               borderCollapse: 'collapse',
             },
-                            th: {
-                  backgroundColor: '#1a1a1a',
-                  color: '#ffffff',
-                  fontFamily: 'JetBrains Mono, monospace',
-                  border: '1px solid #333333',
-                  padding: '0.5rem 1rem',
-                  textAlign: 'left',
-                },
-                            td: {
-                  color: '#ffffff',
-                  border: '1px solid #333333',
-                  padding: '0.5rem 1rem',
-                },
+            th: {
+              backgroundColor: '#313244',
+              color: '#cdd6f4',
+              fontFamily: 'JetBrains Mono, monospace',
+              border: '1px solid #45475a',
+              padding: '0.5rem 1rem',
+              textAlign: 'left',
+            },
+            td: {
+              color: '#cbcbcb !important',
+              border: '1px solid #45475a',
+              padding: '0.5rem 1rem',
+            },
           },
         },
       },
