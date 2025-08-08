@@ -1,5 +1,6 @@
 import { Title } from 'solid-meta';
 import { A } from '@solidjs/router';
+import { For } from 'solid-js';
 
 export default function Home() {
   return (
@@ -113,7 +114,7 @@ export default function Home() {
             </A>
           </div>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {[
+            <For each={[
               {
                 title: "competitive intelligence tool",
                 description: "real-time brand visibility analysis across search engines and LLMs for early-stage companies.",
@@ -132,23 +133,27 @@ export default function Home() {
                 tech: ["react", "typescript", "graphql", "docker"],
                 link: "/projects/portfolio-builder"
               }
-            ].map(project => (
-              <A href={project.link} class="card group">
-                <h3 class="text-xl font-mono font-semibold text-text-primary mb-3 group-hover:text-accent transition-colors duration-200">
-                  {project.title}
-                </h3>
-                <p class="text-text-secondary mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  {project.tech.map(tech => (
-                    <span is="badge" variant="muted" class="font-mono text-xs">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </A>
-            ))}
+            ]}>
+              {(project) => (
+                <A href={project.link} class="card group">
+                  <h3 class="text-xl font-mono font-semibold text-text-primary mb-3 group-hover:text-accent transition-colors duration-200">
+                    {project.title}
+                  </h3>
+                  <p class="text-text-secondary mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <For each={project.tech}>
+                      {(tech) => (
+                        <span is="badge" variant="muted" class="font-mono text-xs">
+                          {tech}
+                        </span>
+                      )}
+                    </For>
+                  </div>
+                </A>
+              )}
+            </For>
           </div>
         </div>
       </section>
@@ -165,7 +170,7 @@ export default function Home() {
             </A>
           </div>
           <div class="space-y-6 sm:space-y-8">
-            {[
+            <For each={[
               {
                 title: "building competitive intelligence tools",
                 excerpt: "lessons learned from developing real-time brand visibility analysis across search engines and LLMs for early-stage companies.",
@@ -182,32 +187,36 @@ export default function Home() {
                 tags: ["node.js", "typescript", "monorepo", "yarn"],
                 slug: "monorepo-architecture"
               }
-            ].map(post => (
-              <article class="border-b border-border pb-8 last:border-b-0">
-                <A href={`/blog/${post.slug}`} class="group">
-                  <h3 class="text-2xl font-mono font-semibold text-text-primary mb-3 group-hover:text-accent transition-colors duration-200">
-                    {post.title}
-                  </h3>
-                  <p class="text-text-secondary mb-4 leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div class="flex items-center space-x-4 text-text-muted font-mono text-sm">
-                      <span>{post.date}</span>
-                      <span>•</span>
-                      <span>{post.readTime}</span>
+            ]}>
+              {(post) => (
+                <article class="border-b border-border pb-8 last:border-b-0">
+                  <A href={`/blog/${post.slug}`} class="group">
+                    <h3 class="text-2xl font-mono font-semibold text-text-primary mb-3 group-hover:text-accent transition-colors duration-200">
+                      {post.title}
+                    </h3>
+                    <p class="text-text-secondary mb-4 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                      <div class="flex items-center space-x-4 text-text-muted font-mono text-sm">
+                        <span>{post.date}</span>
+                        <span>•</span>
+                        <span>{post.readTime}</span>
+                      </div>
+                      <div class="flex flex-wrap gap-2">
+                        <For each={post.tags}>
+                          {(tag) => (
+                            <span is="badge" variant="muted" class="font-mono text-xs">
+                              {tag}
+                            </span>
+                          )}
+                        </For>
+                      </div>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                      {post.tags.map(tag => (
-                        <span is="badge" variant="muted" class="font-mono text-xs">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </A>
-              </article>
-            ))}
+                  </A>
+                </article>
+              )}
+            </For>
           </div>
         </div>
       </section>
