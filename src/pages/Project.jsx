@@ -51,14 +51,16 @@ export default function Project() {
                         </div>
                 
                 <div class="flex gap-4">
-                  <a 
-                    href={project().github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="btn"
-                  >
-                    view on github
-                  </a>
+                  {project().github && (
+                    <a 
+                      href={project().github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="btn"
+                    >
+                      view on github
+                    </a>
+                  )}
                   {project().live && (
                     <a 
                       href={project().live} 

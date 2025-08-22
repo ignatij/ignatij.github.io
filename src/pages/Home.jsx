@@ -1,8 +1,12 @@
 import { Title } from 'solid-meta';
 import { A } from '@solidjs/router';
-import { For } from 'solid-js';
+import { For, createResource } from 'solid-js';
+import { loadProjects, loadBlogPosts } from '../utils/content';
 
 export default function Home() {
+  const [projects] = createResource(loadProjects);
+  const [blogPosts] = createResource(loadBlogPosts);
+
   return (
     <div class="min-h-screen">
       <Title>ignatij - Software Engineer & Developer</Title>
@@ -114,36 +118,17 @@ export default function Home() {
             </A>
           </div>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            <For each={[
-              {
-                title: "competitive intelligence tool",
-                description: "real-time brand visibility analysis across search engines and LLMs for early-stage companies.",
-                tech: ["typescript", "go", "gcp", "kubernetes"],
-                link: "/projects/competitive-intelligence-tool"
-              },
-              {
-                title: "data grid - angular",
-                description: "open-source grid component for angular with over 7000 downloads, providing powerful data visualization.",
-                tech: ["angular", "typescript", "web-components"],
-                link: "/projects/data-grid-angular"
-              },
-              {
-                title: "portfolio builder",
-                description: "fully-featured product for building portfolio websites with working example at jaxt.dev.",
-                tech: ["react", "typescript", "graphql", "docker"],
-                link: "/projects/portfolio-builder"
-              }
-            ]}>
+            <For each={projects()?.slice(0, 3)}>
               {(project) => (
-                <A href={project.link} class="card group">
+                <A href={`/projects/${project.slug}`} class="card group">
                   <h3 class="text-xl font-mono font-semibold text-text-primary mb-3 group-hover:text-accent transition-colors duration-200">
                     {project.title}
                   </h3>
                   <p class="text-text-secondary mb-4 leading-relaxed">
-                    {project.description}
+                    {project.excerpt}
                   </p>
                   <div class="flex flex-wrap gap-2">
-                    <For each={project.tech}>
+                    <For each={project.technologies}>
                       {(tech) => (
                         <span is="badge" variant="muted" class="font-mono text-xs">
                           {tech}
@@ -170,24 +155,7 @@ export default function Home() {
             </A>
           </div>
           <div class="space-y-6 sm:space-y-8">
-            <For each={[
-              {
-                title: "building competitive intelligence tools",
-                excerpt: "lessons learned from developing real-time brand visibility analysis across search engines and LLMs for early-stage companies.",
-                date: "2024-12-20",
-                readTime: "15 min read",
-                tags: ["python", "ai", "analytics"],
-                slug: "competitive-intelligence-tools"
-              },
-              {
-                title: "monorepo architecture with yarn workspaces",
-                excerpt: "best practices for building scalable applications using modern JavaScript/TypeScript technologies in a monorepo structure.",
-                date: "2024-11-15",
-                readTime: "12 min read",
-                tags: ["node.js", "typescript", "monorepo", "yarn"],
-                slug: "monorepo-architecture"
-              }
-            ]}>
+            <For each={blogPosts()?.slice(0, 2)}>
               {(post) => (
                 <article class="border-b border-border pb-8 last:border-b-0">
                   <A href={`/blog/${post.slug}`} class="group">
@@ -201,7 +169,7 @@ export default function Home() {
                       <div class="flex items-center space-x-4 text-text-muted font-mono text-sm">
                         <span>{post.date}</span>
                         <span>•</span>
-                        <span>{post.readTime}</span>
+                        <span>{post.readTime || '5 min read'}</span>
                       </div>
                       <div class="flex flex-wrap gap-2">
                         <For each={post.tags}>

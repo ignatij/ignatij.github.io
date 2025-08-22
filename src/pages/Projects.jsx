@@ -64,15 +64,17 @@ export default function Projects() {
                 </div>
                 
                 <div class="flex gap-4">
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    github
-                  </a>
+                  {project.github && (
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      github
+                    </a>
+                  )}
                   {project.live && (
                     <a 
                       href={project.live} 
