@@ -44,27 +44,27 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav class="hidden md:flex space-x-6 lg:space-x-8">
-            <a
+            <A
               href="/"
               class={`nav-link ${isHomeActive() ? "active" : ""}`}
               style={{ color: isHomeActive() ? "#29ffff" : "#cdd6f4" }}
             >
               home
-            </a>
-            <a
+            </A>
+            <A
               href="/blog"
               class={`nav-link ${isBlogActive() ? "active" : ""}`}
               style={{ color: isBlogActive() ? "#29ffff" : "#cdd6f4" }}
             >
               blog
-            </a>
-            <a
+            </A>
+            <A
               href="/projects"
               class={`nav-link ${isProjectsActive() ? "active" : ""}`}
               style={{ color: isProjectsActive() ? "#29ffff" : "#cdd6f4" }}
             >
               projects
-            </a>
+            </A>
           </nav>
 
           {/* Mobile menu button */}
