@@ -2,11 +2,10 @@
 title: "Coffee Shop"
 description: "Sample coffee-ordering application showcasing modern web development technologies"
 excerpt: "A technical showcase demonstrating Node.js, GraphQL, React, TypeScript, and Docker in a monorepo architecture"
-technologies: ["TypeScript", "React", "Node.js", "GraphQL", "Docker", "PostgreSQL"]
+technologies:
+  ["TypeScript", "React", "Node.js", "GraphQL", "Docker", "PostgreSQL"]
 github: "https://github.com/ignatij/coffee-shop"
 ---
-
-# Coffee Shop - Technical Showcase
 
 A comprehensive sample application demonstrating modern web development technologies and architectural patterns in a coffee-ordering system.
 

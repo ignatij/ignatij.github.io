@@ -6,8 +6,6 @@ technologies: ["C++", "MPI"]
 github: "https://github.com/ignatij/knn-mpi"
 ---
 
-# KNN MPI - Parallel k-Nearest Neighbors Implementation
-
 A high-performance parallel implementation of the k-Nearest Neighbors (kNN) algorithm using Message Passing Interface (MPI), featuring multiple optimization strategies and comprehensive performance analysis.
 
 ## Overview

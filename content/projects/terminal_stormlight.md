@@ -6,8 +6,6 @@ technologies: ["JavaScript", "Node.js", "Bash"]
 github: "https://github.com/ignatij/terminal-stormlight"
 ---
 
-# Terminal Stormlight - Stormlight Archive Meets Bash
-
 An innovative open-source project that brings the epic world of Brandon Sanderson's Stormlight Archive series into your terminal, creating an immersive and interactive experience through animated ASCII art and creative storytelling.
 
 ## Overview
@@ -50,6 +48,7 @@ curl https://terminal-stormlight.onrender.com/
 ### Live Demo Access
 
 The project is instantly accessible through:
+
 - **Web URL**: [terminal-stormlight.onrender.com](https://terminal-stormlight.onrender.com/)
 - **Direct Terminal**: `curl https://terminal-stormlight.onrender.com/`
 

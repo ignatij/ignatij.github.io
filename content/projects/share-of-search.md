@@ -6,8 +6,6 @@ technologies: ["Python", "FastAPI", "PostgreSQL", "Prefect", "Google ADK"]
 start_date: 2024-10-01
 ---
 
-# Share Of Search
-
 A sophisticated competitive intelligence platform designed to analyze real-time brand visibility across multiple search engines and LLM platforms.
 
 ## Overview

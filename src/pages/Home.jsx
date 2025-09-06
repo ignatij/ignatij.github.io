@@ -1,7 +1,7 @@
-import { Title } from 'solid-meta';
-import { A } from '@solidjs/router';
-import { For, createResource } from 'solid-js';
-import { loadProjects, loadBlogPosts } from '../utils/content';
+import { Title } from "solid-meta";
+import { A } from "@solidjs/router";
+import { For, createResource } from "solid-js";
+import { loadProjects, loadBlogPosts } from "../utils/content";
 
 export default function Home() {
   const [projects] = createResource(loadProjects);
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div class="min-h-screen">
       <Title>ignatij - Software Engineer & Developer</Title>
-      
+
       {/* Hero Section */}
       <section class="py-12 sm:py-20">
         <div class="container">
@@ -18,13 +18,13 @@ export default function Home() {
             <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8">
               {/* Left part - Avatar */}
               <div class="flex-shrink-0">
-                <img 
-                  src="/avatar.png" 
-                  alt="ignatij" 
+                <img
+                  src="/avatar.png"
+                  alt="ignatij"
                   class="w-20 h-24 sm:w-24 sm:h-32 border-2 border-border"
                 />
               </div>
-              
+
               {/* Right part - Name and Description */}
               <div class="text-center sm:text-left">
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-mono font-bold text-accent leading-none mb-4">
@@ -36,7 +36,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <A href="/projects" class="btn btn-primary">
               view projects
@@ -57,25 +57,16 @@ export default function Home() {
           <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
             <div>
               <p class="text-text-secondary leading-relaxed mb-6">
-                i'm a software engineer passionate about building efficient, scalable systems. 
-                i specialize in modern web technologies and enjoy exploring new programming paradigms.
-              </p>
-              <p class="text-text-secondary leading-relaxed mb-6">
-                currently working on distributed systems and exploring the intersection of 
-                performance and developer experience.
+                i'm a software engineer passionate about building efficient,
+                scalable systems. i specialize in modern backend technologies
+                and enjoy exploring new programming paradigms.
               </p>
               <div class="flex flex-wrap gap-2">
                 <span is="badge" variant="blue" class="font-mono text-sm">
-                  solid.js
+                  golang
                 </span>
                 <span is="badge" variant="cyan" class="font-mono text-sm">
-                  typescript
-                </span>
-                <span is="badge" variant="red" class="font-mono text-sm">
-                  rust
-                </span>
-                <span is="badge" variant="green" class="font-mono text-sm">
-                  go
+                  node.js
                 </span>
               </div>
             </div>
@@ -86,15 +77,15 @@ export default function Home() {
               <div class="space-y-3">
                 <div class="flex justify-between">
                   <span class="text-text-secondary font-mono">experience</span>
-                  <span class="text-accent font-mono">5+ years</span>
+                  <span class="text-accent font-mono">8+ years</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-text-secondary font-mono">languages</span>
-                  <span class="text-accent font-mono">8+</span>
+                  <span class="text-accent font-mono">5+</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-text-secondary font-mono">projects</span>
-                  <span class="text-accent font-mono">20+</span>
+                  <span class="text-accent font-mono">10+</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-text-secondary font-mono">coffee</span>
@@ -113,7 +104,10 @@ export default function Home() {
             <h2 class="text-3xl sm:text-4xl font-mono font-bold text-text-primary">
               featured projects
             </h2>
-            <A href="/projects" class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm">
+            <A
+              href="/projects"
+              class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm"
+            >
               view all →
             </A>
           </div>
@@ -130,7 +124,11 @@ export default function Home() {
                   <div class="flex flex-wrap gap-2">
                     <For each={project.technologies}>
                       {(tech) => (
-                        <span is="badge" variant="muted" class="font-mono text-xs">
+                        <span
+                          is="badge"
+                          variant="muted"
+                          class="font-mono text-xs"
+                        >
                           {tech}
                         </span>
                       )}
@@ -150,7 +148,10 @@ export default function Home() {
             <h2 class="text-3xl sm:text-4xl font-mono font-bold text-text-primary">
               recent posts
             </h2>
-            <A href="/blog" class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm">
+            <A
+              href="/blog"
+              class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm"
+            >
               view all →
             </A>
           </div>
@@ -169,12 +170,16 @@ export default function Home() {
                       <div class="flex items-center space-x-4 text-text-muted font-mono text-sm">
                         <span>{post.date}</span>
                         <span>•</span>
-                        <span>{post.readTime || '5 min read'}</span>
+                        <span>{post.readTime || "5 min read"}</span>
                       </div>
                       <div class="flex flex-wrap gap-2">
                         <For each={post.tags}>
                           {(tag) => (
-                            <span is="badge" variant="muted" class="font-mono text-xs">
+                            <span
+                              is="badge"
+                              variant="muted"
+                              class="font-mono text-xs"
+                            >
                               {tag}
                             </span>
                           )}
@@ -190,4 +195,4 @@ export default function Home() {
       </section>
     </div>
   );
-} 
+}

@@ -6,8 +6,6 @@ technologies:
 github: "https://github.com/netceteragroup/ngrx-data-grid"
 ---
 
-# Data Grid - Angular
-
 Highly-customizable grid based on the Angular and the NgRx framework, designed to handle large datasets with ease while providing a smooth user experience.
 
 ## Overview

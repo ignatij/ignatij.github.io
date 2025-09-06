@@ -62,7 +62,7 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
     margin-top: 2rem;
-    color: #ff5c53 !important;
+    color: #cdd6f4;
   }
 
   @media (min-width: 640px) {
@@ -77,14 +77,14 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
     margin-top: 2rem;
-    color: #29ffff;
+    color: #cdd6f4;
   }
 
   h4 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
     margin-top: 1.5rem;
-    color: #29ffff;
+    color: #cdd6f4;
   }
 
   p {
@@ -143,10 +143,43 @@
   ul, ol {
     margin-bottom: 1.5rem;
     color: #cbcbcb !important;
+    padding-left: 0;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  ol {
+    list-style-type: decimal;
   }
 
   li {
     margin-bottom: 0.5rem;
+    white-space: nowrap !important;
+    overflow-x: auto;
+    display: flex !important;
+    align-items: flex-start;
+  }
+
+  li * {
+    white-space: nowrap !important;
+    display: inline !important;
+  }
+
+  li p {
+    white-space: nowrap !important;
+    display: inline !important;
+    margin: 0 !important;
+  }
+
+  ul li::before {
+    content: "•";
+    color: #cbcbcb;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-right: 0.5em;
   }
 
   table {
@@ -291,9 +324,30 @@
     color: #cdd6f4;
   }
   
-  .prose h1,
-  .prose h2 {
+  .prose h1 {
     color: #ff5c53 !important;
+  }
+
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    color: #cdd6f4 !important;
+  }
+
+  /* More specific selectors to override any conflicting styles */
+  .prose h2:not(.prose h1),
+  .prose h3:not(.prose h1),
+  .prose h4:not(.prose h1),
+  .prose h5:not(.prose h1),
+  .prose h6:not(.prose h1) {
+    color: #cdd6f4 !important;
+  }
+
+  /* Target all headings except h1 in prose */
+  .prose :is(h2, h3, h4, h5, h6) {
+    color: #cdd6f4 !important;
   }
 
   .prose a {
@@ -355,6 +409,53 @@
 
   .prose td {
     color: #cbcbcb !important;
+  }
+
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+    color: #cbcbcb !important;
+    padding-left: 0;
+  }
+
+  .prose ul {
+    list-style-type: none;
+  }
+
+  .prose ol {
+    list-style-type: decimal;
+  }
+
+  .prose li {
+    margin-bottom: 0.5rem;
+    white-space: nowrap !important;
+    overflow-x: auto;
+    display: flex !important;
+    align-items: flex-start;
+  }
+
+  .prose li * {
+    white-space: nowrap !important;
+    display: inline !important;
+  }
+
+  .prose li p {
+    white-space: nowrap !important;
+    display: inline !important;
+    margin: 0 !important;
+  }
+
+  .prose ul li::before {
+    content: "•";
+    color: #cbcbcb;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-right: 0.5em;
+  }
+
+  .prose strong, .prose b {
+    color: #cdd6f4 !important;
+    font-weight: 600;
   }
 
   .text-accent {

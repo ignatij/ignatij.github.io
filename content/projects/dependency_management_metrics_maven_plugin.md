@@ -6,8 +6,6 @@ technologies: ["Java", "Maven"]
 github: "https://github.com/ignatij/dependency-management-metrics-maven-plugin"
 ---
 
-# Dependency Management Metrics Maven Plugin
-
 A powerful Maven plugin that computes Dependency Management Metrics for multi-module Java projects, helping developers maintain clean architecture principles and identify architectural violations.
 
 ## Overview

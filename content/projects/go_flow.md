@@ -6,8 +6,6 @@ technologies: ["Go", "PostgreSQL", "Docker"]
 github: "https://github.com/ignatij/goflow"
 ---
 
-# GoFlow - Workflow Management Library
-
 A powerful and flexible workflow orchestration library built in Go, designed for simple yet robust workflow management with advanced features like task dependencies, retry mechanisms, and persistent storage.
 
 ## Overview
