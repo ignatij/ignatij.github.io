@@ -17,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" component={Home} />
             <Route path="/blog" component={Blog} />
+            <Route path="/blogs" component={Blog} />
             <Route path="/blog/:slug" component={BlogPost} />
             <Route path="/projects" component={Projects} />
             <Route path="/projects/:slug" component={Project} />

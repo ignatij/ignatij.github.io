@@ -15,7 +15,7 @@ export default function Header() {
 
   const isBlogActive = createMemo(() => {
     const pathname = location.pathname;
-    return pathname === "/blog" || pathname.startsWith("/blog/");
+    return pathname === "/blog" || pathname === "/blogs" || pathname.startsWith("/blog/");
   });
 
   const isProjectsActive = createMemo(() => {

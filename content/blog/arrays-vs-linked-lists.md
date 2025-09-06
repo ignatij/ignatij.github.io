@@ -1,4 +1,9 @@
-# Arrays vs Linked Lists
+---
+title: "Arrays vs Linked Lists"
+date: "2025-09-06"
+excerpt: "When comparing arrays and linked lists, the common wisdom is that arrays are faster to traverse. The usual explanation is spatial locality: arrays are allocated in contiguous memory, so the CPU can fetch data efficiently into cache lines. In this post we explore what would be the outcome if the nodes in the linked list are also allocated contiguously."
+tags: ["performance", "data-structures", "go"]
+---
 
 When comparing arrays and linked lists, the common wisdom is that arrays are faster to traverse. The usual explanation is spatial locality: arrays are allocated in contiguous memory, so the CPU can fetch data efficiently into cache lines.
 
@@ -49,7 +54,6 @@ for {
 Sample output:
 
 ```
-
 Node with value: 1 address: 0x14000198040
 Difference between adjacent nodes = 16 bytes
 Node with value: 2 address: 0x14000198050
@@ -123,9 +127,9 @@ Linked list traversal: ~17k iterations, ~67 µs each
 
 Two main reasons explain this gap:
 
-- Instruction cost: Linked list iteration requires pointer chasing, which adds extra cycles per step.
+Instruction cost: Linked list iteration requires pointer chasing, which adds extra cycles per step.
 
-- Cache predictability: Even with contiguous nodes, the CPU struggles to prefetch effectively compared to a simple array scan.
+Cache predictability: Even with contiguous nodes, the CPU struggles to prefetch effectively compared to a simple array scan.
 
 ### Takeaways
 

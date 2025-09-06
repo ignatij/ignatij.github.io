@@ -7,6 +7,10 @@ marked.setOptions({
   gfm: true,
   headerIds: false,
   mangle: false,
+  pedantic: false,
+  smartLists: false,
+  smartypants: false,
+  xhtml: false,
 });
 
 // Load all blog posts
@@ -14,9 +18,45 @@ export async function loadBlogPosts() {
   const posts = [];
 
   try {
-    // For now, return empty array since we don't have blog posts yet
-    // When you add blog posts, you can use the same pattern as projects
-    console.log("No blog posts found yet");
+    // Use import.meta.glob to discover all markdown files in the blog folder
+    const blogFiles = import.meta.glob("../../content/blog/*.md", {
+      eager: true,
+    });
+    const blogSlugs = Object.keys(blogFiles).map((path) =>
+      path.split("/").pop().replace(".md", "")
+    );
+
+    // Dynamic imports for each discovered blog post
+    for (const slug of blogSlugs) {
+      try {
+        const file = await import(`../../content/blog/${slug}.md?raw`);
+
+        const { data, content: markdownContent } = matter(file.default);
+
+        // Extract first paragraph as excerpt if not provided in frontmatter
+        const excerpt = data.excerpt || 
+          markdownContent
+            .split('\n')
+            .find(line => line.trim() && !line.startsWith('#'))
+            ?.substring(0, 200) + "..." || 
+          markdownContent.substring(0, 200) + "...";
+
+        // Calculate read time (average 200 words per minute)
+        const wordCount = markdownContent.split(/\s+/).length;
+        const readTime = Math.ceil(wordCount / 200);
+
+        posts.push({
+          ...data,
+          slug: slug,
+          content: marked(markdownContent),
+          excerpt: excerpt,
+          readTime: `${readTime} min read`,
+          date: data.date || new Date().toISOString().split('T')[0], // Default to today if no date
+        });
+      } catch (importError) {
+        console.error(`Error importing blog post ${slug}:`, importError);
+      }
+    }
   } catch (error) {
     console.error("Error loading blog posts:", error);
   }
