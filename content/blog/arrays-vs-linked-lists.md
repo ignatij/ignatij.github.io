@@ -127,9 +127,10 @@ Linked list traversal: ~17k iterations, ~67 µs each
 
 Two main reasons explain this gap:
 
-* Instruction cost: Linked list iteration requires pointer chasing, which adds extra cycles per step.
+- Instruction cost: Linked list iteration requires pointer chasing, which adds extra cycles per step.
 
-* Cache predictability: Even with contiguous nodes, the CPU struggles to prefetch effectively compared to a simple array scan.
+- Cache predictability: Even with contiguous nodes, the CPU struggles to prefetch effectively
+  compared to a simple array scan.
 
 ### Takeaways
 

@@ -2,7 +2,8 @@
 title: "Share Of Search"
 description: "real-time brand visibility analysis across search engines and LLMs"
 excerpt: "Real-time brand visibility analysis across search engines and LLMs"
-technologies: ["Python", "FastAPI", "PostgreSQL", "Prefect", "Google ADK"]
+technologies:
+  ["Python", "FastAPI", "PostgreSQL", "Prefect", "Google ADK", "React"]
 start_date: 2024-10-01
 ---
 
@@ -16,7 +17,8 @@ This project represents a comprehensive solution for marketing and market resear
 
 ### Real-time Brand Monitoring
 
-- **Multi-platform Analysis**: Tracks brand visibility across Google, Bing, GoogleAIO, BingAIO, ChatGPT, Perplexity, Gemini and Claude
+- **Multi-platform Analysis**: Tracks brand visibility across Google, Bing, GoogleAIO, BingAIO,
+  ChatGPT, Perplexity, Gemini and Claude
 - **LLM Integration**: Analyzes how AI models perceive and reference brands
 - **Automated Data Collection**: Continuous monitoring with configurable update intervals
 
@@ -34,8 +36,10 @@ This project represents a comprehensive solution for marketing and market resear
 
 #### Backend Infrastructure
 
-- **Microservices Architecture**: Scalable, maintainable service-oriented design that combined the approaches of synchronous / asynchronous communication
+- **Microservices Architecture**: Scalable, maintainable service-oriented design that combined
+  the approaches of synchronous / asynchronous communication
 - **PostgreSQL Database**: Robust data storage with optimized queries
+- **Data Collection Pipelines**: Automated gathering of ranking data from various platforms
 
 #### Frontend Technologies
 
@@ -46,27 +50,6 @@ This project represents a comprehensive solution for marketing and market resear
 
 - **Docker Containerization**: Consistent deployment across environments
 - **Kubernetes Orchestration**: Scalable container management
-
-### Automated Workflows
-
-- **Data Collection Pipelines**: Automated gathering of ranking data from various platforms
-- **Visualization Generation**: Real-time chart and graph creation
-
-## Development Process
-
-### Documentation
-
-Comprehensive documentation was developed to guide future implementations effectively, including:
-
-- **Architecture Guides**: System design and integration patterns
-- **Deployment Procedures**: Step-by-step deployment instructions
-- **Road map**: Complete yearly overview on planned features and epics
-
-### Team Collaboration
-
-- **Cross-team Integration**: Collaboration with data science, and DevOps teams
-- **Code Reviews**: Rigorous review process for quality assurance
-- **Knowledge Sharing**: Regular tech talks and documentation updates
 
 ## My Role
 

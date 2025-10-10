@@ -469,4 +469,62 @@
   .text-gray-300 {
     color: #cbcbcb !important;
   }
+
+  /* Code block styling */
+  .prose pre {
+    background-color: #11111b !important;
+    border: 1px solid #313244 !important;
+    border-radius: 0.5rem !important;
+    padding: 1.5rem !important;
+    overflow-x: auto !important;
+    margin: 1.5rem 0 !important;
+  }
+
+  .prose pre code {
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+    color: inherit !important;
+  }
+
+  /* Ensure highlight.js classes are visible */
+  .prose pre code .hljs-keyword {
+    color: #c678dd !important;
+  }
+
+  .prose pre code .hljs-string {
+    color: #98c379 !important;
+  }
+
+  .prose pre code .hljs-comment {
+    color: #5c6370 !important;
+    font-style: italic;
+  }
+
+  .prose pre code .hljs-number {
+    color: #d19a66 !important;
+  }
+
+  .prose pre code .hljs-type {
+    color: #61afef !important;
+  }
+
+  .prose pre code .hljs-built_in {
+    color: #e06c75 !important;
+  }
+
+  .prose pre code .hljs-function {
+    color: #61afef !important;
+  }
+
+  /* Inline code styling */
+  .prose code:not(pre code) {
+    background-color: #313244 !important;
+    color: #cdd6f4 !important;
+    padding: 0.125rem 0.375rem !important;
+    border-radius: 0.25rem !important;
+    font-size: 0.875em !important;
+  }
 } 

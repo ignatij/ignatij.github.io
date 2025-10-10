@@ -35,7 +35,8 @@ J+ Monitor allows users to define custom rules for checking specific aspects of 
 
 ### Backend Infrastructure
 
-- **Microservices Architecture**: Scalable, maintainable service-oriented design with event-driven architecture
+- **Microservices Architecture**: Scalable, maintainable service-oriented design with
+  event-driven architecture built in Node.js and Golang
 - **Event-Driven Processing**: Google Pub/Sub integration for reliable event handling
 - **Rule Engine**: High-performance rule processing and execution system
 
@@ -56,15 +57,17 @@ J+ Monitor allows users to define custom rules for checking specific aspects of 
 
 ### Architecture Migration
 
-- **From Synchronous to Event-Driven**: Migrated from REST-based microservices communication to event-driven architecture
+- **From Synchronous to Event-Driven**: Migrated from REST-based microservices
+  communication to event-driven architecture
 - **Google Pub/Sub Integration**: Replaced direct HTTP calls with asynchronous message processing
-- **Improved Scalability**: Event-driven design enables better handling of high-volume monitoring requests
+- **Improved Scalability**: Event-driven design enables better handling
+  of high-volume monitoring requests
 
 ## My Role
 
 - **Golang Migration**: Led the migration of one Node.js microservice to Golang
-- **Monitoring Tool Development**: Built the core website monitoring tool in Golang, achieving 33% performance improvement
-- **Architecture Design**: Designed and implemented the rule-based monitoring architecture
+- **Monitoring Tool Development**: Built the core website monitoring tool in Golang,
+  achieving 33% performance improvement
 - **Event System**: Developed the event generation and overview data system
 
 ## Impact & Results
@@ -72,4 +75,3 @@ J+ Monitor allows users to define custom rules for checking specific aspects of 
 - **33% Performance Improvement**: Enhanced rule processing speed through Golang migration
 - **Reduced Resource Usage**: Drastically reduced memory and CPU footprint
 - **Scalable Monitoring**: Successfully handles thousands of concurrent website checks
-- **Automated Event Generation**: Reduced manual monitoring effort by 90%

@@ -1,7 +1,7 @@
 ---
 title: "USB"
 description: "Multiple hospital applications in Basel"
-excerpt: "Unified frontend of multiple hospital applications using Angular component library, created Java authentication libraries, and integrated third-party API services"
+excerpt: "Multiple hospital applications in Basel"
 technologies: ["TypeScript", "JavaScript", "Angular", "Java", "Spring"]
 start_date: 2020-01-01
 end_date: 2021-12-31
@@ -30,7 +30,8 @@ USB was a foundational project for a hospital in Basel that unified the frontend
 
 ### Frontend Technologies
 
-- **Angular Component Library**: Unified UI components shared across all applications using PrimeNG
+- **Angular Component Library**: Unified UI components shared across all applications
+  using PrimeNG
 - **TypeScript**: Type-safe development for improved code quality
 - **Shared Design System**: Consistent design components across hospital applications
 - **Cross-Application Integration**: Seamless integration between multiple hospital applications
@@ -44,7 +45,8 @@ USB was a foundational project for a hospital in Basel that unified the frontend
 
 ## My Role
 
-- **Frontend Unification**: Unified frontend of all hospital applications using Angular component library using PrimeNG
+- **Frontend Unification**: Unified frontend of all hospital applications using Angular
+  component library using PrimeNG
 - **Authentication Development**: Created Java common libraries for authentication and authorization
 - **Third-Party Integration**: Integrated external API services for hospital operations
 - **Team Leadership**: Managed requirements, estimations, reviews, and provided coaching

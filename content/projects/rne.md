@@ -1,7 +1,7 @@
 ---
 title: "RNE - Rail Network Europe"
 description: "Sophisticated rail operations oversight system for 15 European countries"
-excerpt: "Developed and supported sophisticated rail operations system across 15 European countries"
+excerpt: "Sophisticated rail operations oversight system for 15 European countries"
 technologies: ["Java", "Spring", "TypeScript", "Angular", "GraphQL", "NgRx"]
 start_date: 2016-10-01
 end_date: 2020-12-31

@@ -7,6 +7,16 @@ export default function Home() {
   const [projects] = createResource(loadProjects);
   const [blogPosts] = createResource(loadBlogPosts);
 
+  const downloadCV = (e) => {
+    e.preventDefault();
+    const link = document.createElement('a');
+    link.href = '/Ignatij Gichevski CV.pdf';
+    link.download = 'Ignatij Gichevski CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div class="min-h-screen">
       <Title>ignatij - Software Engineer & Developer</Title>
@@ -43,6 +53,9 @@ export default function Home() {
             </A>
             <A href="/blog" class="btn">
               read blog
+            </A>
+            <A href="#" onClick={downloadCV} class="btn">
+              download cv
             </A>
           </div>
         </div>

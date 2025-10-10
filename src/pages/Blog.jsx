@@ -10,7 +10,6 @@ export default function Blog() {
   onMount(async () => {
     try {
       const posts = await loadBlogPosts();
-      console.log('Loaded posts:', posts);
       setBlogPosts(posts);
     } catch (error) {
       console.error('Error loading blog posts:', error);
