@@ -5,6 +5,7 @@ excerpt: "Real-time brand visibility analysis across search engines and LLMs"
 technologies:
   ["Python", "FastAPI", "PostgreSQL", "Prefect", "Google ADK", "React"]
 start_date: 2024-10-01
+end_date: 2025-09-30
 ---
 
 A sophisticated competitive intelligence platform designed to analyze real-time brand visibility across multiple search engines and LLM platforms.
