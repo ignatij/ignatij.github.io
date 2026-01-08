@@ -53,7 +53,7 @@
     h1 {
         font-size: 1.875rem;
         margin-bottom: 1.5rem;
-        color: #ff5c53 !important;
+        color: #f2b487 !important;
     }
 
     @media (min-width: 640px) {
@@ -330,7 +330,7 @@
     }
 
     .prose h1 {
-        color: #ff5c53 !important;
+        color: #f2b487 !important;
     }
 
     .prose h2,

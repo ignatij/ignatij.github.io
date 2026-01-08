@@ -9,9 +9,9 @@ export default function Home() {
 
   const downloadCV = (e) => {
     e.preventDefault();
-    const link = document.createElement('a');
-    link.href = '/Ignatij Gichevski CV.pdf';
-    link.download = 'Ignatij Gichevski CV.pdf';
+    const link = document.createElement("a");
+    link.href = "/Ignatij Gichevski CV.pdf";
+    link.download = "Ignatij Gichevski CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -172,31 +172,43 @@ export default function Home() {
             <For each={blogPosts()?.slice(0, 2)}>
               {(post) => (
                 <article class="border-b border-border pb-8 last:border-b-0">
-                  <A href={`/blog/${post.slug}`} class="group">
-                    <h3 class="text-2xl font-mono font-semibold text-text-primary mb-3 group-hover:text-accent transition-colors duration-200">
-                      {post.title}
-                    </h3>
-                    <p class="text-text-secondary mb-4 leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                      <div class="flex items-center space-x-4 text-text-muted font-mono text-sm">
-                        <span>{post.date}</span>
-                        <span>•</span>
-                        <span>{post.readTime || "5 min read"}</span>
+                  <A href={`/blog/${post.slug}`} class="group block">
+                    <div class="flex flex-col sm:flex-row gap-6">
+                      <div class="sm:w-56 w-full">
+                        <img
+                          src={post.thumbnail}
+                          alt={`Thumbnail for ${post.title}`}
+                          class="w-full h-48 object-cover rounded-lg border border-border transition-transform duration-200 group-hover:scale-[1.01]"
+                          loading="lazy"
+                        />
                       </div>
-                      <div class="flex flex-wrap gap-2">
-                        <For each={post.tags}>
-                          {(tag) => (
-                            <span
-                              is="badge"
-                              variant="muted"
-                              class="font-mono text-xs"
-                            >
-                              {tag}
-                            </span>
-                          )}
-                        </For>
+                      <div class="flex-1">
+                        <h3 class="text-2xl font-mono font-semibold text-text-primary mb-3 group-hover:text-accent transition-colors duration-200">
+                          {post.title}
+                        </h3>
+                        <p class="text-text-secondary mb-4 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                          <div class="flex items-center space-x-4 text-text-muted font-mono text-sm">
+                            <span>{post.date}</span>
+                            <span>•</span>
+                            <span>{post.readTime || "5 min read"}</span>
+                          </div>
+                          <div class="flex flex-wrap gap-2">
+                            <For each={post.tags}>
+                              {(tag) => (
+                                <span
+                                  is="badge"
+                                  variant="muted"
+                                  class="font-mono text-xs"
+                                >
+                                  {tag}
+                                </span>
+                              )}
+                            </For>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </A>

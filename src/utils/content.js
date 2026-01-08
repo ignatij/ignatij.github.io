@@ -52,7 +52,7 @@ export async function loadBlogPosts() {
       eager: true,
     });
     const blogSlugs = Object.keys(blogFiles).map((path) =>
-      path.split("/").pop().replace(".md", "")
+      path.split("/").pop().replace(".md", ""),
     );
 
     // Dynamic imports for each discovered blog post
@@ -82,6 +82,7 @@ export async function loadBlogPosts() {
           excerpt: excerpt,
           readTime: `${readTime} min read`,
           date: data.date || new Date().toISOString().split("T")[0], // Default to today if no date
+          thumbnail: data.thumbnail || "/images/blog-thumb-default.svg",
         });
       } catch (importError) {
         console.error(`Error importing blog post ${slug}:`, importError);
@@ -110,7 +111,7 @@ export async function loadProjects() {
       eager: true,
     });
     const projectSlugs = Object.keys(projectFiles).map((path) =>
-      path.split("/").pop().replace(".md", "")
+      path.split("/").pop().replace(".md", ""),
     );
 
     // Dynamic imports for each discovered project

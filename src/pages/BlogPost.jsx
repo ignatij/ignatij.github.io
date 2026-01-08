@@ -1,7 +1,7 @@
-import { Title } from 'solid-meta';
-import { useParams, A } from '@solidjs/router';
-import { createSignal, onMount } from 'solid-js';
-import { loadBlogPost } from '../utils/content';
+import { Title } from "solid-meta";
+import { useParams, A } from "@solidjs/router";
+import { createSignal, onMount } from "solid-js";
+import { loadBlogPost } from "../utils/content";
 
 export default function BlogPost() {
   const params = useParams();
@@ -13,7 +13,7 @@ export default function BlogPost() {
       const postData = await loadBlogPost(params.slug);
       setPost(postData);
     } catch (error) {
-      console.error('Error loading blog post:', error);
+      console.error("Error loading blog post:", error);
       setPost(null);
     } finally {
       setLoading(false);
@@ -29,7 +29,7 @@ export default function BlogPost() {
       ) : post() ? (
         <>
           <Title>{post().title} - ignatij</Title>
-          
+
           <div class="container">
             <article class="prose prose-lg max-w-none">
               {/* Header */}
@@ -39,22 +39,34 @@ export default function BlogPost() {
                   <span>•</span>
                   <span>{post().readTime}</span>
                 </div>
-                
+
                 <h1 class="text-5xl font-mono font-bold text-accent mb-6">
                   {post().title}
                 </h1>
-                
+
                 <div class="flex gap-2 mb-8">
-                  {post().tags && post().tags.map(tag => (
-                    <span class="px-3 py-1 bg-bg-secondary border border-border rounded text-accent font-mono text-sm">
-                      {tag}
-                    </span>
-                  ))}
+                  {post().tags &&
+                    post().tags.map((tag) => (
+                      <span class="px-3 py-1 bg-bg-secondary border border-border rounded text-accent font-mono text-sm">
+                        {tag}
+                      </span>
+                    ))}
                 </div>
+
+                {post().thumbnail && (
+                  <div class="w-full flex justify-center">
+                    <img
+                      src={post().thumbnail}
+                      alt={`Cover art for ${post().title}`}
+                      class="w-full max-w-2xl h-auto rounded-xl border border-border"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
               </header>
 
               {/* Content */}
-              <div 
+              <div
                 class="prose prose-lg max-w-none"
                 innerHTML={post().content}
               />
@@ -63,7 +75,10 @@ export default function BlogPost() {
             {/* Navigation */}
             <nav class="mt-16 pt-8 border-t border-border">
               <div class="flex justify-between items-center">
-                <A href="/blog" class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm">
+                <A
+                  href="/blog"
+                  class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm"
+                >
                   ← back to blog
                 </A>
                 <div class="text-text-secondary font-mono text-sm">
@@ -88,4 +103,4 @@ export default function BlogPost() {
       )}
     </div>
   );
-} 
+}

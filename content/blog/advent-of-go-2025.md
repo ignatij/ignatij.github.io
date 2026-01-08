@@ -2,6 +2,7 @@
 title: "Advent of Go - 2025"
 date: "2026-01-08"
 excerpt: "A walkthrough of the challenges and solutions for Advent of Code 2025 in Go"
+thumbnail: "/images/aoc-2025.jpg"
 tags: ["aoc-2025", "go", "algorithms", "data-structures"]
 ---
 

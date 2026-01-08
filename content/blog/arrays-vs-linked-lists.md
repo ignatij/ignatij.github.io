@@ -1,11 +1,12 @@
 ---
 title: "Arrays vs Linked Lists"
 date: "2025-09-06"
-excerpt: "When comparing arrays and linked lists, the common wisdom is that arrays are faster to traverse. The usual explanation is spatial locality: arrays are allocated in contiguous memory, so the CPU can fetch data efficiently into cache lines. In this post we explore what would be the outcome if the nodes in the linked list are also allocated contiguously."
+excerpt: "When comparing arrays and linked lists, the common wisdom is that arrays are faster to traverse. The usual explanation is spatial locality: arrays are allocated in contiguous memory, so the CPU can fetch data efficiently into cache lines"
 tags: ["performance", "data-structures", "go"]
+thumbnail: "/images/arrays-vs-linked-list.jpg"
 ---
 
-When comparing arrays and linked lists, the common wisdom is that arrays are faster to traverse. The usual explanation is spatial locality: arrays are allocated in contiguous memory, so the CPU can fetch data efficiently into cache lines.
+When comparing arrays and linked lists, the common wisdom is that arrays are faster to traverse. The usual explanation is spatial locality: arrays are allocated in contiguous memory, so the CPU can fetch data efficiently into cache lines. In this post we explore what would be the outcome if the nodes in the linked list are also allocated contiguously.
 
 Linked lists, in contrast, store nodes scattered across memory, and traversal requires chasing pointers. But what if we force linked list nodes to be allocated contiguously? Would that close the performance gap?
 
