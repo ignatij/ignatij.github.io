@@ -14,8 +14,9 @@ technologies:
     "Digital Ocean",
     "AWS",
   ]
-start_date: 2023-01-01
+start_date: 2022-01-01
 end_date: 2023-07-30
+my_role: 'Successfully migrated client-specific digital publishing solution to SaaS, managing 700,000 monthly requests. Developed detailed documentation to guide future implementations effectively.'
 ---
 
 A complete digital publishing SaaS platform that enables article publishing to various websites, content import from multiple sources, and building delivery websites for end users to read published articles.

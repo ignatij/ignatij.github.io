@@ -5,6 +5,7 @@ excerpt: "A technical showcase demonstrating Node.js, GraphQL, React, TypeScript
 technologies:
   ["TypeScript", "React", "Node.js", "GraphQL", "Docker", "PostgreSQL"]
 github: "https://github.com/ignatij/coffee-shop"
+show_in_cv: false
 ---
 
 A comprehensive sample application demonstrating modern web development technologies and architectural patterns in a coffee-ordering system.

@@ -4,6 +4,7 @@ description: "Stormlight Archive comes to terminal - An interactive terminal exp
 excerpt: "A creative open-source project that brings the magical world of Stormlight Archive into your terminal with animated ASCII art and interactive elements"
 technologies: ["JavaScript", "Node.js", "Bash"]
 github: "https://github.com/ignatij/terminal-stormlight"
+show_in_cv: false
 ---
 
 An innovative open-source project that brings the epic world of Brandon Sanderson's Stormlight Archive series into your terminal, creating an immersive and interactive experience through animated ASCII art and creative storytelling.

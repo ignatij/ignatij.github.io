@@ -2,19 +2,19 @@ import { Title } from "solid-meta";
 import { A } from "@solidjs/router";
 import { For, createResource } from "solid-js";
 import { loadProjects, loadBlogPosts } from "../utils/content";
+import { generateClientCv } from "../utils/cvGenerator";
 
 export default function Home() {
   const [projects] = createResource(loadProjects);
   const [blogPosts] = createResource(loadBlogPosts);
 
-  const downloadCV = (e) => {
+  const downloadCV = async (e) => {
     e.preventDefault();
-    const link = document.createElement("a");
-    link.href = "/Ignatij Gichevski CV.pdf";
-    link.download = "Ignatij Gichevski CV.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      await generateClientCv();
+    } catch (error) {
+      console.error("Failed to generate CV", error);
+    }
   };
 
   return (

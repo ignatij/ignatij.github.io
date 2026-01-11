@@ -5,6 +5,7 @@ excerpt: "Multiple hospital applications in Basel"
 technologies: ["TypeScript", "JavaScript", "Angular", "Java", "Spring"]
 start_date: 2020-01-01
 end_date: 2021-12-31
+my_role: 'Led team to develop unified UI design system for four hospital applications, improving user experience. Created and maintained common libraries for third-party service integration and standardized authentication process.'
 ---
 
 A comprehensive project focused on creating and maintaining multiple applications for a hospital in Basel, Switzerland, with unified frontend architecture and standardized authentication.

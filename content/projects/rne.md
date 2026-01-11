@@ -5,6 +5,7 @@ excerpt: "Sophisticated rail operations oversight system for 15 European countri
 technologies: ["Java", "Spring", "TypeScript", "Angular", "GraphQL", "NgRx"]
 start_date: 2016-10-01
 end_date: 2020-12-31
+my_role: 'Developed and supported a sophisticated system for overseeing rail operations in 15 European countries.'
 ---
 
 A sophisticated system for overseeing rail operations across 15 European countries, providing comprehensive monitoring, management, and coordination capabilities for European rail networks.

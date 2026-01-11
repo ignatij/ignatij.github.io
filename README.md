@@ -60,6 +60,7 @@ pnpm dev
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint errors
+- `npm run cv:generate` - Produce an updated “Ignatij Gichevski CV.pdf” in `public/` from the markdown project metadata
 
 ## Project Structure
 

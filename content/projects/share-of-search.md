@@ -1,11 +1,12 @@
 ---
 title: "Share Of Search"
-description: "real-time brand visibility analysis across search engines and LLMs"
+description: "Real-time brand visibility analysis across search engines and LLMs"
 excerpt: "Real-time brand visibility analysis across search engines and LLMs"
 technologies:
   ["Python", "FastAPI", "PostgreSQL", "Prefect", "Google ADK", "React"]
 start_date: 2024-10-01
 end_date: 2025-09-30
+my_role: 'Led the development of a competitive intelligence tool for real-time brand visibility analysis across search engines and LLMs. Designed automated workflows for collecting and visualizing ranking data from various platforms.'
 ---
 
 A sophisticated competitive intelligence platform designed to analyze real-time brand visibility across multiple search engines and LLM platforms.

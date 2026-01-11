@@ -16,6 +16,7 @@ technologies:
   ]
 start_date: 2024-06-01
 end_date: 2024-12-31
+my_role: 'Enhanced product speed by 33% by migrating the core processing logic to Golang'
 ---
 
 A rule-based website monitoring platform that enables users to create custom monitoring rules for targeting websites and automatically generates real-time events and overview data.
