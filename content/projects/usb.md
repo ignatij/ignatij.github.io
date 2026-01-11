@@ -3,7 +3,7 @@ title: "USB"
 description: "Multiple hospital applications in Basel"
 excerpt: "Multiple hospital applications in Basel"
 technologies: ["TypeScript", "JavaScript", "Angular", "Java", "Spring"]
-start_date: 2020-01-01
+start_date: 2021-01-01
 end_date: 2021-12-31
 my_role: 'Led team to develop unified UI design system for four hospital applications, improving user experience. Created and maintained common libraries for third-party service integration and standardized authentication process.'
 ---

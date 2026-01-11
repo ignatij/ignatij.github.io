@@ -15,7 +15,7 @@ technologies:
     "PostgreSQL",
   ]
 start_date: 2024-06-01
-end_date: 2024-12-31
+end_date: 2024-11-30
 my_role: 'Enhanced product speed by 33% by migrating the core processing logic to Golang'
 ---
 
