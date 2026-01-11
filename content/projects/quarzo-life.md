@@ -27,6 +27,7 @@ A full-scale life insurance platform that offers a comprehensive range of insura
 - **Deno Modular Monolith Runtime**: Modular monolith runtime built in Deno, consisting of multiple contexts, each with its own domain model, services, and infrastructure.
 - **Event-Driven Architecture**: Contexts exchange domain events through RabbitMQ while remaining independently deployable.
 - **DDD Boundaries**: Each context exposes its own REST surface, migrations, and seeders, ensuring domain isolation with explicit contracts.
+- **Shared Libraries**: A collection of reusable modules and utilities for Functional Programming, Railway-Oriented Programming, shared across contexts.
 
 ### Frontend Technologies
 
@@ -48,7 +49,8 @@ A full-scale life insurance platform that offers a comprehensive range of insura
 - **Monorepo**: A single workspace hosting backend services, frontend apps, shared SDK, and infrastructure scripts, all linted, tested, and bundled via Deno tasks and pnpm.
 - **Trunk-Based Development** keeps releases flowing daily by gating merges behind automated checks and short-lived feature branches.
 - **Feature Toggles** allow gradual rollouts without code forks.
-- **Functional Programming** principles to ensure code predictability and maintainability.
+- **Functional Programming** principles to ensure immutability and long-term maintainability.
+- **Railway-Oriented Programming** for error handling and composability.
 - **Test-Driven Development (TDD)** enforces executable specifications for aggregates, REST handlers, and React flows.
 - **Domain-Driven Design (DDD)** guides bounded contexts, ubiquitous language, and integration contracts.
 
