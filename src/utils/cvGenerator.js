@@ -144,12 +144,16 @@ function drawProject(doc, project, y) {
   doc.setFontSize(11);
   const period = formatPeriod(project);
   const header = period ? `${project.title} — ${period}` : project.title;
-  doc.text(header, PAGE.marginX, cursorY);
-  if (project.github) {
+  const maxHeaderWidth =
+    doc.internal.pageSize.getWidth() - PAGE.marginX * 2 - 24;
+  const headerLines = doc.splitTextToSize(header, maxHeaderWidth);
+  doc.text(headerLines, PAGE.marginX, cursorY);
+  if (project.github && headerLines.length > 0) {
     const iconSize = 12;
-    const textWidth = doc.getTextWidth(header);
+    const textWidth = doc.getTextWidth(headerLines[0]);
+    const baselineOffset = doc.getLineHeight() * 0.25;
     const iconX = PAGE.marginX + textWidth + 6;
-    const iconY = cursorY - iconSize + 4;
+    const iconY = cursorY - iconSize + baselineOffset - 1;
     doc.addImage(
       GITHUB_ICON,
       "PNG",
