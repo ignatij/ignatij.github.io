@@ -226,6 +226,21 @@
         }
     }
 
+    /* Project case studies benefit from a wider canvas than listing pages. */
+    .project-container {
+        max-width: 80rem;
+    }
+
+    /* Keep prose wrapping at word boundaries instead of splitting words. */
+    .project-content,
+    .project-content p,
+    .project-content li {
+        min-width: 0;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+        hyphens: none;
+    }
+
     .btn {
         display: inline-flex;
         align-items: center;

@@ -30,15 +30,15 @@ export default function Project() {
         <>
           <Title>{project().title} - ignatij</Title>
           
-          <div class="container">
-            <article class="prose prose-lg max-w-none">
+          <div class="container project-container">
+            <article class="project-content prose prose-lg max-w-none">
               {/* Header */}
               <header class="mb-16">
                 <h1 class="text-5xl font-mono font-bold text-accent mb-6">
                   {project().title}
                 </h1>
                 
-                <p class="text-xl text-text-secondary leading-relaxed mb-8 max-w-3xl">
+                <p class="text-xl text-text-secondary leading-relaxed mb-8 max-w-5xl">
                   {project().excerpt}
                 </p>
                 
@@ -109,4 +109,4 @@ export default function Project() {
       )}
     </div>
   );
-} 
+}

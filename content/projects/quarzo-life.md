@@ -1,64 +1,68 @@
 ---
 title: "Quarzo Life"
-description: "Core insurance platform for next-gen wealthtech operations"
-excerpt: "Core insurance platform for next-gen wealthtech operations"
+description: "Insurance and WealthTech platform supporting insurance, investments, payments, settlements, premium scheduling, and position management"
+excerpt: "A financial platform built around reliable domain workflows for insurance, investments, payments, settlements, and portfolio operations."
 technologies:
   [
-    "Deno",
     "TypeScript",
-    "React",
+    "Deno",
     "PostgreSQL",
-    "Docker",
     "RabbitMQ",
-    "HashiCorp Vault",
-    "Keycloak",
+    "Redis",
+    "Docker",
+    "Hono",
+    "Zod",
+    "OpenAPI",
+    "Zitadel",
   ]
 start_date: 2025-10-01
+my_role: "Designed and evolved the backend architecture using Domain-Driven Design and Clean/Hexagonal Architecture. Built reliable event-driven workflows with RabbitMQ, transactional outbox/inbox patterns, idempotent consumers, and PostgreSQL transaction boundaries; delivered validated APIs and isolated third-party integrations."
 ---
 
 ## Overview
 
-A full-scale life insurance platform that offers a comprehensive range of insurance and investment products to clients.
+Quarzo Life is an Insurance and WealthTech platform supporting the financial lifecycle across insurance, investments, payments, settlements, premium scheduling, and position management.
 
-## Technical Architecture
+My work focused on designing and evolving the backend architecture so that consistency-critical financial operations remained reliable while the platform continued to grow across business domains.
 
-### Backend Infrastructure
+## Architecture and Engineering
 
-- **Deno Modular Monolith Runtime**: Modular monolith runtime built in Deno, consisting of multiple contexts, each with its own domain model, services, and infrastructure.
-- **Event-Driven Architecture**: Contexts exchange domain events through RabbitMQ while remaining independently deployable.
-- **DDD Boundaries**: Each context exposes its own REST surface, migrations, and seeders, ensuring domain isolation with explicit contracts.
-- **Shared Libraries**: A collection of reusable modules and utilities for Functional Programming, Railway-Oriented Programming, shared across contexts.
+### Domain-Driven Services
 
-### Frontend Technologies
+- Designed services around explicit business domains using **Domain-Driven Design** and **Clean/Hexagonal Architecture**.
+- Kept business rules independent from databases, messaging infrastructure, and external providers through clear application ports and infrastructure adapters.
+- Established reusable patterns for authentication, logging, scheduling, persistence, and messaging without weakening domain boundaries.
 
-- **React** consuming BFF endpoints.
+### Reliable Event-Driven Workflows
 
-### Security & Platform
+- Built asynchronous workflows with **RabbitMQ** and explicit domain events to coordinate processes across business domains.
+- Applied **transactional outbox and inbox patterns** so database changes and message processing remained consistent.
+- Designed **idempotent consumers** to make retries safe and prevent duplicate processing in financial workflows.
 
-- **HashiCorp Vault** for secrets, seeded via automated scripts.
-- **Keycloak** as the Identity Provider (IdP).
-- **Dockerized Dev Stack** (Vault, Postgres, Keycloak, RabbitMQ) for local parity; production-ready images shipped to Kubernetes targets.
+### Transactional Persistence
 
-### Continuous Integration and Deployment
+- Developed persistence layers on **PostgreSQL** using repository and unit-of-work patterns.
+- Defined transaction boundaries for consistency-critical operations involving payments, settlements, premium schedules, and investment positions.
+- Used **Redis** where fast, short-lived access to shared data supported platform workflows.
 
-- **GitHub Actions CI** for Continuous Integration.
-- **Railway** for Continuous Deployment.
+### APIs and Integrations
 
-### Methodologies
+- Designed strongly validated REST APIs and internal service contracts with **TypeScript, Deno, Hono, Zod, and OpenAPI**.
+- Isolated banking, identity, document-signing, storage, email, and other third-party services behind adapters, reducing provider coupling and keeping external concerns out of the domain model.
 
-- **Monorepo**: A single workspace hosting backend services, frontend apps, shared SDK, and infrastructure scripts, all linted, tested, and bundled via Deno tasks and pnpm.
-- **Trunk-Based Development** keeps releases flowing daily by gating merges behind automated checks and short-lived feature branches.
-- **Feature Toggles** allow gradual rollouts without code forks.
-- **Functional Programming** principles to ensure immutability and long-term maintainability.
-- **Railway-Oriented Programming** for error handling and composability.
-- **Test-Driven Development (TDD)** enforces executable specifications for aggregates, REST handlers, and React flows.
-- **Domain-Driven Design (DDD)** guides bounded contexts, ubiquitous language, and integration contracts.
+### Quality and Reliability
+
+- Improved confidence in changes through automated unit, integration, repository, and end-to-end tests.
+- Built reusable testing and infrastructure foundations for consistent behavior across services and business domains.
 
 ## My Role
 
-- Architected the monorepo conventions (workspace layout, shared tooling, CI pipelines) and enforced DDD boundaries.
-- Integrated Vault, Keycloak, and GitHub Actions so secrets, identity, and automation adhere to enterprise standards.
+- Designed and evolved the platform's backend architecture and domain boundaries.
+- Implemented reliable messaging and transactional consistency patterns for cross-domain workflows.
+- Built persistence, API, and integration layers for core insurance and wealth-management operations.
 
-## Impact
+## Technology and Architecture
 
-- Enabled teams to spin up new bounded contexts rapidly while keeping DevOps (Docker, CI, infra scripts) consistent.
+**Technology:** TypeScript, Deno, PostgreSQL, RabbitMQ, Redis, Docker, Hono, Zod, OpenAPI, Zitadel
+
+**Architecture:** Domain-Driven Design, Clean/Hexagonal Architecture, Event-Driven Architecture, Transactional Outbox/Inbox, REST APIs
