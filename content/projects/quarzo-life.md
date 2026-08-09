@@ -1,14 +1,14 @@
 ---
 title: "Quarzo Life"
-description: "Insurance and WealthTech platform supporting insurance, investments, payments, settlements, premium scheduling, and position management"
-excerpt: "A financial platform built around reliable domain workflows for insurance, investments, payments, settlements, and portfolio operations."
+description: "End-to-end investment and insurance platform spanning onboarding, funding, investment execution, portfolio management, settlements, recurring investments, and withdrawals"
+excerpt: "An end-to-end investment and insurance platform built around secure, reliable workflows for the complete customer and investment lifecycle."
 technologies:
   [
     "TypeScript",
     "Deno",
     "PostgreSQL",
     "RabbitMQ",
-    "Redis",
+    "Redis / Valkey",
     "Docker",
     "Hono",
     "Zod",
@@ -16,14 +16,14 @@ technologies:
     "Zitadel",
   ]
 start_date: 2025-10-01
-my_role: "Designed and evolved the backend architecture using Domain-Driven Design and Clean/Hexagonal Architecture. Built reliable event-driven workflows with RabbitMQ, transactional outbox/inbox patterns, idempotent consumers, and PostgreSQL transaction boundaries; delivered validated APIs and isolated third-party integrations."
+my_role: "Architected the backend using Domain-Driven Design and Hexagonal Architecture. Built reliable RabbitMQ workflows with transactional outbox/inbox patterns and idempotent consumers; designed PostgreSQL transaction boundaries, Zitadel-based identity and authorization and envelope encryption for sensitive customer data."
 ---
 
 ## Overview
 
-Quarzo Life is an Insurance and WealthTech platform supporting the financial lifecycle across insurance, investments, payments, settlements, premium scheduling, and position management.
+Quarzo Life is an end-to-end investment and insurance platform covering the complete customer and investment lifecycle—from onboarding and funding through investment execution, portfolio management, settlements, recurring investments, and withdrawals.
 
-My work focused on designing and evolving the backend architecture so that consistency-critical financial operations remained reliable while the platform continued to grow across business domains.
+My work focused on designing and developing the backend so consistency-critical financial operations remained secure, traceable, and reliable as the platform grew across business domains.
 
 ## Architecture and Engineering
 
@@ -31,19 +31,25 @@ My work focused on designing and evolving the backend architecture so that consi
 
 - Designed services around explicit business domains using **Domain-Driven Design** and **Clean/Hexagonal Architecture**.
 - Kept business rules independent from databases, messaging infrastructure, and external providers through clear application ports and infrastructure adapters.
-- Established reusable patterns for authentication, logging, scheduling, persistence, and messaging without weakening domain boundaries.
+- Standardized shared infrastructure for persistence, messaging, authentication, observability, and scheduling without weakening domain boundaries.
 
 ### Reliable Event-Driven Workflows
 
 - Built asynchronous workflows with **RabbitMQ** and explicit domain events to coordinate processes across business domains.
 - Applied **transactional outbox and inbox patterns** so database changes and message processing remained consistent.
 - Designed **idempotent consumers** to make retries safe and prevent duplicate processing in financial workflows.
+- Propagated correlation and causation metadata across message flows to make distributed operations traceable.
 
 ### Transactional Persistence
 
 - Developed persistence layers on **PostgreSQL** using repository and unit-of-work patterns.
-- Defined transaction boundaries for consistency-critical operations involving payments, settlements, premium schedules, and investment positions.
-- Used **Redis** where fast, short-lived access to shared data supported platform workflows.
+- Defined transaction boundaries for consistency-critical operations involving investment execution, money movement, settlements, recurring investments, and position keeping.
+- Used **Redis/Valkey** where fast, short-lived access to shared data supported platform workflows.
+
+### Identity, Security, and Traceability
+
+- Designed the identity and authorization architecture with **Zitadel**, supporting users, machine identities, service accounts, token validation, fine-grained authorization, and secure service-to-service communication.
+- Protected sensitive customer data with **envelope encryption**, separating key-encryption keys from data-encryption keys and controlling their lifecycle.
 
 ### APIs and Integrations
 
@@ -52,17 +58,16 @@ My work focused on designing and evolving the backend architecture so that consi
 
 ### Quality and Reliability
 
-- Improved confidence in changes through automated unit, integration, repository, and end-to-end tests.
-- Built reusable testing and infrastructure foundations for consistent behavior across services and business domains.
+- Improved confidence in changes through automated tests covering domain logic, repositories, messaging infrastructure, external integrations, and end-to-end investment workflows.
 
 ## My Role
 
-- Designed and evolved the platform's backend architecture and domain boundaries.
-- Implemented reliable messaging and transactional consistency patterns for cross-domain workflows.
-- Built persistence, API, and integration layers for core insurance and wealth-management operations.
+- Architected the backend and defined domain boundaries for the full investment and insurance lifecycle.
+- Implemented reliable messaging and transactional consistency patterns for cross-domain financial workflows.
+- Designed identity, authorization, execution-context propagation, encryption, persistence, API, and integration foundations shared across services.
 
 ## Technology and Architecture
 
-**Technology:** TypeScript, Deno, PostgreSQL, RabbitMQ, Redis, Docker, Hono, Zod, OpenAPI, Zitadel
+**Technology:** TypeScript, Deno, PostgreSQL, RabbitMQ, Zitadel, Redis/Valkey, Docker, Hono, Zod, OpenAPI
 
-**Architecture:** Domain-Driven Design, Clean/Hexagonal Architecture, Event-Driven Architecture, Transactional Outbox/Inbox, REST APIs
+**Architecture:** Domain-Driven Design, Hexagonal Architecture, Event-Driven Architecture, OAuth/OIDC, Transactional Outbox/Inbox, Idempotency, Envelope Encryption, Distributed Tracing, REST APIs

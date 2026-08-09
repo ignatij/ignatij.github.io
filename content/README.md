@@ -45,6 +45,7 @@ excerpt: "Brief description of the project"
 technologies: ["tech1", "tech2", "tech3"]
 github: "https://github.com/username/repo"
 live: "https://live-demo-url.com"  # or null if no live demo
+personal_project_order: 1  # optional; lower values appear first among personal projects
 ---
 ```
 
@@ -75,4 +76,4 @@ The content is styled using Tailwind CSS Typography plugin with custom colors:
 
 ## Examples
 
-See the existing files in `blog/` and `projects/` directories for examples of properly formatted content. 
+See the existing files in `blog/` and `projects/` directories for examples of properly formatted content.

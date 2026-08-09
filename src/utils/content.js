@@ -179,8 +179,20 @@ export async function loadProjects() {
       }
     }
 
-    // If both are private projects (no dates), sort alphabetically
+    // If both are private projects (no dates), honor an explicit order first,
+    // then sort the remaining projects alphabetically.
     if (!aHasDates && !bHasDates) {
+      const aOrder = Number.isFinite(a.personal_project_order)
+        ? a.personal_project_order
+        : Number.POSITIVE_INFINITY;
+      const bOrder = Number.isFinite(b.personal_project_order)
+        ? b.personal_project_order
+        : Number.POSITIVE_INFINITY;
+
+      if (aOrder !== bOrder) {
+        return aOrder - bOrder;
+      }
+
       return a.title?.localeCompare(b.title) || 0;
     }
 
