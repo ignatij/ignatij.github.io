@@ -3,6 +3,7 @@ import { A } from "@solidjs/router";
 import { For, createResource } from "solid-js";
 import { loadProjects, loadBlogPosts } from "../utils/content";
 import { generateClientCv } from "../utils/cvGenerator";
+import { formatYearsOfExperience } from "../utils/experience";
 
 export default function Home() {
   const [projects] = createResource(loadProjects);
@@ -90,7 +91,9 @@ export default function Home() {
               <div class="space-y-3">
                 <div class="flex justify-between">
                   <span class="text-text-secondary font-mono">experience</span>
-                  <span class="text-accent font-mono">8+ years</span>
+                  <span class="text-accent font-mono">
+                    {formatYearsOfExperience()}
+                  </span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-text-secondary font-mono">languages</span>

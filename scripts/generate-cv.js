@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import puppeteer from 'puppeteer';
+import { formatYearsOfExperience } from '../src/utils/experience.js';
 
 const ROOT = process.cwd();
 const PROJECTS_DIR = path.join(ROOT, 'content', 'projects');
@@ -13,8 +14,7 @@ const PROFILE = {
   location: 'Skopje, North Macedonia',
   email: 'hello@ignatij.dev',
   website: 'https://ignatij.dev',
-  summary:
-    'Senior software engineer with a focus on Go, Deno, and event-driven architectures. I build resilient platforms with strong developer experience, automation, and measurable product impact.',
+  summary: `Senior software engineer with ${formatYearsOfExperience()} of experience and a focus on Go, Deno, and event-driven architectures. I build resilient platforms with strong developer experience, automation, and measurable product impact.`,
 };
 
 function formatDate(dateString) {

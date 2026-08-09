@@ -1,5 +1,6 @@
 import { jsPDF } from "jspdf";
 import { loadProjects } from "./content";
+import { formatYearsOfExperience } from "./experience";
 
 const PROFILE = {
   name: "Ignatij Gichevski",
@@ -7,8 +8,7 @@ const PROFILE = {
   location: "Skopje, North Macedonia",
   email: "ignatij.gichevski@gmail.com",
   website: "https://ignatij.github.io",
-  summary:
-    "Senior Software Engineer with 8+ years of experience building scalable backend systems and distributed platforms. Strong background in Go, TypeScript, JavaScript, and cloud architectures. Experienced in leading teams, designing high-performance systems, and delivering production-grade software at scale.",
+  summary: `Senior Software Engineer with ${formatYearsOfExperience()} of experience building scalable backend systems and distributed platforms. Strong background in Go, TypeScript, JavaScript, and cloud architectures. Experienced in leading teams, designing high-performance systems, and delivering production-grade software at scale.`,
 };
 
 const PAGE = {
