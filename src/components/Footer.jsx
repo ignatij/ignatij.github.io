@@ -26,12 +26,12 @@ export default function Footer() {
               linkedin
             </a>
             <a
-              href="https://twitter.com/ignatij"
+              href="https://x.com/jaxovich"
               target="_blank"
               rel="noopener noreferrer"
               class="text-text-secondary hover:text-accent transition-colors duration-200 font-mono text-sm"
             >
-              twitter
+              X
             </a>
           </div>
         </div>
