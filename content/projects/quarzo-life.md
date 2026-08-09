@@ -14,9 +14,12 @@ technologies:
     "Zod",
     "OpenAPI",
     "Zitadel",
+    "OpenTofu",
+    "Ansible",
+    "Proxmox",
   ]
 start_date: 2025-10-01
-my_role: "Architected the backend using Domain-Driven Design and Hexagonal Architecture. Built reliable RabbitMQ workflows with transactional outbox/inbox patterns and idempotent consumers; designed PostgreSQL transaction boundaries, Zitadel-based identity and authorization and envelope encryption for sensitive customer data."
+my_role: "Architected the backend using Domain-Driven Design and Hexagonal Architecture. Built reliable RabbitMQ workflows with transactional outbox/inbox patterns and idempotent consumers; designed PostgreSQL transaction boundaries, Zitadel-based identity and authorization, envelope encryption, and reproducible multi-environment infrastructure with OpenTofu and Ansible on Proxmox."
 ---
 
 ## Overview
@@ -56,6 +59,11 @@ My work focused on designing and developing the backend so consistency-critical 
 - Designed strongly validated REST APIs and internal service contracts with **TypeScript, Deno, Hono, Zod, and OpenAPI**.
 - Isolated banking, identity, document-signing, storage, email, and other third-party services behind adapters, reducing provider coupling and keeping external concerns out of the domain model.
 
+### Infrastructure and Environments
+
+- Automated reproducible infrastructure provisioning and configuration with **OpenTofu** and **Ansible** on **Proxmox**.
+- Supported isolated development, staging, demo, sandbox, and production environments through a consistent infrastructure-as-code workflow.
+
 ### Quality and Reliability
 
 - Improved confidence in changes through automated tests covering domain logic, repositories, messaging infrastructure, external integrations, and end-to-end investment workflows.
@@ -65,9 +73,10 @@ My work focused on designing and developing the backend so consistency-critical 
 - Architected the backend and defined domain boundaries for the full investment and insurance lifecycle.
 - Implemented reliable messaging and transactional consistency patterns for cross-domain financial workflows.
 - Designed identity, authorization, execution-context propagation, encryption, persistence, API, and integration foundations shared across services.
+- Automated reproducible, isolated application environments with OpenTofu and Ansible on Proxmox.
 
 ## Technology and Architecture
 
-**Technology:** TypeScript, Deno, PostgreSQL, RabbitMQ, Zitadel, Redis/Valkey, Docker, Hono, Zod, OpenAPI
+**Technology:** TypeScript, Deno, PostgreSQL, RabbitMQ, Zitadel, Redis/Valkey, Docker, Hono, Zod, OpenAPI, OpenTofu, Ansible, Proxmox
 
-**Architecture:** Domain-Driven Design, Hexagonal Architecture, Event-Driven Architecture, OAuth/OIDC, Transactional Outbox/Inbox, Idempotency, Envelope Encryption, Distributed Tracing, REST APIs
+**Architecture:** Domain-Driven Design, Hexagonal Architecture, Event-Driven Architecture, OAuth/OIDC, Transactional Outbox/Inbox, Idempotency, Envelope Encryption, Distributed Tracing, Infrastructure as Code, REST APIs

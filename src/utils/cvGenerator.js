@@ -28,18 +28,32 @@ const EDUCATION = [
 
 const SKILLS = [
   { label: "Languages", value: "Go, TypeScript, JavaScript, Python, Java" },
-  { label: "Backend", value: "Node.js, Deno, FastAPI, Spring" },
+  {
+    label: "Backend & APIs",
+    value: "Node.js, Deno, Hono, FastAPI, Spring, Zod, OpenAPI, REST",
+  },
   { label: "Frontend", value: "React, Svelte, Solid.js, Angular" },
-  { label: "Databases", value: "PostgreSQL" },
+  { label: "Data", value: "PostgreSQL, Redis/Valkey" },
+  {
+    label: "Architecture",
+    value:
+      "Domain-Driven Design, Hexagonal Architecture, Event-Driven Architecture",
+  },
+  {
+    label: "Messaging & Reliability",
+    value:
+      "RabbitMQ, Google Pub/Sub, Transactional Outbox/Inbox, Idempotency, Prefect",
+  },
+  {
+    label: "Identity & Security",
+    value:
+      "Zitadel, OAuth/OIDC, Keycloak, Vault, Envelope Encryption",
+  },
   {
     label: "Cloud & DevOps",
-    value: "Docker, Kubernetes, GCP, AWS, Pulumi, Terraform",
+    value:
+      "Docker, Kubernetes, GCP, AWS, OpenTofu, Terraform, Pulumi, Ansible, Proxmox",
   },
-  {
-    label: "Messaging & Infra",
-    value: "RabbitMQ, Google Pub/Sub, Prefect",
-  },
-  { label: "Auth & Security", value: "Keycloak, Vault" },
 ];
 
 const COLORS = {
