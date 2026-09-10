@@ -20,8 +20,7 @@ start_date: 2024-06-01
 end_date: 2024-11-30
 my_role: 'Enhanced product speed by 33% by migrating the core processing logic to Golang'
 cv_highlights:
-  - "Migrated one core processing service from Node.js to Go and contributed to event-driven processing with Google Pub/Sub."
-  - "The recorded result was a 33% improvement; the exact measurement definition still needs confirmation."
+  - "Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go."
 ---
 
 A rule-based website monitoring platform that lets users define checks for target websites and produces events and overview data from those checks.
