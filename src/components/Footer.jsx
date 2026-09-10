@@ -4,7 +4,7 @@ export default function Footer() {
       <div class="container py-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="text-text-secondary font-mono text-sm mb-4 md:mb-0">
-            © 2026 ignatij. built with <span class="text-accent">solid.js</span>{" "}
+            © 2026 Ignatij Gichevski. built with <span class="text-accent">solid.js</span>{" "}
             + <span class="text-accent">tailwind 🫶</span>
           </div>
 

@@ -28,12 +28,17 @@ export default function Project() {
         </div>
       ) : project() ? (
         <>
-          <Title>{project().title} - ignatij</Title>
+          <Title>{project().title} — Ignatij Gichevski</Title>
           
           <div class="container project-container">
             <article class="project-content prose prose-lg max-w-none">
               {/* Header */}
               <header class="mb-16">
+                <p class="font-mono text-sm uppercase tracking-wider text-text-muted mb-3">
+                  {project().category === "client"
+                    ? `${project().employer} · client project`
+                    : "personal / open-source project"}
+                </p>
                 <h1 class="text-5xl font-mono font-bold text-accent mb-6">
                   {project().title}
                 </h1>

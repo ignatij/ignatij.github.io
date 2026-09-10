@@ -48,6 +48,9 @@
         font-family: "JetBrains Mono", monospace;
         font-weight: 600;
         color: #cdd6f4;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
     }
 
     h1 {
@@ -97,6 +100,9 @@
         margin-bottom: 1.5rem;
         color: #cbcbcb !important;
         font-size: 0.875rem;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
     }
 
     @media (min-width: 640px) {

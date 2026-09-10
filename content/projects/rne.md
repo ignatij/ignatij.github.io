@@ -1,57 +1,32 @@
 ---
-title: "RNE - Rail Network Europe"
-description: "Sophisticated rail operations oversight system for 15 European countries"
-excerpt: "Sophisticated rail operations oversight system for 15 European countries"
+title: "RNE — Rail Network Europe"
+category: "client"
+employer: "Netcetera"
+description: "Rail-operations software supporting coordination across 15 European countries"
+excerpt: "A multi-country rail-operations system where I developed and supported Java/Spring services and TypeScript/Angular interfaces."
 technologies: ["Java", "Spring", "TypeScript", "Angular", "GraphQL", "NgRx"]
 start_date: 2016-10-01
 end_date: 2020-12-31
-my_role: 'Developed and supported a sophisticated system for overseeing rail operations in 15 European countries.'
+my_role: "Developed and supported backend and frontend features for a rail-operations system used across 15 European countries."
+cv_highlights:
+  - "Developed and supported Java/Spring and TypeScript/Angular features for rail operations across 15 European countries."
+  - "Worked on GraphQL APIs, NgRx state management, and multi-country time and scheduling concerns."
 ---
 
-A sophisticated system for overseeing rail operations across 15 European countries, providing comprehensive monitoring, management, and coordination capabilities for European rail networks.
+## The problem
 
-## Overview
+RNE supported rail-operation oversight and coordination across **15 European countries**, where schedules and operational data had to remain coherent across country and timezone boundaries.
 
-RNE (Rail Network Europe) was a complex, multi-country rail operations system that required handling diverse rail networks, regulations, and operational requirements across 15 European countries. The system provided comprehensive monitoring, coordination, and management capabilities for European rail operations.
+## My contribution
 
-## Key Features
+I developed and supported features across the Java/Spring backend and the TypeScript/Angular frontend. The work included GraphQL APIs and NgRx state management, giving me full-stack responsibility within a long-running operational system.
 
-- **Multi-Country Operations**: Oversight system covering 15 European countries
-- **Rail Operations Monitoring**: Comprehensive tracking and monitoring of rail operations
-- **Cross-Border Coordination**: Seamless coordination between different European rail networks
+## Engineering focus
 
-## Technical Architecture
+- Represented and presented rail-operation data through Java/Spring services and GraphQL APIs.
+- Built Angular interfaces and managed complex client state with NgRx.
+- Worked through timezone, timestamp-consistency, and cross-border scheduling concerns.
 
-### Backend Infrastructure
+## Supported result
 
-- **Java & Spring**: Robust backend services for rail operations management
-- **GraphQL API**: Flexible data querying
-
-### Frontend Technologies
-
-- **Angular**: Modern frontend framework for rail operations dashboard
-- **TypeScript**: Type-safe development for complex rail operations logic
-- **NgRx State Management**: Advanced state management
-- **GraphQL Integration**: Efficient data fetching
-
-## Technical Challenges
-
-### Timezone Management
-
-- **Multi-Country Timezones**: Coordinated operations across 15 different European timezones
-- **Timezone Synchronization**: Ensured accurate time-based operations across borders
-- **Schedule Coordination**: Managed train schedules and operations in multiple timezones
-- **Data Consistency**: Maintained consistent timestamps across diverse rail networks
-
-## My Role
-
-- **Full-Stack Development**: Developed both backend (Java/Spring) and frontend (Angular) components
-- **GraphQL Implementation**: Built flexible APIs for rail operations data
-- **State Management**: Implemented NgRx for complex state management
-- **Career Growth**: Progressed from junior to senior developer role over 4+ years
-
-## Impact & Results
-
-- **European Rail Coordination**: Successfully coordinated rail operations across 15 countries
-- **Rail Operations Monitoring**: Provided comprehensive oversight of European rail networks
-- **Career Advancement**: Demonstrated growth from junior to senior developer
+The system provided monitoring and coordination capabilities for rail operations spanning 15 countries.

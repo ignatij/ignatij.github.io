@@ -1,5 +1,7 @@
 ---
 title: "Quarzo Life"
+category: "client"
+employer: "Ludotech"
 description: "End-to-end investment and insurance platform spanning onboarding, funding, investment execution, portfolio management, settlements, recurring investments, and withdrawals"
 excerpt: "An end-to-end investment and insurance platform built around secure, reliable workflows for the complete customer and investment lifecycle."
 technologies:
@@ -20,6 +22,10 @@ technologies:
   ]
 start_date: 2025-10-01
 my_role: "Architected the backend using Domain-Driven Design and Hexagonal Architecture. Built reliable RabbitMQ workflows with transactional outbox/inbox patterns and idempotent consumers; designed PostgreSQL transaction boundaries, Zitadel-based identity and authorization, envelope encryption, and reproducible multi-environment infrastructure with OpenTofu and Ansible on Proxmox."
+cv_highlights:
+  - "Architected TypeScript/Deno services around domain and hexagonal boundaries for the customer, investment, and insurance lifecycle."
+  - "Built reliable RabbitMQ workflows with transactional outbox/inbox patterns, idempotent consumers, and traceable message context."
+  - "Defined PostgreSQL transaction boundaries, Zitadel identity and authorization, envelope encryption, and reproducible environments."
 ---
 
 ## Overview

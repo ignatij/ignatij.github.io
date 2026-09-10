@@ -1,5 +1,6 @@
 ---
 title: "Terminal Stormlight"
+category: "open-source"
 description: "Stormlight Archive comes to terminal - An interactive terminal experience inspired by Brandon Sanderson's epic fantasy series"
 excerpt: "A creative open-source project that brings the magical world of Stormlight Archive into your terminal with animated ASCII art and interactive elements"
 technologies: ["JavaScript", "Node.js", "Bash"]

@@ -1,12 +1,14 @@
 ---
 title: "J+ Monitor"
-description: "Rule-based website monitoring platform with 33% performance improvement through Golang migration"
-excerpt: "Platform for creating rules to check targeting websites and generating events with overview data, enhanced by 33% performance improvement through Golang migration"
+category: "client"
+employer: "Ludotech"
+description: "Rule-based website monitoring platform whose core processing service was migrated from Node.js to Go"
+excerpt: "A rule-based monitoring platform where I migrated core processing from Node.js to Go and helped move service communication toward event-driven processing."
 technologies:
   [
     "Node.js",
     "React",
-    "Golang",
+    "Go",
     "GCP",
     "Docker",
     "Pulumi",
@@ -17,9 +19,12 @@ technologies:
 start_date: 2024-06-01
 end_date: 2024-11-30
 my_role: 'Enhanced product speed by 33% by migrating the core processing logic to Golang'
+cv_highlights:
+  - "Migrated one core processing service from Node.js to Go and contributed to event-driven processing with Google Pub/Sub."
+  - "The recorded result was a 33% improvement; the exact measurement definition still needs confirmation."
 ---
 
-A rule-based website monitoring platform that enables users to create custom monitoring rules for targeting websites and automatically generates real-time events and overview data.
+A rule-based website monitoring platform that lets users define checks for target websites and produces events and overview data from those checks.
 
 ## Overview
 
@@ -30,7 +35,7 @@ J+ Monitor allows users to define custom rules for checking specific aspects of 
 - **Custom Rule Creation**: Intuitive interface for defining monitoring rules for target websites
 - **Event Generation**: Automated creation of events based on rule violations or conditions
 - **Real-time Overview Data**: Comprehensive analytics and insights for each monitored website
-- **Performance Optimization**: 33% speed improvement through Golang migration
+- **Measured improvement**: Existing project records report a 33% improvement after the Go migration. The measurement definition needs confirmation, so this is not characterized as latency or throughput.
 
 ## Technical Architecture
 
@@ -52,27 +57,21 @@ J+ Monitor allows users to define custom rules for checking specific aspects of 
 ### Golang Migration
 
 - **Rule Processing Engine**: Migrated rule execution logic from Node.js to Golang
-- **33% Performance Boost**: Significant improvement in rule processing speed
-- **Reduced Resource Usage**: Drastically reduced memory and CPU footprint
-- **Enhanced Concurrency**: Better handling of multiple simultaneous website checks
+- **33% recorded improvement**: Preserved from the project record, with the underlying measurement still to be confirmed
 
 ### Architecture Migration
 
 - **From Synchronous to Event-Driven**: Migrated from REST-based microservices
   communication to event-driven architecture
 - **Google Pub/Sub Integration**: Replaced direct HTTP calls with asynchronous message processing
-- **Improved Scalability**: Event-driven design enables better handling
-  of high-volume monitoring requests
+- **Looser service coupling**: Event-driven processing replaced some direct synchronous communication
 
 ## My Role
 
 - **Golang Migration**: Led the migration of one Node.js microservice to Golang
-- **Monitoring Tool Development**: Built the core website monitoring tool in Golang,
-  achieving 33% performance improvement
+- **Monitoring Tool Development**: Built core website-monitoring processing in Go; existing records report a 33% improvement, pending clarification of how it was measured
 - **Event System**: Developed the event generation and overview data system
 
 ## Impact & Results
 
-- **33% Performance Improvement**: Enhanced rule processing speed through Golang migration
-- **Reduced Resource Usage**: Drastically reduced memory and CPU footprint
-- **Scalable Monitoring**: Successfully handles thousands of concurrent website checks
+- **33% recorded improvement** following the migration, with the measurement definition flagged for review

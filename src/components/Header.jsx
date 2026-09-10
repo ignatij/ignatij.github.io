@@ -65,6 +65,9 @@ export default function Header() {
             >
               projects
             </A>
+            <a href="/Ignatij Gichevski CV.pdf" download class="nav-link">
+              cv
+            </a>
           </nav>
 
           {/* Mobile menu button */}
@@ -123,6 +126,9 @@ export default function Header() {
               >
                 projects
               </A>
+              <a href="/Ignatij Gichevski CV.pdf" download class="nav-link">
+                download cv
+              </a>
             </div>
           </nav>
         )}

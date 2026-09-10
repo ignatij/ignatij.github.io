@@ -1,74 +1,35 @@
 ---
 title: "Forward Publishing"
-description: "A complete digital publishing SaaS platform that enables article publishing to various websites, content import from multiple sources, and building delivery websites for end users to read published articles"
-excerpt: "A complete digital publishing SaaS platform that enables article publishing to various websites, content import from multiple sources, and building delivery websites for end users to read published articles"
-technologies:
-  [
-    "Node.js",
-    "React",
-    "NX",
-    "Livingdocs CMS",
-    "PostgreSQL",
-    "Docker",
-    "Kubernetes",
-    "Digital Ocean",
-    "AWS",
-  ]
+category: "client"
+employer: "Netcetera"
+description: "Digital publishing platform for importing, managing, and delivering content across multiple websites"
+excerpt: "A Node.js publishing platform that evolved from a client-specific system into a SaaS offering, with content import, CMS integration, and multi-site delivery."
+technologies: ["Node.js", "React", "NX", "Livingdocs CMS", "PostgreSQL", "Docker", "Kubernetes", "Digital Ocean", "AWS", "Terraform", "Cloudflare"]
 start_date: 2022-01-01
 end_date: 2023-07-30
-my_role: 'Successfully migrated client-specific digital publishing solution to SaaS, managing 700,000 monthly requests. Developed detailed documentation to guide future implementations effectively.'
+my_role: "Contributed to migrating a client-specific publishing solution into a SaaS platform, worked across application and infrastructure concerns, and documented the system for future implementations."
+cv_highlights:
+  - "Contributed to the migration of a client-specific publishing solution into a SaaS platform."
+  - "Worked across Node.js services, PostgreSQL, React, CMS integrations, and Kubernetes infrastructure; the platform handled about 700,000 monthly requests."
+  - "Documented the platform to support subsequent implementation work."
 ---
 
-A complete digital publishing SaaS platform that enables article publishing to various websites, content import from multiple sources, and building delivery websites for end users to read published articles.
+## The problem
 
-## Overview
+Forward Publishing needed to grow from a solution built for one client into a SaaS platform. It had to import content from multiple sources, support editorial work through Livingdocs CMS, publish to different websites, and serve reader-facing delivery sites.
 
-Forward Publishing represents a comprehensive digital publishing ecosystem designed to handle high-scale content distribution. The platform successfully transitioned from a client-specific solution to a robust SaaS offering, managing over 700,000 monthly requests with advanced microservices architecture and enterprise-grade infrastructure.
+## My contribution
 
-## Key Features
+I contributed to the migration and worked across the Node.js services, PostgreSQL data layer, React interfaces, CMS integration, and delivery infrastructure. I also produced detailed documentation so later implementations could follow the platform's established patterns.
 
-- **Multi-Platform Publishing**: Seamless article publishing to various websites and platforms
-- **Content Import System**: Automated import from multiple content sources and feeds
-- **Delivery Website Builder**: Complete solution for building article delivery websites
-- **SaaS Architecture**: Scalable multi-tenant platform serving multiple clients
-- **High-Performance Infrastructure**: Handles 700K monthly requests with autoscaling
+## Engineering decisions
 
-## Technical Architecture
+- Used an NX monorepo to manage related services and applications.
+- Ran containerized services on Kubernetes across Digital Ocean and AWS.
+- Used Aurora PostgreSQL for managed relational storage, Amazon SQS for inter-service messaging, and S3 for article storage.
+- Provisioned environments with Terraform and used autoscaling for traffic variation.
+- Used Cloudflare protection while responding to DDoS attacks.
 
-### Backend Infrastructure
+## Supported result
 
-- **Microservices Architecture**: Scalable, maintainable service-oriented design
-- **Monorepo design**: Monorepo management with NX
-- **Livingdocs CMS Integration**: Advanced content management system integration
-- **PostgreSQL Database**: Robust data storage with Aurora managed database
-- **DDoS Protection**: Comprehensive protection against multiple DDoS attacks using Cloudflare
-
-### Frontend Technologies
-
-- **React**: Modern, responsive user interface for content management
-- **Multi-tenant Dashboard**: Client-specific interfaces and configurations
-- **Content Delivery**: Optimized article delivery websites for end users
-
-### Cloud Infrastructure
-
-- **Multi-Cloud Deployment**: Kubernetes running on Digital Ocean and AWS infrastructure
-- **Terraform**: Terraform for provisioning easily new environments
-- **Autoscaling**: Dynamic scaling during traffic peaks and DDoS attacks
-- **Aurora Database**: Managed PostgreSQL with high availability and performance
-- **Amazon SQS**: Queue for inter-services communication
-- **Amazon S3**: Bucket storage for articles
-
-### Technical Challenges
-
-- **DDoS Attacks**: Robust protection and mitigation strategies using Cloudflare
-- **Traffic Peaks**: Autoscaling infrastructure to handle sudden traffic spikes
-- **Data Migration**: Seamless migration of existing client data to new SaaS architecture
-- **Performance Optimization**: Maintained high performance across multiple tenants
-
-## My Role
-
-- **SaaS Migration Leadership**: Part of the team that led the migration from client-specific solution to SaaS platform
-
-## Impact & Results
-
-- **Successful SaaS Migration**: Transformed client-specific solution into scalable SaaS platform while handling significant traffic load over 700k monthly requests
+The client-specific system was migrated into a SaaS offering. During this work the platform handled about **700,000 requests per month**. That number describes the platform's operating context; it is not presented as a throughput benchmark.

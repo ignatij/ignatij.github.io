@@ -1,10 +1,13 @@
 ---
 title: "Data Grid - Angular"
+category: "open-source"
 description: "One of the core contributions of an open-source grid based on Angular with more than 7000 downloads"
 excerpt: "Open-source grid component for Angular with over 7000 downloads, providing powerful data visualization capabilities"
 technologies:
   ["Angular", "TypeScript", "JavaScript", "HTML", "CSS", "Web Components"]
 github: "https://github.com/netceteragroup/ngrx-data-grid"
+cv_highlights:
+  - "Contributed core functionality to an open-source Angular data-grid component with more than 7,000 downloads."
 ---
 
 Highly-customizable grid based on the Angular and the NgRx framework, designed to handle large datasets with ease while providing a smooth user experience.

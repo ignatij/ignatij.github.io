@@ -1,5 +1,6 @@
 ---
 title: "KNN MPI"
+category: "personal"
 description: "Parallel implementation of k-Nearest Neighbors algorithm using MPI for high-performance computing"
 excerpt: "A high-performance parallel implementation of kNN algorithm using MPI with multiple optimization strategies and performance comparisons"
 technologies: ["C++", "MPI"]

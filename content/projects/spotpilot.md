@@ -1,10 +1,13 @@
 ---
 title: "SpotPilot"
+category: "open-source"
 description: "Agent-first Go CLI for deterministic, local Spotify playback control"
 excerpt: "A Go CLI that lets AI agents search and control Spotify through predictable commands, JSON-first output, and local-device-aware playback"
 technologies: ["Go", "Cobra", "Spotify", "Chrome DevTools Protocol"]
 github: "https://github.com/ignatij/spotpilot"
 personal_project_order: 1
+cv_highlights:
+  - "Built an agent-first Go CLI with deterministic commands, JSON-first output, local-device-aware Spotify playback, and browser-based authentication recovery."
 ---
 
 SpotPilot is a local command-line tool that turns an AI agent's music requests into reliable Spotify playback actions. The agent handles natural language; SpotPilot provides the narrow, deterministic execution layer behind it.

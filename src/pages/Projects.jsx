@@ -1,7 +1,32 @@
 import { Title } from "solid-meta";
 import { A } from "@solidjs/router";
-import { createSignal, onMount } from "solid-js";
+import { For, createSignal, onMount } from "solid-js";
 import { loadProjects } from "../utils/content";
+import { EMPLOYERS } from "../data/profile";
+
+function ProjectCard(props) {
+  return (
+    <A href={`/projects/${props.project.slug}`} class="card group">
+      <p class="font-mono text-xs uppercase tracking-wider text-text-muted mb-2">
+        {props.project.category === "client" ? "client project" : "open source / personal"}
+      </p>
+      <h3 class="text-xl font-mono font-semibold text-text-primary mb-3 mt-0 group-hover:text-accent transition-colors duration-200">
+        {props.project.title}
+      </h3>
+      <p class="text-text-secondary leading-relaxed mb-4">{props.project.excerpt}</p>
+      <div class="flex flex-wrap gap-2 mb-5">
+        <For each={props.project.technologies}>
+          {(tech) => (
+            <span class="px-2 py-1 bg-bg-tertiary border border-border rounded text-accent font-mono text-xs">
+              {tech}
+            </span>
+          )}
+        </For>
+      </div>
+      {props.project.github && <span class="text-accent font-mono text-sm">github →</span>}
+    </A>
+  );
+}
 
 export default function Projects() {
   const [projects, setProjects] = createSignal([]);
@@ -9,8 +34,7 @@ export default function Projects() {
 
   onMount(async () => {
     try {
-      const projectData = await loadProjects();
-      setProjects(projectData);
+      setProjects(await loadProjects());
     } catch (error) {
       console.error("Error loading projects:", error);
     } finally {
@@ -19,69 +43,68 @@ export default function Projects() {
   });
 
   return (
-    <div class="min-h-screen py-16">
-      <Title>projects - ignatij</Title>
-
+    <div class="min-h-screen py-12 sm:py-16">
+      <Title>Experience & Projects — Ignatij Gichevski</Title>
       <div class="container">
-        <header class="mb-16">
-          <h1 class="text-6xl font-mono font-bold text-accent mb-6">
-            projects
+        <header class="mb-12 sm:mb-16">
+          <h1 class="text-4xl sm:text-6xl font-mono font-bold text-accent mb-6">
+            experience & projects
           </h1>
+          <p class="text-text-secondary max-w-3xl">
+            Client work is grouped under the employer where I delivered it;
+            personal and open-source work is listed separately.
+          </p>
         </header>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {loading() ? (
-            <div class="col-span-full text-center py-12">
-              <p class="text-text-secondary font-mono">loading projects...</p>
-            </div>
-          ) : (
-            projects().map((project) => (
-              <A href={`/projects/${project.slug}`} class="card group">
-                <h3 class="text-xl font-mono font-semibold text-text-primary mb-3 group-hover:text-accent transition-colors duration-200">
-                  {project.title}
-                </h3>
-
-                <p class="text-text-secondary leading-relaxed mb-4">
-                  {project.excerpt}
-                </p>
-
-                <div class="flex flex-wrap gap-2 mb-6">
-                  {project.technologies &&
-                    project.technologies.map((tech) => (
-                      <span class="px-2 py-1 bg-bg-tertiary border border-border rounded text-accent font-mono text-xs">
-                        {tech}
-                      </span>
-                    ))}
+        {loading() ? (
+          <div class="text-center py-12">
+            <p class="text-text-secondary font-mono">loading projects...</p>
+          </div>
+        ) : (
+          <>
+            <For each={EMPLOYERS}>
+              {(employer) => (
+              <section class="mb-14">
+                <div class="mb-5 border-b border-border pb-4">
+                  <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <h2 class="text-2xl font-mono font-semibold text-text-primary m-0">
+                      {employer.name}
+                    </h2>
+                    <span class="font-mono text-sm text-text-muted">
+                      {employer.period}
+                    </span>
+                  </div>
+                  <p class="font-mono text-sm text-accent mt-2 mb-0">
+                    {employer.progression}
+                  </p>
                 </div>
-
-                <div class="flex gap-4">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      github
-                    </a>
-                  )}
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-accent hover:text-accent-hover transition-colors duration-200 font-mono text-sm"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      live demo
-                    </a>
-                  )}
+                <div class="grid md:grid-cols-2 gap-6">
+                  <For
+                    each={employer.projectSlugs
+                      .map((slug) => projects().find((project) => project.slug === slug))
+                      .filter(Boolean)}
+                  >
+                    {(project) => <ProjectCard project={project} />}
+                  </For>
                 </div>
-              </A>
-            ))
-          )}
-        </div>
+              </section>
+              )}
+            </For>
+
+            <section>
+              <div class="mb-5 border-b border-border pb-4">
+                <h2 class="text-2xl font-mono font-semibold text-text-primary m-0">
+                  personal & open-source projects
+                </h2>
+              </div>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <For each={projects().filter((project) => project.category !== "client")}>
+                  {(project) => <ProjectCard project={project} />}
+                </For>
+              </div>
+            </section>
+          </>
+        )}
       </div>
     </div>
   );

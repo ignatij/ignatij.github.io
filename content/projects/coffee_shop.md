@@ -1,5 +1,6 @@
 ---
 title: "Coffee Shop"
+category: "personal"
 description: "Sample coffee-ordering application showcasing modern web development technologies"
 excerpt: "A technical showcase demonstrating Node.js, GraphQL, React, TypeScript, and Docker in a monorepo architecture"
 technologies:

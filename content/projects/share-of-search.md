@@ -1,65 +1,34 @@
 ---
-title: "Share Of Search"
-description: "Real-time brand visibility analysis across search engines and LLMs"
-excerpt: "Real-time brand visibility analysis across search engines and LLMs"
-technologies:
-  ["Python", "FastAPI", "PostgreSQL", "Prefect", "Google ADK", "React"]
+title: "Share of Search / Model"
+category: "client"
+employer: "Ludotech"
+description: "Competitive-intelligence product for analysing brand visibility across search engines and LLMs"
+excerpt: "A competitive-intelligence product where I led full-stack development and automated collection workflows across search engines and LLM platforms."
+technologies: ["Python", "FastAPI", "PostgreSQL", "Prefect", "Google ADK", "React", "Docker", "Kubernetes"]
 start_date: 2024-12-01
 end_date: 2025-09-30
-my_role: 'Led the development of a competitive intelligence tool for real-time brand visibility analysis across search engines and LLMs. Designed automated workflows for collecting and visualizing ranking data from various platforms.'
+my_role: "Led development of the product and designed automated workflows for collecting and presenting brand-ranking data, collaborating with data science on LLM integrations."
+cv_highlights:
+  - "Led development of a competitive-intelligence product covering search engines and LLM platforms."
+  - "Designed automated collection workflows and worked with data science on LLM integrations."
 ---
 
-A sophisticated competitive intelligence platform designed to analyze real-time brand visibility across multiple search engines and LLM platforms.
+## The problem
 
-## Overview
+Marketing and research users needed one place to compare brand visibility across Google, Bing, their AI-assisted search experiences, and LLM products including ChatGPT, Perplexity, Gemini, and Claude.
 
-This project represents a comprehensive solution for marketing and market research teams to gain actionable insights into their competitive landscape.
+## My contribution
 
-## Key Features
+I led full-stack development and architecture work, designed automated workflows for collecting and presenting ranking data, and collaborated with the data-science team on LLM integrations.
 
-### Real-time Brand Monitoring
+## Engineering decisions
 
-- **Multi-platform Analysis**: Tracks brand visibility across Google, Bing, GoogleAIO, BingAIO,
-  ChatGPT, Perplexity, Gemini and Claude
-- **LLM Integration**: Analyzes how AI models perceive and reference brands
-- **Automated Data Collection**: Continuous monitoring with configurable update intervals
+- Built backend APIs with Python and FastAPI, backed by PostgreSQL.
+- Orchestrated collection pipelines with Prefect.
+- Combined synchronous APIs with asynchronous processing where workflows required it.
+- Used React for the analytics interface and server-sent events to stream responses from a per-user agent built with Google ADK.
+- Packaged and ran the services with Docker and Kubernetes.
 
-### Advanced Analytics Dashboard
+## Supported result
 
-- **Competitive Positioning**: Visual representation of brand positioning vs competitors
-- **Trend Analysis**: Historical data tracking and trend identification
-- **Custom Metrics**: Configurable KPIs and performance indicators
-
-### Built-in Agent
-
-- **Personalized Agent**: Built-in agent using the Google ADK library which is personalized per user
-
-### Technical Architecture
-
-#### Backend Infrastructure
-
-- **Microservices Architecture**: Scalable, maintainable service-oriented design that combined
-  the approaches of synchronous / asynchronous communication
-- **PostgreSQL Database**: Robust data storage with optimized queries
-- **Data Collection Pipelines**: Automated gathering of ranking data from various platforms
-
-#### Frontend Technologies
-
-- **React**: Modern, responsive user interface
-- **Real-time Updates**: SSE integration for live streaming of the agent's response
-
-#### DevOps & Infrastructure
-
-- **Docker Containerization**: Consistent deployment across environments
-- **Kubernetes Orchestration**: Scalable container management
-
-## My Role
-
-- Led full-stack development and architecture design
-- Collaborated with data science team on LLM integrations
-
-## Impact & Results
-
-- Streamlined competitive analysis workflow for marketing teams
-- Reduced manual research time by implementing automated data collection
-- Successfully integrated multiple AI platforms for comprehensive brand monitoring
+The product brought collection and visualisation for multiple search and LLM platforms into a single competitive-analysis workflow.

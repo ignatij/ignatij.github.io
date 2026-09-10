@@ -1,62 +1,32 @@
 ---
 title: "USB"
-description: "Multiple hospital applications in Basel"
-excerpt: "Multiple hospital applications in Basel"
-technologies: ["TypeScript", "JavaScript", "Angular", "Java", "Spring"]
+category: "client"
+employer: "Netcetera"
+description: "Shared frontend and integration foundations for four hospital applications in Basel"
+excerpt: "Hospital application work combining an Angular design system with reusable Java authentication, authorization, and integration libraries."
+technologies: ["TypeScript", "JavaScript", "Angular", "PrimeNG", "Java", "Spring"]
 start_date: 2021-01-01
 end_date: 2021-12-31
-my_role: 'Led team to develop unified UI design system for four hospital applications, improving user experience. Created and maintained common libraries for third-party service integration and standardized authentication process.'
+my_role: "Led work to unify four hospital applications through shared UI components and created reusable Java libraries for authentication, authorization, and third-party service integration."
+cv_highlights:
+  - "Led work to unify four hospital applications through a shared Angular/PrimeNG component library."
+  - "Built reusable Java libraries for authentication, authorization, and third-party service integration."
 ---
 
-A comprehensive project focused on creating and maintaining multiple applications for a hospital in Basel, Switzerland, with unified frontend architecture and standardized authentication.
+## The problem
 
-## Overview
+Four hospital applications in Basel needed a more consistent user experience and shared foundations for authentication, authorization, and external-service integration.
 
-USB was a foundational project for a hospital in Basel that unified the frontend of multiple applications using a shared Angular component library. The project also included creating Java common libraries for authentication and authorization, along with third-party API service integration.
+## My contribution
 
-## Key Features
+I led requirements and estimation work, reviewed code, coached developers, and contributed directly to both frontend and backend libraries.
 
-- **Unified Frontend**: Standardized Angular component library across all hospital applications
-- **Authentication Libraries**: Java common libraries for authentication and authorization
-- **Third-Party Integration**: Integrated external API services for hospital operations
+## Engineering decisions
 
-## Technical Architecture
+- Created a shared Angular and PrimeNG component library to align the four application interfaces.
+- Built reusable Java/Spring libraries for authentication and authorization.
+- Centralised common third-party integration concerns behind reusable APIs.
 
-### Backend Infrastructure
+## Supported result
 
-- **Java & Spring**: Robust backend services with common authentication libraries
-- **Authentication Libraries**: Reusable Java libraries for authentication and authorization
-- **Third-Party API Integration**: External service integration for hospital operations
-- **API Standardization**: Consistent interfaces for external service communication
-
-### Frontend Technologies
-
-- **Angular Component Library**: Unified UI components shared across all applications
-  using PrimeNG
-- **TypeScript**: Type-safe development for improved code quality
-- **Shared Design System**: Consistent design components across hospital applications
-- **Cross-Application Integration**: Seamless integration between multiple hospital applications
-
-## Team Management
-
-- **Requirements Management**: Led requirements gathering and analysis for hospital applications
-- **Project Estimations**: Provided accurate time and resource estimations
-- **Code Reviews**: Established and maintained code review processes
-- **Team Coaching**: Provided technical guidance and mentorship
-
-## My Role
-
-- **Frontend Unification**: Unified frontend of all hospital applications using Angular
-  component library using PrimeNG
-- **Authentication Development**: Created Java common libraries for authentication and authorization
-- **Third-Party Integration**: Integrated external API services for hospital operations
-- **Team Leadership**: Managed requirements, estimations, reviews, and provided coaching
-- **Technical Architecture**: Designed and implemented unified frontend and backend patterns
-
-## Impact & Results
-
-- **Unified User Experience**: Consistent frontend experience across all hospital applications
-- **Standardized Authentication**: Reliable authentication and authorization across applications
-- **Third-Party Integration**: Seamless integration with external hospital services
-- **Code Maintainability**: Reusable components and libraries for future development
-- **Team Efficiency**: Improved development workflow through standardized patterns
+The applications shared a consistent component system and reusable security and integration foundations, reducing duplicated implementation across the product set.

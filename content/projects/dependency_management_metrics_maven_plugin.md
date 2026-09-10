@@ -1,9 +1,12 @@
 ---
 title: "Dependency Management Metrics Maven Plugin"
+category: "open-source"
 description: "Maven plugin for calculation of Dependency Management Metrics for multi-module Java projects"
 excerpt: "A comprehensive Maven plugin that computes stability, abstraction, and distance metrics while enforcing clean architecture principles"
 technologies: ["Java", "Maven"]
 github: "https://github.com/ignatij/dependency-management-metrics-maven-plugin"
+cv_highlights:
+  - "Created a Maven plugin that calculates dependency-management metrics for multi-module Java projects and can enforce architecture thresholds."
 ---
 
 A powerful Maven plugin that computes Dependency Management Metrics for multi-module Java projects, helping developers maintain clean architecture principles and identify architectural violations.
