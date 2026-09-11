@@ -39,6 +39,7 @@ a:focus-visible, pre:focus-visible { outline: 2px solid #7dd3fc; outline-offset:
 .work-entry h3 a:hover { text-decoration-color: currentColor; }
 .work-entry h3 span { font-size: 15px; }
 .work-entry p { margin-bottom: 6px; color: #e4e4e7; font-size: 17px; line-height: 1.5; }
+.work-entry .entry-subtitle { margin-top: -2px; color: #b4b4bc; font-size: 14px; }
 .work-entry .metadata { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px; color: #b4b4bc; }
 .work-entry .metadata { margin-bottom: 0; }
 .experience-entry + .experience-entry { margin-top: 16px; padding-top: 16px; border-top: 1px solid #34343b; }

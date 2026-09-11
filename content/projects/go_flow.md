@@ -1,7 +1,7 @@
 ---
 title: "GoFlow"
 category: "open-source"
-personal_project_order: 2
+personal_project_order: 3
 cv_highlights:
   - "Built a Go workflow library with dependency resolution, retries, timeouts, parallel execution, and PostgreSQL persistence."
 description: "Workflow management library built in Go for simple, powerful workflow orchestration"

@@ -5,7 +5,7 @@ description: "Agent-first Go CLI for deterministic, local Spotify playback contr
 excerpt: "A Go CLI that lets AI agents search and control Spotify through predictable commands, JSON-first output, and local-device-aware playback"
 technologies: ["Go", "Cobra", "Spotify", "Chrome DevTools Protocol"]
 github: "https://github.com/ignatij/spotpilot"
-personal_project_order: 1
+personal_project_order: 2
 cv_highlights:
   - "Built an agent-first Go CLI with deterministic commands, JSON-first output, local-device-aware Spotify playback, and browser-based authentication recovery."
 ---

@@ -5,6 +5,7 @@ export function ProjectEntry(props) {
       <A href={`/projects/${props.project.slug}`}>{props.project.title}<span aria-hidden="true"> ↗</span>
       </A>
     </h3>
+    {props.project.listing_subtitle && <p class="entry-subtitle">{props.project.listing_subtitle}</p>}
     <p>{props.project.home_summary || props.project.excerpt}</p>
     <p class="metadata">{(props.project.home_technologies || props.project.technologies || []).slice(0, 4).join(" · ")}</p>
   </article>;

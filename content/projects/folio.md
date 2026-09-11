@@ -1,7 +1,8 @@
 ---
-title: "Folio — Open-source CMS contributor"
+title: "Folio"
 category: "open-source"
-personal_project_order: 3
+personal_project_order: 1
+listing_subtitle: "Open-source CMS contributor"
 description: "An open-source, self-hosted CMS with a Go backend and static-site publishing"
 excerpt: "Folio is an open-source, self-hosted CMS with a Go backend and static-site publishing. I am an active contributor and maintain multiple websites on my custom VPS hosting."
 technologies: ["Go", "SQLite", "TypeScript / React", "Eleventy"]
