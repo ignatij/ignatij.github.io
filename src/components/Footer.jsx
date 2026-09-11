@@ -1,41 +1,9 @@
+import { PROFILE } from "../data/profile";
 export default function Footer() {
-  return (
-    <footer class="bg-bg-primary border-t border-border mt-16">
-      <div class="container py-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="text-text-secondary font-mono text-sm mb-4 md:mb-0">
-            © 2026 Ignatij Gichevski. built with <span class="text-accent">solid.js</span>{" "}
-            + <span class="text-accent">tailwind 🫶</span>
-          </div>
-
-          <div class="flex space-x-6">
-            <a
-              href="https://github.com/ignatij"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-text-secondary hover:text-accent transition-colors duration-200 font-mono text-sm"
-            >
-              github
-            </a>
-            <a
-              href="https://linkedin.com/in/ignatij"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-text-secondary hover:text-accent transition-colors duration-200 font-mono text-sm"
-            >
-              linkedin
-            </a>
-            <a
-              href="https://x.com/jaxovich"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-text-secondary hover:text-accent transition-colors duration-200 font-mono text-sm"
-            >
-              X
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+  return <footer class="site-footer container">
+    <div class="footer-content">
+      <div class="contact-line"><span>Let’s talk.</span><a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a></div>
+      <p class="metadata">© {new Date().getFullYear()} {PROFILE.name}</p>
+    </div>
+  </footer>;
 }

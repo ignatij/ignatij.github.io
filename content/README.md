@@ -66,13 +66,17 @@ The website supports standard markdown features including:
 
 ## Styling
 
-The content is styled using Tailwind CSS Typography plugin with custom colors:
+The shared reading layout is styled in `src/index.css`:
 
-- **H1/H2**: Red (`#ff5c53`)
-- **Paragraphs**: Light gray (`#cbcbcb`)
-- **Links**: Cyan (`#29ffff`)
-- **Code**: Cyan (`#29ffff`)
-- **Background**: Dark theme
+- **Headings**: Neutral white (`#F4F4F5`)
+- **Paragraphs and metadata**: Gray (`#B4B4BC`)
+- **Links and focus**: Light blue (`#7DD3FC`), with underlined links
+- **Background**: Dark zinc (`#18181B`)
+- **Typography**: Sans-serif body and headings; monospace code
+
+Featured projects can provide `home_summary` and `home_technologies` for concise
+listing entries. Full technology lists remain on project pages and in the CV.
+CV highlights come from `cv_highlights`; run `pnpm cv:generate` after editing them.
 
 ## Examples
 

@@ -1,5 +1,7 @@
 ---
 title: "J+ Monitor"
+home_summary: "Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go."
+home_technologies: ["Go", "Node.js", "Google Pub/Sub"]
 category: "client"
 employer: "Ludotech"
 description: "Rule-based website monitoring platform whose core processing service was migrated from Node.js to Go"
@@ -18,7 +20,7 @@ technologies:
   ]
 start_date: 2024-06-01
 end_date: 2024-11-30
-my_role: 'Enhanced product speed by 33% by migrating the core processing logic to Golang'
+my_role: "Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go."
 cv_highlights:
   - "Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go."
 ---
@@ -34,7 +36,6 @@ J+ Monitor allows users to define custom rules for checking specific aspects of 
 - **Custom Rule Creation**: Intuitive interface for defining monitoring rules for target websites
 - **Event Generation**: Automated creation of events based on rule violations or conditions
 - **Real-time Overview Data**: Comprehensive analytics and insights for each monitored website
-- **Measured improvement**: Existing project records report a 33% improvement after the Go migration. The measurement definition needs confirmation, so this is not characterized as latency or throughput.
 
 ## Technical Architecture
 
@@ -55,8 +56,7 @@ J+ Monitor allows users to define custom rules for checking specific aspects of 
 
 ### Golang Migration
 
-- **Rule Processing Engine**: Migrated rule execution logic from Node.js to Golang
-- **33% recorded improvement**: Preserved from the project record, with the underlying measurement still to be confirmed
+- Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go.
 
 ### Architecture Migration
 
@@ -68,9 +68,9 @@ J+ Monitor allows users to define custom rules for checking specific aspects of 
 ## My Role
 
 - **Golang Migration**: Led the migration of one Node.js microservice to Golang
-- **Monitoring Tool Development**: Built core website-monitoring processing in Go; existing records report a 33% improvement, pending clarification of how it was measured
+- **Monitoring Tool Development**: Built core website-monitoring processing in Go.
 - **Event System**: Developed the event generation and overview data system
 
 ## Impact & Results
 
-- **33% recorded improvement** following the migration, with the measurement definition flagged for review
+- Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go.

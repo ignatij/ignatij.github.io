@@ -11,9 +11,10 @@ import Project from './pages/Project';
 function App() {
   return (
     <MetaProvider>
-      <div class="min-h-screen bg-bg-primary text-text-primary">
+      <div>
+        <a class="skip-link" href="#main-content">Skip to content</a>
         <Header />
-        <main>
+        <main id="main-content" tabindex="-1">
           <Routes>
             <Route path="/" component={Home} />
             <Route path="/blog" component={Blog} />
@@ -29,4 +30,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

@@ -1,5 +1,7 @@
 ---
 title: "Quarzo Life"
+home_summary: "Architected reliable investment and insurance workflows, from transactions to event processing."
+home_technologies: ["TypeScript / Deno", "Hono", "PostgreSQL", "RabbitMQ"]
 category: "client"
 employer: "Ludotech"
 description: "End-to-end investment and insurance platform spanning onboarding, funding, investment execution, portfolio management, settlements, recurring investments, and withdrawals"

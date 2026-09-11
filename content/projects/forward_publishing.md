@@ -1,5 +1,7 @@
 ---
 title: "Forward Publishing"
+home_summary: "Contributed to migrating a client-specific publishing solution into a SaaS platform."
+home_technologies: ["Node.js", "PostgreSQL", "React", "Kubernetes"]
 category: "client"
 employer: "Netcetera"
 description: "Digital publishing platform for importing, managing, and delivering content across multiple websites"

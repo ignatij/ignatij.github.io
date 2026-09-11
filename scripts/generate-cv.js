@@ -76,7 +76,6 @@ function pageHeader() {
     <p class="headline">${escapeHtml(PROFILE.headline)}</p>
     <div class="contact">
       <span>${escapeHtml(PROFILE.location)}</span>
-      <span>${escapeHtml(PROFILE.availability)}</span>
       <a href="mailto:${escapeHtml(PROFILE.email)}">${escapeHtml(PROFILE.email)}</a>
       <a href="${escapeHtml(PROFILE.website)}">${escapeHtml(PROFILE.website.replace("https://", ""))}</a>
       <a href="${escapeHtml(PROFILE.linkedin)}">LinkedIn</a>

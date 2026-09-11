@@ -1,558 +1,108 @@
-/* Import WebTUI base styles */
-@import "@webtui/css/base.css";
-
-/* Import WebTUI components */
-@import "@webtui/css/components/typography.css";
-@import "@webtui/css/components/button.css";
-@import "@webtui/css/components/badge.css";
-@import "@webtui/css/components/input.css";
-@import "@webtui/css/components/table.css";
-
-/* Import Catppuccin theme */
-@import "@webtui/theme-catppuccin";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Custom terminal styling */
-@layer base {
-    html {
-        background-color: #1e1e2e;
-        color: #cdd6f4;
-        font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
-        scroll-behavior: smooth;
-        overflow-x: hidden;
-    }
-
-    body {
-        background-color: #1e1e2e;
-        color: #cdd6f4;
-        line-height: 1.7;
-        font-size: 16px;
-        font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
-        overflow-x: hidden;
-    }
-
-    * {
-        border-color: #313244;
-    }
-
-    /* Typography */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: "JetBrains Mono", monospace;
-        font-weight: 600;
-        color: #cdd6f4;
-        overflow-wrap: normal;
-        word-break: normal;
-        hyphens: none;
-    }
-
-    h1 {
-        font-size: 1.875rem;
-        margin-bottom: 1.5rem;
-        color: #f2b487 !important;
-    }
-
-    @media (min-width: 640px) {
-        h1 {
-            font-size: 2.25rem;
-            margin-bottom: 2rem;
-        }
-    }
-
-    h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        margin-top: 2rem;
-        color: #cdd6f4;
-    }
-
-    @media (min-width: 640px) {
-        h2 {
-            font-size: 1.875rem;
-            margin-bottom: 1.5rem;
-            margin-top: 3rem;
-        }
-    }
-
-    h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        margin-top: 2rem;
-        color: #cdd6f4;
-    }
-
-    h4 {
-        font-size: 1.25rem;
-        margin-bottom: 0.75rem;
-        margin-top: 1.5rem;
-        color: #cdd6f4;
-    }
-
-    p {
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-        color: #cbcbcb !important;
-        font-size: 0.875rem;
-        overflow-wrap: normal;
-        word-break: normal;
-        hyphens: none;
-    }
-
-    @media (min-width: 640px) {
-        p {
-            font-size: 1rem;
-        }
-    }
-
-    a {
-        color: #29ffff;
-        transition: color 0.2s;
-    }
-
-    a:hover {
-        color: #89dceb;
-    }
-
-    code {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.875rem;
-        background-color: #313244;
-        border: 1px solid #45475a;
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
-        color: #cdd6f4;
-    }
-
-    pre {
-        background-color: #313244;
-        border: 1px solid #45475a;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        overflow-x: auto;
-    }
-
-    pre code {
-        background-color: transparent;
-        border: none;
-        padding: 0;
-    }
-
-    blockquote {
-        border-left: 4px solid #29ffff;
-        padding-left: 1rem;
-        font-style: italic;
-        color: #a6adc8;
-    }
-
-    ul,
-    ol {
-        margin-bottom: 1.5rem;
-        color: #cbcbcb !important;
-    }
-
-    ul {
-        list-style: none;
-        padding-left: 1.5rem;
-    }
-
-    ol {
-        padding-left: 1.5rem;
-        list-style-type: decimal;
-    }
-
-    li {
-        margin-bottom: 0.5rem;
-        white-space: normal;
-        overflow-wrap: anywhere;
-        overflow-x: visible;
-    }
-
-    li > p {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    ul li {
-        position: relative;
-        padding-left: 0.75rem;
-    }
-
-    ul li::before {
-        content: "•";
-        color: #cbcbcb;
-        position: absolute;
-        left: -1.5rem;
-        top: 0.25rem;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 1.5rem;
-    }
-
-    th,
-    td {
-        border: 1px solid #45475a;
-        padding: 0.5rem 1rem;
-        text-align: left;
-    }
-
-    th {
-        background-color: #313244;
-        font-family: "JetBrains Mono", monospace;
-        color: #cdd6f4;
-    }
-
-    td {
-        color: #cbcbcb !important;
-    }
+:root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; color: #f4f4f5; background: #18181b; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 18px; line-height: 1.65; }
+h1, h2, h3, h4, h5, h6 { color: #f4f4f5; font-weight: 600; line-height: 1.25; }
+h1 { font-size: 44px; letter-spacing: -1.2px; margin: 0 0 16px; }
+h2 { font-size: 24px; margin: 0 0 24px; }
+h3 { font-size: 20px; margin: 0 0 8px; }
+p { margin: 0 0 16px; color: #b4b4bc; }
+a { color: #7dd3fc; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, pre:focus-visible { outline: 2px solid #7dd3fc; outline-offset: 5px; border-radius: 2px; }
+.container { width: 100%; max-width: 960px; margin-inline: auto; padding-inline: 24px; }
+.site-header { display: flex; justify-content: space-between; align-items: center; gap: 0 24px; flex-wrap: wrap; padding-top: 16px; font-size: 15px; }
+.site-header::after { content: ""; width: 100%; border-bottom: 1px solid #34343b; margin-top: 12px; }
+.site-header a { display: inline-flex; align-items: center; min-height: 44px; color: #b4b4bc; text-decoration: none; }
+.site-header .home-link { color: #f4f4f5; font-weight: 600; font-size: 23px; letter-spacing: -.6px; }
+.site-header nav { display: flex; gap: 24px; }
+.site-header a:hover, .site-header a.active { color: #f4f4f5; text-decoration: underline; }
+.page { padding-top: 40px; padding-bottom: 8px; overflow-wrap: anywhere; }
+.page > section + section { margin-top: 40px; }
+.intro { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 28px; align-items: start; }
+.avatar { width: 104px; height: 104px; object-fit: cover; object-position: center 25%; border-radius: 8px; image-rendering: pixelated; }
+.intro h1 { margin: 0 0 4px; font-size: 48px; font-weight: 700; }
+.role { color: #b4b4bc; font-size: 25px; margin-bottom: 18px; }
+.intro-copy { max-width: 58ch; color: #f4f4f5; font-size: 19px; line-height: 1.5; }
+.metadata { font-size: 14px; line-height: 1.6; color: #b4b4bc; }
+.location { margin-block: 12px 8px; }
+.link-row { display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: 15px; }
+.link-row a { min-height: 44px; display: inline-flex; align-items: center; }
+.section-heading, .employer-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 20px; }
+.section-heading > a { font-size: 14px; flex-shrink: 0; padding-block: 8px; }
+.work-entry { padding-block: 16px; border-bottom: 1px solid #34343b; }
+.work-entry:first-of-type { padding-top: 0; }
+.work-entry:last-child { border-bottom: 0; padding-bottom: 0; }
+.work-entry h3 a { text-decoration: none; }
+.work-entry h3 a:hover { text-decoration-color: currentColor; }
+.work-entry h3 span { font-size: 15px; }
+.work-entry p { margin-bottom: 6px; color: #e4e4e7; font-size: 17px; line-height: 1.5; }
+.work-entry .metadata { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px; color: #b4b4bc; }
+.work-entry .metadata { margin-bottom: 0; }
+.experience-entry + .experience-entry { margin-top: 16px; padding-top: 16px; border-top: 1px solid #34343b; }
+.employer-heading h2, .employer-heading h3 { margin-bottom: 8px; }
+.employer-heading .metadata { flex-shrink: 0; }
+.progression { font-size: 16px; margin-bottom: 6px; }
+.experience-entry p:last-child { margin-bottom: 0; }
+.writing-entry { padding-block: 18px; border-bottom: 1px solid #34343b; }
+.writing-entry:first-of-type { padding-top: 0; }
+.writing-entry:last-child { border-bottom: 0; }
+.writing-entry h3 { margin-bottom: 6px; }
+.page-heading { margin-bottom: 40px; max-width: 70ch; }
+.page-heading .link-row:empty { display: none; }
+.page-heading + section { margin-top: 40px; }
+.page > section > .progression { margin-bottom: 28px; }
+.prose { max-width: 70ch; color: #b4b4bc; }
+.prose h2 { margin: 40px 0 16px; }
+.prose h3 { margin: 28px 0 12px; }
+.prose h4 { margin: 24px 0 12px; }
+.prose p, .prose ul, .prose ol { margin-bottom: 20px; }
+.prose ul { list-style: disc; padding-left: 24px; }
+.prose ol { list-style: decimal; padding-left: 24px; }
+.prose li { margin-bottom: 8px; }
+.prose strong { color: #f4f4f5; font-weight: 600; }
+.prose img { max-width: 100%; height: auto; margin-block: 24px; }
+.prose blockquote { border-left: 2px solid #34343b; padding-left: 20px; margin-block: 24px; }
+code, pre { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .85em; }
+code { color: #f4f4f5; background: #242427; padding: 2px 4px; border-radius: 3px; }
+pre { max-width: 100%; overflow-x: auto; padding: 20px; border: 1px solid #34343b; border-radius: 4px; margin-block: 24px; line-height: 1.7; background: #18181b; }
+pre code { background: none; padding: 0; font-size: inherit; overflow-wrap: normal; }
+.hljs { color: #f4f4f5; }
+.hljs-keyword, .hljs-type, .hljs-title, .hljs-built_in { color: #7dd3fc; }
+.hljs-comment { color: #b4b4bc; font-style: italic; }
+.hljs-string, .hljs-number { color: #d4d4d8; }
+.prose table { display: block; overflow-x: auto; max-width: 100%; border-collapse: collapse; margin-block: 24px; }
+.prose th, .prose td { padding: 10px 16px; border-bottom: 1px solid #34343b; text-align: left; }
+.back-link { margin-top: 48px; padding-top: 24px; border-top: 1px solid #34343b; font-size: 16px; }
+.site-footer { margin-top: 40px; padding-bottom: 32px; }
+.site-footer::before { content: ""; display: block; border-top: 1px solid #34343b; margin-bottom: 20px; }
+.site-footer p { margin: 10px 0 0; }
+.footer-content, .contact-line { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; font-size: 14px; }
+.footer-content .metadata { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; margin: 0; }
+.contact-line a { padding-block: 10px; overflow-wrap: anywhere; }
+.skip-link { position: absolute; left: 24px; top: -100px; background: #18181b; padding: 12px; z-index: 10; }
+.skip-link:focus { top: 12px; }
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+  h1 { font-size: 34px; letter-spacing: -.7px; }
+  h2 { font-size: 23px; }
+  .site-header { padding-block: 16px; }
+  .site-header nav { gap: 20px; }
+  .intro { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .avatar { width: 80px; height: 80px; }
+  .intro h1 { font-size: 32px; letter-spacing: -.9px; }
+  .role { font-size: 20px; }
+  .intro-copy { font-size: 17px; }
+  .intro .link-row { display: grid; grid-template-columns: max-content max-content; column-gap: 24px; row-gap: 0; }
+  .page { padding-top: 24px; }
+  .page > section + section { margin-top: 40px; }
+  .employer-heading { flex-direction: column; gap: 0; margin-bottom: 8px; }
+  .employer-heading h3 { margin-bottom: 4px; }
+  .section-heading { gap: 10px; }
+  .site-footer { margin-top: 40px; }
 }
-
-@layer components {
-    .container {
-        max-width: 64rem;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    @media (min-width: 640px) {
-        .container {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
-    }
-
-    /* Project case studies benefit from a wider canvas than listing pages. */
-    .project-container {
-        max-width: 80rem;
-    }
-
-    /* Keep prose wrapping at word boundaries instead of splitting words. */
-    .project-content,
-    .project-content p,
-    .project-content li {
-        min-width: 0;
-        overflow-wrap: normal !important;
-        word-break: normal !important;
-        hyphens: none;
-    }
-
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.75rem 1.5rem;
-        border: 1px solid #45475a;
-        border-radius: 0.5rem;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.875rem;
-        transition: all 0.2s;
-        color: #a6adc8;
-    }
-
-    .btn:hover {
-        color: #29ffff;
-        border-color: #29ffff;
-    }
-
-    .btn-primary {
-        background-color: #29ffff;
-        color: #1e1e2e;
-        border-color: #29ffff;
-    }
-
-    .btn-primary:hover {
-        background-color: #89dceb;
-        border-color: #89dceb;
-    }
-
-    .card {
-        background-color: #313244;
-        border: 1px solid #45475a;
-        border-radius: 0.5rem;
-        padding: 1.5rem;
-        transition: all 0.2s;
-    }
-
-    .card:hover {
-        border-color: #29ffff;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-label {
-        display: block;
-        font-size: 0.875rem;
-        font-family: "JetBrains Mono", monospace;
-        color: #a6adc8;
-        margin-bottom: 0.5rem;
-    }
-
-    .form-input {
-        width: 100%;
-        padding: 0.75rem 1rem;
-        background-color: #1e1e2e;
-        border: 1px solid #45475a;
-        border-radius: 0.5rem;
-        color: #cdd6f4;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.875rem;
-        transition: all 0.2s;
-    }
-
-    .form-input:focus {
-        outline: none;
-        border-color: #29ffff;
-        box-shadow: 0 0 0 1px #29ffff;
-    }
-
-    .form-input::placeholder {
-        color: #6c7086;
-    }
-
-    .nav-link {
-        color: #cdd6f4;
-        transition: color 0.2s;
-        font-family: "JetBrains Mono", monospace;
-    }
-
-    .nav-link:hover {
-        color: #29ffff;
-    }
-
-    .nav-link.active {
-        color: #29ffff;
-    }
-}
-
-@layer utilities {
-    .prose {
-        color: #cbcbcb !important;
-    }
-
-    .prose h1,
-    .prose h2,
-    .prose h3,
-    .prose h4,
-    .prose h5,
-    .prose h6 {
-        font-family: "JetBrains Mono", monospace;
-        font-weight: 600;
-        color: #cdd6f4;
-    }
-
-    .prose h1 {
-        color: #f2b487 !important;
-    }
-
-    .prose h2,
-    .prose h3,
-    .prose h4,
-    .prose h5,
-    .prose h6 {
-        color: #cdd6f4 !important;
-    }
-
-    /* More specific selectors to override any conflicting styles */
-    .prose h2:not(.prose h1),
-    .prose h3:not(.prose h1),
-    .prose h4:not(.prose h1),
-    .prose h5:not(.prose h1),
-    .prose h6:not(.prose h1) {
-        color: #cdd6f4 !important;
-    }
-
-    /* Target all headings except h1 in prose */
-    .prose :is(h2, h3, h4, h5, h6) {
-        color: #cdd6f4 !important;
-    }
-
-    .prose a {
-        color: #29ffff;
-    }
-
-    .prose a:hover {
-        color: #89dceb;
-    }
-
-    .prose code {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.875rem;
-        background-color: #313244;
-        border: 1px solid #45475a;
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
-        color: #cdd6f4;
-    }
-
-    .prose pre {
-        background-color: #313244;
-        border: 1px solid #45475a;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        overflow-x: auto;
-    }
-
-    .prose pre code {
-        background-color: transparent;
-        border: none;
-        padding: 0;
-    }
-
-    .prose blockquote {
-        border-left: 4px solid #29ffff;
-        padding-left: 1rem;
-        font-style: italic;
-        color: #a6adc8;
-    }
-
-    .prose table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    .prose th,
-    .prose td {
-        border: 1px solid #45475a;
-        padding: 0.5rem 1rem;
-        text-align: left;
-    }
-
-    .prose th {
-        background-color: #313244;
-        font-family: "JetBrains Mono", monospace;
-        color: #cdd6f4;
-    }
-
-    .prose td {
-        color: #cbcbcb !important;
-    }
-
-    .prose ul,
-    .prose ol {
-        margin-bottom: 1.5rem;
-        color: #cbcbcb !important;
-    }
-
-    .prose ul {
-        list-style: none;
-        padding-left: 1.5rem;
-    }
-
-    .prose ol {
-        padding-left: 1.5rem;
-        list-style-type: decimal;
-    }
-
-    .prose li {
-        margin-bottom: 0.5rem;
-        white-space: normal !important;
-        overflow-wrap: anywhere;
-        overflow-x: visible;
-    }
-
-    .prose li > p {
-        margin: 0 !important;
-    }
-
-    .prose ul li {
-        position: relative;
-        padding-left: 0.75rem;
-    }
-
-    .prose ul li::before {
-        content: "•";
-        color: #cbcbcb;
-        position: absolute;
-        left: -1.5rem;
-        top: 0.25rem;
-    }
-
-    .prose strong,
-    .prose b {
-        color: #cdd6f4 !important;
-        font-weight: 600;
-    }
-
-    .text-accent {
-        color: #29ffff !important;
-    }
-
-    .text-red-500 {
-        color: #ff5c53 !important;
-    }
-
-    .text-gray-300 {
-        color: #cbcbcb !important;
-    }
-
-    /* Code block styling */
-    .prose pre {
-        background-color: #11111b !important;
-        border: 1px solid #313244 !important;
-        border-radius: 0.5rem !important;
-        padding: 1.5rem !important;
-        overflow-x: auto !important;
-        margin: 1.5rem 0 !important;
-    }
-
-    .prose pre code {
-        background: none !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-        font-size: 0.875rem !important;
-        line-height: 1.6 !important;
-        color: inherit !important;
-    }
-
-    /* Ensure highlight.js classes are visible */
-    .prose pre code .hljs-keyword {
-        color: #c678dd !important;
-    }
-
-    .prose pre code .hljs-string {
-        color: #98c379 !important;
-    }
-
-    .prose pre code .hljs-comment {
-        color: #5c6370 !important;
-        font-style: italic;
-    }
-
-    .prose pre code .hljs-number {
-        color: #d19a66 !important;
-    }
-
-    .prose pre code .hljs-type {
-        color: #61afef !important;
-    }
-
-    .prose pre code .hljs-built_in {
-        color: #e06c75 !important;
-    }
-
-    .prose pre code .hljs-function {
-        color: #61afef !important;
-    }
-
-    /* Inline code styling */
-    .prose code:not(pre code) {
-        background-color: #313244 !important;
-        color: #cdd6f4 !important;
-        padding: 0.125rem 0.375rem !important;
-        border-radius: 0.25rem !important;
-        font-size: 0.875em !important;
-    }
-}
-li {
-    margin-bottom: 0.5rem;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
 }

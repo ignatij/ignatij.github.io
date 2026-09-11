@@ -25,7 +25,7 @@ renderer.code = function (code, lang) {
     }
   }
 
-  return `<pre><code class="hljs language-${
+  return `<pre tabindex="0" aria-label="Code example"><code class="hljs language-${
     codeLang || ""
   }">${highlightedCode}</code></pre>`;
 };

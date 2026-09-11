@@ -36,8 +36,8 @@ export const FEATURED_PROJECT_SLUGS = [
 export const FEATURED_OPEN_SOURCE_SLUGS = [
   "go_flow",
   "spotpilot",
+  "folio",
   "dependency_management_metrics_maven_plugin",
-  "data-grid-angular",
 ];
 
 export const SKILLS = [
