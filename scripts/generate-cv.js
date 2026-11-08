@@ -48,7 +48,7 @@ function projectEntry(project, { openSource = false } = {}) {
     : "";
 
   return `<article class="project">
-    <div class="project-heading"><h3>${openSource ? "" : "Project: "}${escapeHtml(project.title)}</h3>${link}</div>
+    <div class="project-heading"><h3>${escapeHtml(project.title)}</h3>${link}</div>
     <ul>${highlights.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
     ${tech}
   </article>`;
@@ -63,10 +63,10 @@ function employerSection(employer, projectMap) {
 
   return `<section class="employer">
     <div class="employer-heading">
-      <div><h2>Employer: ${escapeHtml(employer.name)}</h2><p>${escapeHtml(employer.progression)}</p></div>
-      <span>Employed ${escapeHtml(employer.period)}</span>
+      <div><h2>${escapeHtml(employer.name)}</h2><p>${escapeHtml(employer.progression)}</p></div>
+      <span>${escapeHtml(employer.period)}</span>
     </div>
-    <p class="project-label">Selected projects delivered during this employment</p>
+    <p class="project-label">Selected projects at ${escapeHtml(employer.name)}</p>
     ${projects}
   </section>`;
 }
