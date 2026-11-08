@@ -66,7 +66,6 @@ function employerSection(employer, projectMap) {
       <div><h2>${escapeHtml(employer.name)}</h2><p>${escapeHtml(employer.progression)}</p></div>
       <span>${escapeHtml(employer.period)}</span>
     </div>
-    <p class="project-label">Selected projects at ${escapeHtml(employer.name)}</p>
     ${projects}
   </section>`;
 }
