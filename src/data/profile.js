@@ -8,7 +8,7 @@ export const PROFILE = {
   website: "https://ignatij.github.io",
   github: "https://github.com/ignatij",
   linkedin: "https://linkedin.com/in/ignatij",
-  summary: `Senior Backend Engineer with ${formatYearsOfExperience()} of experience owning backend systems, reliable financial workflows, and performance-sensitive services. Hands-on across Node.js, TypeScript, Go, and cloud infrastructure, with technical leadership experience and full-stack breadth when delivery calls for it.`,
+  summary: `Senior Backend Engineer with ${formatYearsOfExperience()} of experience across two employers: Netcetera (October 2016–May 2024) and Ludotech (June 2024–present). Delivered multiple client projects within each company, owning backend systems, reliable financial workflows, and performance-sensitive services. Hands-on across Node.js, TypeScript, Go, and cloud infrastructure, with technical leadership experience.`,
 };
 
 export const EMPLOYERS = [

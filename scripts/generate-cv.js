@@ -48,7 +48,7 @@ function projectEntry(project, { openSource = false } = {}) {
     : "";
 
   return `<article class="project">
-    <div class="project-heading"><h3>${escapeHtml(project.title)}</h3>${link}</div>
+    <div class="project-heading"><h3>${openSource ? "" : "Project: "}${escapeHtml(project.title)}</h3>${link}</div>
     <ul>${highlights.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
     ${tech}
   </article>`;
@@ -63,9 +63,10 @@ function employerSection(employer, projectMap) {
 
   return `<section class="employer">
     <div class="employer-heading">
-      <div><h2>${escapeHtml(employer.name)}</h2><p>${escapeHtml(employer.progression)}</p></div>
-      <span>${escapeHtml(employer.period)}</span>
+      <div><h2>Employer: ${escapeHtml(employer.name)}</h2><p>${escapeHtml(employer.progression)}</p></div>
+      <span>Employed ${escapeHtml(employer.period)}</span>
     </div>
+    <p class="project-label">Selected projects delivered during this employment</p>
     ${projects}
   </section>`;
 }
@@ -115,6 +116,7 @@ function buildHtml(projectMap) {
     .employer-heading h2 { margin: 0; font-size: 12pt; color: #171820; }
     .employer-heading p { margin: 0.7mm 0 0; font-size: 8.5pt; color: #a34d34; font-weight: 700; }
     .employer-heading span { flex: 0 0 auto; font-size: 8.7pt; color: #555762; padding-top: 0.5mm; }
+    .project-label { margin: 0 0 1.5mm; font-size: 8pt; color: #555762; }
     .project { margin: 0 0 2.5mm; break-inside: avoid; }
     .project-heading { display: flex; align-items: baseline; gap: 2mm; }
     .project h3 { margin: 0; font-size: 9.6pt; color: #242630; }
