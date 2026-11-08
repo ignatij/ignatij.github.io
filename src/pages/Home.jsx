@@ -14,15 +14,15 @@ export default function Home() {
       <img src="/avatar.png" alt="" width="104" height="104" class="avatar" />
       <div class="intro-body">
         <h1 id="intro-title">{PROFILE.name}</h1>
-      <p class="role">{PROFILE.headline}</p>
-      <p class="intro-copy">I build reliable backend systems and financial workflows with TypeScript, Node.js, and Go. Currently leading engineering work at Ludotech.</p>
-      <p class="metadata location">{PROFILE.location}</p>
-      <div class="link-row">
-        <a href={`mailto:${PROFILE.email}`}>Email ↗</a>
-        <a href="/Ignatij Gichevski CV.pdf" download>Download CV ↓</a>
-        <a href={PROFILE.github}>GitHub ↗</a>
-        <a href={PROFILE.linkedin}>LinkedIn ↗</a>
-      </div>
+        <p class="role">{PROFILE.headline}</p>
+        <p class="intro-copy">Building backend systems with TypeScript, Node.js, and Go. Currently leading engineering work at Ludotech.</p>
+        <p class="metadata location">{PROFILE.location}</p>
+        <div class="link-row">
+          <a href={`mailto:${PROFILE.email}`}>Email ↗</a>
+          <a href="/Ignatij Gichevski CV.pdf" download>Download CV ↓</a>
+          <a href={PROFILE.github}>GitHub ↗</a>
+          <a href={PROFILE.linkedin}>LinkedIn ↗</a>
+        </div>
       </div>
     </section>
     <Show when={selected().length}>
