@@ -43,7 +43,7 @@ export const FEATURED_OPEN_SOURCE_SLUGS = [
 export const SKILLS = [
   {
     label: "Backend",
-    value: "Node.js, TypeScript, Deno, Go, Python, Java, REST, OpenAPI",
+    value: "Node.js, TypeScript, Bun, Go, Python, Java, REST, OpenAPI",
   },
   {
     label: "Data & messaging",

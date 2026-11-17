@@ -1,7 +1,7 @@
 ---
 title: "Quarzo Life"
 home_summary: "Architected reliable investment and insurance workflows, from transactions to event processing."
-home_technologies: ["TypeScript / Deno", "Hono", "PostgreSQL", "RabbitMQ"]
+home_technologies: ["TypeScript / Bun", "Hono", "PostgreSQL", "RabbitMQ"]
 category: "client"
 employer: "Ludotech"
 description: "End-to-end investment and insurance platform spanning onboarding, funding, investment execution, portfolio management, settlements, recurring investments, and withdrawals"
@@ -9,7 +9,7 @@ excerpt: "An end-to-end investment and insurance platform built around secure, r
 technologies:
   [
     "TypeScript",
-    "Deno",
+    "Bun",
     "PostgreSQL",
     "RabbitMQ",
     "Redis / Valkey",
@@ -25,7 +25,7 @@ technologies:
 start_date: 2025-10-01
 my_role: "Architected the backend using Domain-Driven Design and Hexagonal Architecture. Built reliable RabbitMQ workflows with transactional outbox/inbox patterns and idempotent consumers; designed PostgreSQL transaction boundaries, Zitadel-based identity and authorization, envelope encryption, and reproducible multi-environment infrastructure with OpenTofu and Ansible on Proxmox."
 cv_highlights:
-  - "Architected TypeScript/Deno services around domain and hexagonal boundaries for the customer, investment, and insurance lifecycle."
+  - "Architected TypeScript/Bun services around domain and hexagonal boundaries for the customer, investment, and insurance lifecycle."
   - "Built reliable RabbitMQ workflows with transactional outbox/inbox patterns, idempotent consumers, and traceable message context."
   - "Defined PostgreSQL transaction boundaries, Zitadel identity and authorization, envelope encryption, and reproducible environments."
 ---
@@ -64,7 +64,7 @@ My work focused on designing and developing the backend so consistency-critical 
 
 ### APIs and Integrations
 
-- Designed strongly validated REST APIs and internal service contracts with **TypeScript, Deno, Hono, Zod, and OpenAPI**.
+- Designed strongly validated REST APIs and internal service contracts with **TypeScript, Bun, Hono, Zod, and OpenAPI**.
 - Isolated banking, identity, document-signing, storage, email, and other third-party services behind adapters, reducing provider coupling and keeping external concerns out of the domain model.
 
 ### Infrastructure and Environments
@@ -85,6 +85,6 @@ My work focused on designing and developing the backend so consistency-critical 
 
 ## Technology and Architecture
 
-**Technology:** TypeScript, Deno, PostgreSQL, RabbitMQ, Zitadel, Redis/Valkey, Docker, Hono, Zod, OpenAPI, OpenTofu, Ansible, Proxmox
+**Technology:** TypeScript, Bun, PostgreSQL, RabbitMQ, Zitadel, Redis/Valkey, Docker, Hono, Zod, OpenAPI, OpenTofu, Ansible, Proxmox
 
 **Architecture:** Domain-Driven Design, Hexagonal Architecture, Event-Driven Architecture, OAuth/OIDC, Transactional Outbox/Inbox, Idempotency, Envelope Encryption, Distributed Tracing, Infrastructure as Code, REST APIs

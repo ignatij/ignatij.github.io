@@ -61,6 +61,8 @@ pnpm dev
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint errors
 - `npm run cv:generate` - Produce an updated “Ignatij Gichevski CV.pdf” in `public/` from the markdown project metadata
+- `npm run cv:resend` - Produce the Resend-tailored CV in `content/cv/` without changing the public CV
+- `npm run cv:dualentry` - Produce the DualEntry-tailored CV in `content/cv/` without changing the public CV
 
 ## Project Structure
 

@@ -2,6 +2,8 @@ import { promises as fs } from "fs";
 import path from "path";
 import matter from "gray-matter";
 import puppeteer from "puppeteer";
+import { RESEND_CV } from "./cv-targets/resend.js";
+import { DUALENTRY_CV } from "./cv-targets/dualentry.js";
 import {
   EDUCATION,
   EMPLOYERS,
@@ -12,7 +14,15 @@ import {
 
 const ROOT = process.cwd();
 const PROJECTS_DIR = path.join(ROOT, "content", "projects");
-const OUTPUT_PATH = path.join(ROOT, "public", "Ignatij Gichevski CV.pdf");
+const target = process.argv[2] || "general";
+const TARGETS = { resend: RESEND_CV, dualentry: DUALENTRY_CV };
+if (target !== "general" && !(target in TARGETS)) {
+  throw new Error(`Unknown CV target: ${target}`);
+}
+const tailored = TARGETS[target] || null;
+const OUTPUT_PATH = tailored
+  ? path.join(ROOT, "content", "cv", `Ignatij Gichevski CV - ${target === "resend" ? "Resend" : "DualEntry"}.pdf`)
+  : path.join(ROOT, "public", "Ignatij Gichevski CV.pdf");
 const ARCHIVE_PATH = path.join(ROOT, "content", "cv", "Ignatij Gichevski CV.pdf");
 
 const escapeHtml = (value = "") =>
@@ -39,12 +49,13 @@ async function loadProjects() {
 }
 
 function projectEntry(project, { openSource = false } = {}) {
-  const highlights = project.cv_highlights || [project.my_role || project.description];
+  const highlights = tailored?.highlights?.[project.slug] || project.cv_highlights || [project.my_role || project.description];
   const link = openSource && project.github
     ? `<a class="project-link" href="${escapeHtml(project.github)}">GitHub ↗</a>`
     : "";
-  const tech = project.technologies?.length
-    ? `<p class="tech"><strong>Technology:</strong> ${project.technologies.map(escapeHtml).join(", ")}</p>`
+  const technologies = tailored?.technologies?.[project.slug] || project.technologies;
+  const tech = technologies?.length
+    ? `<p class="tech"><strong>Technology:</strong> ${technologies.map(escapeHtml).join(", ")}</p>`
     : "";
 
   return `<article class="project">
@@ -55,7 +66,7 @@ function projectEntry(project, { openSource = false } = {}) {
 }
 
 function employerSection(employer, projectMap) {
-  const projects = employer.projectSlugs
+  const projects = (tailored?.projectsByEmployer?.[employer.name] || employer.projectSlugs)
     .map((slug) => projectMap.get(slug))
     .filter(Boolean)
     .map((project) => projectEntry(project))
@@ -66,6 +77,7 @@ function employerSection(employer, projectMap) {
       <div><h2>${escapeHtml(employer.name)}</h2><p>${escapeHtml(employer.progression)}</p></div>
       <span>${escapeHtml(employer.period)}</span>
     </div>
+    ${tailored ? `<p class="project-label">Selected projects at ${escapeHtml(employer.name)}</p>` : ""}
     ${projects}
   </section>`;
 }
@@ -88,11 +100,11 @@ function buildHtml(projectMap) {
   const employerSections = EMPLOYERS.map((employer) =>
     employerSection(employer, projectMap),
   ).join("");
-  const openSourceSections = FEATURED_OPEN_SOURCE_SLUGS.map((slug) => projectMap.get(slug))
+  const openSourceSections = (tailored?.openSourceSlugs || FEATURED_OPEN_SOURCE_SLUGS).map((slug) => projectMap.get(slug))
     .filter(Boolean)
     .map((project) => projectEntry(project, { openSource: true }))
     .join("");
-  const skillRows = SKILLS.map(
+  const skillRows = (tailored?.skills || SKILLS).map(
     (skill) => `<div class="skill"><strong>${escapeHtml(skill.label)}</strong><span>${escapeHtml(skill.value)}</span></div>`,
   ).join("");
 
@@ -138,7 +150,7 @@ function buildHtml(projectMap) {
   </style></head><body>
     <main class="page">
       ${pageHeader()}
-      <section><h2 class="section-label">Summary</h2><p class="summary">${escapeHtml(PROFILE.summary)}</p></section>
+      <section><h2 class="section-label">Summary</h2><p class="summary">${escapeHtml(tailored?.summary || PROFILE.summary)}</p></section>
       <h2 class="section-label">Professional experience</h2>
       ${employerSections}
     </main>
@@ -152,6 +164,7 @@ function buildHtml(projectMap) {
 
 async function main() {
   const projectMap = await loadProjects();
+  await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
   const browser = await puppeteer.launch({ headless: true });
   try {
     const page = await browser.newPage();
@@ -166,8 +179,10 @@ async function main() {
   } finally {
     await browser.close();
   }
-  await fs.mkdir(path.dirname(ARCHIVE_PATH), { recursive: true });
-  await fs.copyFile(OUTPUT_PATH, ARCHIVE_PATH);
+  if (!tailored) {
+    await fs.mkdir(path.dirname(ARCHIVE_PATH), { recursive: true });
+    await fs.copyFile(OUTPUT_PATH, ARCHIVE_PATH);
+  }
   console.log(`CV generated at ${OUTPUT_PATH}`);
 }
 

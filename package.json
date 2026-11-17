@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx,ts,tsx",
     "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix",
-    "cv:generate": "node scripts/generate-cv.js"
+    "cv:generate": "node scripts/generate-cv.js",
+    "cv:resend": "node scripts/generate-cv.js resend",
+    "cv:dualentry": "node scripts/generate-cv.js dualentry"
   },
   "dependencies": {
     "@solidjs/router": "^0.8.0",
