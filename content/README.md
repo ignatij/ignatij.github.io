@@ -24,8 +24,10 @@ content/
 ---
 title: "Your Blog Post Title"
 date: "YYYY-MM-DD"
-readTime: "X min read"
-tags: ["tag1", "tag2", "tag3"]
+topic: "Distributed systems" # optional; shown in metadata
+featured: true               # optional; set false to keep off the homepage
+draft: true                  # optional; hides unpublished drafts from listings
+tags: ["tag1", "tag2"]
 excerpt: "A brief description of your blog post."
 ---
 ```
@@ -42,10 +44,13 @@ excerpt: "A brief description of your blog post."
 ---
 title: "Project Name"
 excerpt: "Brief description of the project"
+home_summary: "Concise 1–2 line summary for listings" # optional
+home_technologies: ["Go", "PostgreSQL"]               # optional; up to 4 shown in listings
 technologies: ["tech1", "tech2", "tech3"]
 github: "https://github.com/username/repo"
 live: "https://live-demo-url.com"  # or null if no live demo
-personal_project_order: 1  # optional; lower values appear first among personal projects
+personal_project_order: 1          # optional; lower values appear first among open-source projects
+archived: true                     # optional; hides from /projects while keeping direct URLs working
 ---
 ```
 

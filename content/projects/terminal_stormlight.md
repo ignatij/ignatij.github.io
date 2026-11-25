@@ -6,6 +6,7 @@ excerpt: "A creative open-source project that brings the magical world of Storml
 technologies: ["JavaScript", "Node.js", "Bash"]
 github: "https://github.com/ignatij/terminal-stormlight"
 show_in_cv: false
+archived: true
 ---
 
 An innovative open-source project that brings the epic world of Brandon Sanderson's Stormlight Archive series into your terminal, creating an immersive and interactive experience through animated ASCII art and creative storytelling.

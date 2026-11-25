@@ -1,6 +1,8 @@
 ---
 title: "Advent of Go - 2025"
 date: "2026-01-08"
+topic: "Algorithms"
+featured: false
 excerpt: "A walkthrough of the challenges and solutions for Advent of Code 2025 in Go"
 thumbnail: "/images/aoc-2025.jpg"
 tags: ["aoc-2025", "go", "algorithms", "data-structures"]
@@ -225,7 +227,7 @@ Instead I recast the machine as an Integer Linear Program (ILP). Give every butt
 
 I solved this ILP with the Go bindings for Z3 (<https://pkg.go.dev/github.com/aclements/go-z3/z3>). The binding doesn’t expose Z3’s Optimize API, so I binary-search the minimum objective: assert all constraints once, then repeatedly push an extra inequality `sum_j x_j <= mid`, check satisfiability, and adjust the bound until the smallest feasible `mid` is found. Summing those minima over all machines gives the final answer.
 
-This was definetely the hardest challenge of the AoC 2025!
+This was definitely the hardest challenge of the AoC 2025!
 Probably a big contributing fact for that would be my lack of experience with ILP problems.
 
 ## Day 11

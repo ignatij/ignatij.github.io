@@ -1,32 +1,33 @@
 ---
 title: "Folio"
+home_summary: "Active contributor to a self-hosted Go/SQLite CMS with static Eleventy publishing and atomic build swaps; self-hosting two live production sites on my VPS."
+home_technologies: ["Go", "SQLite", "React", "Eleventy"]
 category: "open-source"
-personal_project_order: 1
-listing_subtitle: "Open-source CMS contributor"
-description: "An open-source, self-hosted CMS with a Go backend and static-site publishing"
-excerpt: "Folio is an open-source, self-hosted CMS with a Go backend and static-site publishing. I am an active contributor and maintain multiple websites on my custom VPS hosting."
+personal_project_order: 3
+listing_subtitle: "Open-source CMS contributor & operator"
+description: "Open-source, self-hosted CMS pairing a Go/SQLite admin API with statically generated Eleventy sites and atomic publish swaps"
+excerpt: "Open-source, self-hosted CMS separating a Go/SQLite admin API from statically generated Eleventy output with atomic build swaps; active contributor self-hosting two live production sites on a managed VPS."
 technologies: ["Go", "SQLite", "TypeScript / React", "Eleventy"]
 github: "https://github.com/vl4d1m1r4/folio"
 cv_highlights:
-  - "Active contributor to Folio, an open-source, self-hosted CMS with a Go API, React admin interface, and static-site publishing."
-  - "Host and maintain multiple Folio websites on my custom VPS."
+  - "Active contributor to Folio, an open-source self-hosted Go/SQLite/React CMS with static Eleventy publishing and atomic build swaps."
+  - "Self-host and maintain two live production sites (anastasijagichevska.com and animacentar.com) on a custom VPS."
 ---
 
-Folio is an open-source, self-hosted CMS that combines a visual content-management interface with a statically generated public website.
+## Context & risk
 
-## How Folio works
+Traditional dynamic CMS platforms expose the database, authentication surface, and application runtime directly to every public visitor request. Folio reduces that attack surface and operational complexity by isolating authenticated editing from static public delivery.
 
-The Go/Echo backend exposes APIs for content and administration, with SQLite storing articles, pages, translations, and settings. A React/TypeScript admin interface provides authenticated editing, media management, and configurable content blocks.
+## Architecture & security mechanics
 
-Editors can manage multilingual articles and pages, arrange content visually, and customize the site's theme and navigation. Uploaded media is stored separately from the content database.
-
-Eleventy reads content through the API and generates the public site. Publishing changes triggers a rebuild, and the build script replaces the published output only after a successful build. This separates the editing experience from the static pages served to visitors.
+- **Decoupled admin runtime and static delivery:** A **Go/Echo** backend with **SQLite** and a **React/TypeScript** admin interface handles authenticated editing, multilingual content, media uploads (stored separately from the database), and theme configuration.
+- **Atomic publish swaps:** Publishing triggers an **Eleventy** static build that pulls content through the API and replaces the served public output only after a build succeeds—preventing broken partial deploys and keeping the public web tier strictly static.
 
 ## My involvement
 
-I am an active Folio contributor and maintain multiple websites on my custom VPS hosting, including:
+I am an active contributor to Folio and operate two live production sites on my own managed VPS:
 
-- [Anastasija Gichevska website](https://anastasijagichevska.com/en/)
-- [Anima Centar website](https://animacentar.com/)
+- [anastasijagichevska.com](https://anastasijagichevska.com/en/)
+- [animacentar.com](https://animacentar.com/)
 
-[Original Folio repository](https://github.com/vl4d1m1r4/folio)
+[View Folio on GitHub](https://github.com/vl4d1m1r4/folio)

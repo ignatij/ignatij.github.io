@@ -1,76 +1,41 @@
 ---
 title: "J+ Monitor"
-home_summary: "Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go."
-home_technologies: ["Go", "Node.js", "Google Pub/Sub"]
+home_summary: "Cut message-processing latency by 33% and reduced container memory and cloud costs by migrating the core event-processing system from Node.js to Go on Google Pub/Sub."
+home_technologies: ["Go", "Node.js", "Google Pub/Sub", "Kubernetes"]
 category: "client"
 employer: "Ludotech"
-description: "Rule-based website monitoring platform whose core processing service was migrated from Node.js to Go"
-excerpt: "A rule-based monitoring platform where I migrated core processing from Node.js to Go and helped move service communication toward event-driven processing."
+description: "Rule-based website monitoring platform whose core event-processing system was migrated from Node.js to Go"
+excerpt: "Rule-based website monitoring platform where migrating the core event-processing system from Node.js to compiled Go workers cut message-processing time by 33% while lowering memory usage and cloud costs."
 technologies:
   [
-    "Node.js",
-    "React",
     "Go",
-    "GCP",
-    "Docker",
-    "Pulumi",
-    "K8s",
+    "Node.js",
     "Google Pub/Sub",
     "PostgreSQL",
+    "GCP",
+    "Kubernetes",
+    "Pulumi",
+    "Docker",
+    "React",
   ]
 start_date: 2024-06-01
 end_date: 2024-11-30
-my_role: "Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go."
+my_role: "Migrated the core message-processing system from Node.js to Go, reducing message-processing latency by 33% and lowering container memory usage and cloud hosting costs while decoupling services onto Google Pub/Sub."
 cv_highlights:
-  - "Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go."
+  - "Migrated the core event-processing system from Node.js to compiled Go workers on Google Pub/Sub (GCP, Pulumi, K8s), cutting message-processing latency by 33% while lowering container memory and cloud costs."
 ---
 
-A rule-based website monitoring platform that lets users define checks for target websites and produces events and overview data from those checks.
+## Context & risk
 
-## Overview
+J+ Monitor is a rule-based website monitoring platform that executes user-defined checks against target sites, generates alert events on rule violations, and aggregates overview data. As rule evaluations and event volume grew, running the core processing workers in Node.js introduced cold-start and runtime overhead, while synchronous REST calls tightly coupled upstream and downstream services.
 
-J+ Monitor allows users to define custom rules for checking specific aspects of target websites. The platform automatically executes these rules and generates events with detailed overview data, providing insights into website performance, content changes, and user-defined metrics.
+## Architecture & key tradeoffs
 
-## Key Features
+- **Compiled Go workers replacing Node.js:** Rebuilt the core event-processing system as compiled **Go** binaries instead of continuing to tune or scale out the Node.js workers. Eliminating Node.js cold-start and runtime overhead cut processing time and lowered per-container memory footprint.
+- **Synchronous REST to event-driven Pub/Sub:** Replaced direct HTTP calls between services with asynchronous message delivery over **Google Pub/Sub**, decoupling check execution from downstream event generation and overview aggregation.
+- **Infrastructure & delivery:** Operated containerized services on **GCP and Kubernetes** with infrastructure defined in **Pulumi**, backed by **PostgreSQL** and a **React** rule-management interface.
 
-- **Custom Rule Creation**: Intuitive interface for defining monitoring rules for target websites
-- **Event Generation**: Automated creation of events based on rule violations or conditions
-- **Real-time Overview Data**: Comprehensive analytics and insights for each monitored website
+## Role & outcome
 
-## Technical Architecture
-
-### Backend Infrastructure
-
-- **Microservices Architecture**: Scalable, maintainable service-oriented design with
-  event-driven architecture built in Node.js and Golang
-- **Event-Driven Processing**: Google Pub/Sub integration for reliable event handling
-- **Rule Engine**: High-performance rule processing and execution system
-
-### Frontend Technologies
-
-- **React**: Modern, responsive user interface for rule creation and data visualization
-- **Interactive Dashboards**: Real-time overview data and event visualization
-- **Rule Builder Interface**: User-friendly tools for creating and managing monitoring rules
-
-## Performance Improvements
-
-### Golang Migration
-
-- Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go.
-
-### Architecture Migration
-
-- **From Synchronous to Event-Driven**: Migrated from REST-based microservices
-  communication to event-driven architecture
-- **Google Pub/Sub Integration**: Replaced direct HTTP calls with asynchronous message processing
-- **Looser service coupling**: Event-driven processing replaced some direct synchronous communication
-
-## My Role
-
-- **Golang Migration**: Led the migration of one Node.js microservice to Golang
-- **Monitoring Tool Development**: Built core website-monitoring processing in Go.
-- **Event System**: Developed the event generation and overview data system
-
-## Impact & Results
-
-- Reduced message-processing time by 33% by migrating a core processing service from Node.js to Go.
+- Led the migration of the core monitoring and event-processing system from Node.js to Go and contributed to the Google Pub/Sub decoupling effort.
+- Reduced message-processing time by **33%** while lowering container memory usage and cloud hosting costs.

@@ -62,6 +62,10 @@ export async function loadBlogPosts() {
 
         const { data, content: markdownContent } = matter(file.default);
 
+        if (data.draft === true) {
+          continue;
+        }
+
         // Extract first paragraph as excerpt if not provided in frontmatter
         const excerpt =
           data.excerpt ||
@@ -78,6 +82,8 @@ export async function loadBlogPosts() {
         posts.push({
           ...data,
           slug: slug,
+          featured: data.featured !== false,
+          topic: data.topic || null,
           content: marked(markdownContent),
           excerpt: excerpt,
           readTime: `${readTime} min read`,
@@ -124,6 +130,7 @@ export async function loadProjects() {
         projects.push({
           ...data,
           slug: slug,
+          archived: Boolean(data.archived),
           content: marked(markdownContent),
           excerpt: data.excerpt || markdownContent.substring(0, 200) + "...",
         });

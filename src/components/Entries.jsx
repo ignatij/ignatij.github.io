@@ -15,6 +15,9 @@ export function WritingEntry(props) {
     <h3>
       <A href={`/blog/${props.post.slug}`}>{props.post.title}</A>
     </h3>
-    <time class="metadata" dateTime={String(props.post.date)}>{new Date(props.post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</time>
+    <p class="metadata">
+      <time dateTime={String(props.post.date)}>{new Date(props.post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</time>
+      {props.post.topic ? ` · ${props.post.topic}` : ""}
+    </p>
   </article>;
 }

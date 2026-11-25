@@ -6,6 +6,7 @@ excerpt: "Open-source grid component for Angular with over 7000 downloads, provi
 technologies:
   ["Angular", "TypeScript", "JavaScript", "HTML", "CSS", "Web Components"]
 github: "https://github.com/netceteragroup/ngrx-data-grid"
+archived: true
 cv_highlights:
   - "Contributed core functionality to an open-source Angular data-grid component with more than 7,000 downloads."
 ---

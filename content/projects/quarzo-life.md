@@ -1,11 +1,11 @@
 ---
 title: "Quarzo Life"
-home_summary: "Architected reliable investment and insurance workflows, from transactions to event processing."
-home_technologies: ["TypeScript / Bun", "Hono", "PostgreSQL", "RabbitMQ"]
+home_summary: "Greenfield investment and insurance backend (5+ engineers, 10+ bounded contexts) built as a modular monolith with RabbitMQ outbox/inbox, Zitadel authz, and envelope encryption."
+home_technologies: ["TypeScript / Bun", "PostgreSQL", "RabbitMQ", "Zitadel"]
 category: "client"
 employer: "Ludotech"
 description: "End-to-end investment and insurance platform spanning onboarding, funding, investment execution, portfolio management, settlements, recurring investments, and withdrawals"
-excerpt: "An end-to-end investment and insurance platform built around secure, reliable workflows for the complete customer and investment lifecycle."
+excerpt: "Greenfield investment and insurance platform architected as a modular monolith across 10+ bounded contexts with transactional outbox/inbox messaging, Zitadel authorization, and envelope encryption."
 technologies:
   [
     "TypeScript",
@@ -23,68 +23,40 @@ technologies:
     "Proxmox",
   ]
 start_date: 2025-10-01
-my_role: "Architected the backend using Domain-Driven Design and Hexagonal Architecture. Built reliable RabbitMQ workflows with transactional outbox/inbox patterns and idempotent consumers; designed PostgreSQL transaction boundaries, Zitadel-based identity and authorization, envelope encryption, and reproducible multi-environment infrastructure with OpenTofu and Ansible on Proxmox."
+my_role: "Lead backend architect for a greenfield investment and insurance platform (team of 5+ engineers). Designed a single-service modular monolith across 10+ bounded contexts with PostgreSQL transaction boundaries, RabbitMQ transactional outbox/inbox, Zitadel identity and authorization, envelope encryption, and 4 reproducible Proxmox environments via OpenTofu and Ansible."
 cv_highlights:
-  - "Architected TypeScript/Bun services around domain and hexagonal boundaries for the customer, investment, and insurance lifecycle."
-  - "Built reliable RabbitMQ workflows with transactional outbox/inbox patterns, idempotent consumers, and traceable message context."
-  - "Defined PostgreSQL transaction boundaries, Zitadel identity and authorization, envelope encryption, and reproducible environments."
+  - "Architected a greenfield TypeScript/Bun modular monolith (10+ bounded contexts, team of 5+ engineers) for investment/insurance lifecycles."
+  - "Built PostgreSQL transaction boundaries and self-hosted RabbitMQ transactional outbox/inbox workflows with idempotent consumers and traceable correlation context."
+  - "Designed Zitadel authz, KEK/DEK envelope encryption, provider adapters (Memo Bank, Resend, Goodflag), and 4 OpenTofu/Ansible Proxmox environments."
 ---
 
-## Overview
+## Context & risk
 
-Quarzo Life is an end-to-end investment and insurance platform covering the complete customer and investment lifecycle—from onboarding and funding through investment execution, portfolio management, settlements, recurring investments, and withdrawals.
+Quarzo Life is a greenfield investment and insurance platform covering onboarding, funding, investment execution, portfolio management, settlements, recurring investments, and withdrawals. In money-movement and settlement lifecycles, partial writes, duplicate deliveries, leaked PII, or tightly coupled external financial providers create direct operational and compliance risk.
 
-My work focused on designing and developing the backend so consistency-critical financial operations remained secure, traceable, and reliable as the platform grew across business domains.
+## Architecture & key tradeoffs
 
-## Architecture and Engineering
+- **Single-service modular monolith across 10+ bounded contexts:** Enforced explicit Domain-Driven Design and Hexagonal Architecture boundaries inside a single deployable service rather than splitting prematurely into microservices. This preserves strict module isolation and domain ownership while avoiding distributed-deployment overhead and cross-service schema coordination early in the product lifecycle.
+- **Self-hosted RabbitMQ with transactional outbox/inbox:** Selected RabbitMQ over managed workflow SaaS platforms to avoid vendor lock-in and keep recurring infrastructure costs and operational surface area low, while still decoupling cross-domain workflows cleanly.
+- **Adapter-isolated third-party providers:** Isolated external dependencies—**Memo Bank** (banking), **Zitadel** (identity/auth), **Resend** (transactional email), and **Goodflag** (electronic signing)—behind application-owned ports and adapters so provider changes and failure modes stay outside the core domain model.
+- **Validated service contracts:** Built HTTP APIs and internal boundaries with **TypeScript, Bun, Hono, Zod, and OpenAPI**.
 
-### Domain-Driven Services
+## Security & reliability mechanics
 
-- Designed services around explicit business domains using **Domain-Driven Design** and **Clean/Hexagonal Architecture**.
-- Kept business rules independent from databases, messaging infrastructure, and external providers through clear application ports and infrastructure adapters.
-- Standardized shared infrastructure for persistence, messaging, authentication, observability, and scheduling without weakening domain boundaries.
+- **Transactional consistency & idempotency:** Paired PostgreSQL repository and unit-of-work transaction boundaries with transactional outbox and inbox tables so state transitions and published domain events commit atomically. Consumers are idempotent so retries and redeliveries cannot duplicate money-movement or settlement side effects.
+- **Traceable distributed flows:** Propagated correlation and causation metadata across message hops so multi-domain financial operations remain auditable end to end.
+- **Identity & fine-grained authorization:** Built authentication and authorization on **Zitadel**, covering end users, machine identities, service accounts, token validation, and service-to-service access controls.
+- **Envelope encryption:** Protected sensitive customer data by separating key-encryption keys (KEKs) from data-encryption keys (DEKs) with explicit key-lifecycle control.
+- **Reproducible infrastructure:** Automated **4 isolated environments** (`demo`, `staging`, `sandbox`, `prod`) on **Proxmox** using **OpenTofu** and **Ansible**, backed by automated tests spanning domain rules, persistence, messaging, partner adapters, and end-to-end investment workflows.
 
-### Reliable Event-Driven Workflows
+## Role & outcome
 
-- Built asynchronous workflows with **RabbitMQ** and explicit domain events to coordinate processes across business domains.
-- Applied **transactional outbox and inbox patterns** so database changes and message processing remained consistent.
-- Designed **idempotent consumers** to make retries safe and prevent duplicate processing in financial workflows.
-- Propagated correlation and causation metadata across message flows to make distributed operations traceable.
+- Led backend architecture and a team of **5+ engineers** from day zero across **10+ bounded contexts**.
+- Delivered shared foundations for persistence, reliable messaging, identity, encryption, execution context, and third-party provider adapters.
+- Provisioned 4 reproducible Proxmox environments.
 
-### Transactional Persistence
+## Technology
 
-- Developed persistence layers on **PostgreSQL** using repository and unit-of-work patterns.
-- Defined transaction boundaries for consistency-critical operations involving investment execution, money movement, settlements, recurring investments, and position keeping.
-- Used **Redis/Valkey** where fast, short-lived access to shared data supported platform workflows.
+**Stack:** TypeScript, Bun, PostgreSQL, RabbitMQ, Zitadel, Redis/Valkey, Docker, Hono, Zod, OpenAPI, OpenTofu, Ansible, Proxmox
 
-### Identity, Security, and Traceability
-
-- Designed the identity and authorization architecture with **Zitadel**, supporting users, machine identities, service accounts, token validation, fine-grained authorization, and secure service-to-service communication.
-- Protected sensitive customer data with **envelope encryption**, separating key-encryption keys from data-encryption keys and controlling their lifecycle.
-
-### APIs and Integrations
-
-- Designed strongly validated REST APIs and internal service contracts with **TypeScript, Bun, Hono, Zod, and OpenAPI**.
-- Isolated banking, identity, document-signing, storage, email, and other third-party services behind adapters, reducing provider coupling and keeping external concerns out of the domain model.
-
-### Infrastructure and Environments
-
-- Automated reproducible infrastructure provisioning and configuration with **OpenTofu** and **Ansible** on **Proxmox**.
-- Supported isolated development, staging, demo, sandbox, and production environments through a consistent infrastructure-as-code workflow.
-
-### Quality and Reliability
-
-- Improved confidence in changes through automated tests covering domain logic, repositories, messaging infrastructure, external integrations, and end-to-end investment workflows.
-
-## My Role
-
-- Architected the backend and defined domain boundaries for the full investment and insurance lifecycle.
-- Implemented reliable messaging and transactional consistency patterns for cross-domain financial workflows.
-- Designed identity, authorization, execution-context propagation, encryption, persistence, API, and integration foundations shared across services.
-- Automated reproducible, isolated application environments with OpenTofu and Ansible on Proxmox.
-
-## Technology and Architecture
-
-**Technology:** TypeScript, Bun, PostgreSQL, RabbitMQ, Zitadel, Redis/Valkey, Docker, Hono, Zod, OpenAPI, OpenTofu, Ansible, Proxmox
-
-**Architecture:** Domain-Driven Design, Hexagonal Architecture, Event-Driven Architecture, OAuth/OIDC, Transactional Outbox/Inbox, Idempotency, Envelope Encryption, Distributed Tracing, Infrastructure as Code, REST APIs
+**Patterns:** Modular Monolith, Domain-Driven Design, Hexagonal Architecture, Transactional Outbox/Inbox, Idempotent Consumers, OAuth/OIDC, Envelope Encryption, Infrastructure as Code

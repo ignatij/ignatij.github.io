@@ -25,7 +25,10 @@ a:focus-visible, pre:focus-visible { outline: 2px solid #7dd3fc; outline-offset:
 .avatar { width: 104px; height: 104px; object-fit: cover; object-position: center 25%; border-radius: 8px; image-rendering: pixelated; }
 .intro h1 { margin: 0 0 4px; font-size: 48px; font-weight: 700; }
 .role { color: #b4b4bc; font-size: 25px; margin-bottom: 18px; }
-.intro-copy { max-width: 58ch; color: #f4f4f5; font-size: 19px; line-height: 1.5; }
+.intro-copy { max-width: 62ch; color: #f4f4f5; font-size: 18px; line-height: 1.55; }
+.focus-section { margin-top: 24px !important; padding-block: 14px; border-top: 1px solid #34343b; border-bottom: 1px solid #34343b; }
+.focus-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14px; line-height: 1.5; color: #b4b4bc; }
+.focus-list strong { color: #f4f4f5; font-weight: 600; }
 .metadata { font-size: 14px; line-height: 1.6; color: #b4b4bc; }
 .location { margin-block: 12px 8px; }
 .link-row { display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: 15px; }
@@ -46,11 +49,15 @@ a:focus-visible, pre:focus-visible { outline: 2px solid #7dd3fc; outline-offset:
 .employer-heading h2, .employer-heading h3 { margin-bottom: 8px; }
 .employer-heading .metadata { flex-shrink: 0; }
 .progression { font-size: 16px; margin-bottom: 6px; }
+.employer-summary { font-size: 15px; line-height: 1.5; color: #e4e4e7; margin-bottom: 6px; }
+.employer-projects a { color: #b4b4bc; text-decoration-color: #52525b; }
+.employer-projects a:hover { color: #7dd3fc; text-decoration-color: #7dd3fc; }
 .experience-entry p:last-child { margin-bottom: 0; }
 .writing-entry { padding-block: 18px; border-bottom: 1px solid #34343b; }
 .writing-entry:first-of-type { padding-top: 0; }
 .writing-entry:last-child { border-bottom: 0; }
 .writing-entry h3 { margin-bottom: 6px; }
+.writing-entry .metadata { margin-bottom: 0; }
 .page-heading { margin-bottom: 40px; max-width: 70ch; }
 .page-heading .link-row:empty { display: none; }
 .page-heading + section { margin-top: 40px; }
@@ -80,6 +87,7 @@ pre code { background: none; padding: 0; font-size: inherit; overflow-wrap: norm
 .site-footer { margin-top: 40px; padding-bottom: 32px; }
 .site-footer::before { content: ""; display: block; border-top: 1px solid #34343b; margin-bottom: 20px; }
 .site-footer p { margin: 10px 0 0; }
+.footer-availability { margin: 0 0 8px !important; font-size: 14px; line-height: 1.5; color: #b4b4bc; }
 .footer-content, .contact-line { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; font-size: 14px; }
 .footer-content .metadata { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; margin: 0; }
 .contact-line a { padding-block: 10px; overflow-wrap: anywhere; }

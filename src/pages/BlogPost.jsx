@@ -16,7 +16,7 @@ export default function BlogPost() {
           <article>
             <header class="page-heading">
               <p class="metadata">
-                <time dateTime={String(p().date)}>{new Date(p().date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</time> · {p().readTime}</p>
+                <time dateTime={String(p().date)}>{new Date(p().date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</time>{p().topic ? ` · ${p().topic}` : ""} · {p().readTime}</p>
               <h1>{p().title}</h1>
             </header>
             <div class="prose" innerHTML={p().content} />

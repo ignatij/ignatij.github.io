@@ -2,31 +2,26 @@
 title: "RNE — Rail Network Europe"
 category: "client"
 employer: "Netcetera"
-description: "Rail-operations software supporting coordination across 15 European countries"
-excerpt: "A multi-country rail-operations system where I developed and supported Java/Spring services and TypeScript/Angular interfaces."
-technologies: ["Java", "Spring", "TypeScript", "Angular", "GraphQL", "NgRx"]
+description: "Cross-border rail-operations platform coordinating schedules and oversight across 15 European countries"
+excerpt: "Long-running multi-country rail-operations platform across 15 European countries built with Java/Spring, GraphQL, TypeScript, Angular, and NgRx."
+technologies: ["Java", "Spring", "GraphQL", "TypeScript", "Angular", "NgRx"]
 start_date: 2016-10-01
 end_date: 2020-12-31
-my_role: "Developed and supported backend and frontend features for a rail-operations system used across 15 European countries."
+my_role: "Developed and supported Java/Spring backend services, GraphQL APIs, and Angular/NgRx interfaces for rail operations spanning 15 European countries."
 cv_highlights:
-  - "Developed and supported Java/Spring and TypeScript/Angular features for rail operations across 15 European countries."
-  - "Worked on GraphQL APIs, NgRx state management, and multi-country time and scheduling concerns."
+  - "Developed Java/Spring services, GraphQL APIs, and Angular/NgRx interfaces for rail operations across 15 European countries, handling cross-border timezone and scheduling consistency."
 ---
 
-## The problem
+## Context & risk
 
-RNE supported rail-operation oversight and coordination across **15 European countries**, where schedules and operational data had to remain coherent across country and timezone boundaries.
+RNE coordinates rail-operation oversight across **15 European countries**. Operational schedules and train-movement records have to remain consistent across national boundaries, timezones, and daylight-saving transitions where subtle timestamp bugs disrupt cross-border coordination.
 
-## My contribution
+## Architecture & key tradeoffs
 
-I developed and supported features across the Java/Spring backend and the TypeScript/Angular frontend. The work included GraphQL APIs and NgRx state management, giving me full-stack responsibility within a long-running operational system.
+- **Java/Spring & GraphQL backend:** Exposed complex, interconnected rail-operation entities through **Java/Spring** services and **GraphQL** APIs to support varied operational views without proliferating brittle REST payloads.
+- **Deterministic client state:** Managed dense operational UI workflows in **TypeScript/Angular** using **NgRx** for predictable state transitions.
+- **Cross-border time semantics:** Explicitly modeled timezone and timestamp-consistency rules across multi-country rail schedules.
 
-## Engineering focus
+## Role & outcome
 
-- Represented and presented rail-operation data through Java/Spring services and GraphQL APIs.
-- Built Angular interfaces and managed complex client state with NgRx.
-- Worked through timezone, timestamp-consistency, and cross-border scheduling concerns.
-
-## Supported result
-
-The system provided monitoring and coordination capabilities for rail operations spanning 15 countries.
+- Built and maintained features end to end across backend services, GraphQL APIs, and Angular/NgRx frontends over four years on a mission-critical European operational platform.

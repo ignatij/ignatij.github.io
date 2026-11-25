@@ -1,42 +1,37 @@
 ---
 title: "SpotPilot"
+home_summary: "Agent-first Go CLI enforcing narrow, deterministic Spotify commands, strict JSON contracts, and bounded Chrome DevTools Protocol auth recovery."
+home_technologies: ["Go", "Cobra", "Chrome DevTools Protocol", "JSON CLI"]
 category: "open-source"
-description: "Agent-first Go CLI for deterministic, local Spotify playback control"
-excerpt: "A Go CLI that lets AI agents search and control Spotify through predictable commands, JSON-first output, and local-device-aware playback"
-technologies: ["Go", "Cobra", "Spotify", "Chrome DevTools Protocol"]
+description: "Agent-first Go CLI enforcing a narrow, deterministic execution boundary and bounded browser auth recovery for Spotify playback"
+excerpt: "Agent-first Go CLI that isolates LLM natural-language intent from side effects via narrow commands, strict JSON envelopes, exit codes, and bounded Chrome DevTools Protocol auth recovery."
+technologies: ["Go", "Cobra", "Chrome DevTools Protocol", "Spotify"]
 github: "https://github.com/ignatij/spotpilot"
-personal_project_order: 2
+personal_project_order: 1
 cv_highlights:
-  - "Built an agent-first Go CLI with deterministic commands, JSON-first output, local-device-aware Spotify playback, and browser-based authentication recovery."
+  - "Built an agent-first Go CLI enforcing narrow deterministic commands, strict JSON envelopes, adapter-isolated side effects, and bounded Chrome DevTools Protocol auth recovery."
 ---
 
-SpotPilot is a local command-line tool that turns an AI agent's music requests into reliable Spotify playback actions. The agent handles natural language; SpotPilot provides the narrow, deterministic execution layer behind it.
+## Context & risk
 
-## Overview
+Giving an AI agent direct access to browser automation, raw cookies, or unconstrained shell scripts to perform a simple user action expands both failure modes and blast radius. SpotPilot separates intent from execution: the agent handles natural language, while SpotPilot enforces a narrow, deterministic execution boundary for local Spotify playback.
 
-Built in Go for macOS and Linux, SpotPilot exposes one command per playback action and returns stable, machine-readable results. It is designed for agent workflows where predictable behavior, clear failures, and automation-friendly output matter more than an interactive interface.
+## Architecture & key tradeoffs
 
-## Key Features
+- **Single-binary layered Go architecture:** Separates **Cobra** command parsing, application use cases (login, search, local device resolution, playback), domain error types, and integration adapters (browser automation, session persistence, Spotify APIs) behind application-owned interfaces.
+- **Strict machine-readable output boundary:** Every command returns a consistent JSON envelope with structured errors and predictable exit codes (with an optional concise plain-text mode for humans), keeping automated callers in control without scraping stdout.
+- **Deterministic configuration precedence:** Resolves configuration in a fixed order—command flags, environment variables, YAML config, then defaults—and provides idempotent setup commands (`spotpilot codex setup`, `spotpilot copilot setup`) to register tool usage with OpenAI Codex and GitHub Copilot CLI.
 
-- **Agent-First Interface**: Focused commands for playing, pausing, resuming, skipping, and inspecting playback
-- **JSON-First Output**: A consistent result envelope makes every command easy for agents and scripts to interpret
-- **Local Device Preference**: Targets Spotify on the current machine instead of taking over a phone, speaker, or another computer
-- **Automatic Recovery**: Starts the desktop client when needed and can fall back to Spotify's web player
-- **Browser-Based Login**: Captures and persists a Spotify session through Chrome or Chromium, then resumes the original action
-- **Agent Setup Commands**: Installs tool preferences for OpenAI Codex and GitHub Copilot CLI with idempotent setup commands
-- **Human-Friendly Mode**: Supports concise plain-text responses alongside the default structured output
+## Security & reliability mechanics
+
+- **Bounded browser auth recovery:** When no valid session exists, SpotPilot launches a scoped Chrome/Chromium login flow over **Chrome DevTools Protocol**, captures and persists the session within the CLI's storage boundary, and resumes the original command—avoiding exposing raw browser control to the calling agent.
+- **Local-device preference & fallback:** Targets Spotify on the local machine rather than hijacking remote speakers or phones, starting the desktop client when needed and falling back cleanly to the web player.
 
 ## Usage
 
-Install SpotPilot with Homebrew:
-
 ```bash
 brew install ignatij/spotpilot/spotpilot
-```
 
-Then authenticate and control playback:
-
-```bash
 spotpilot login
 spotpilot play "Master of Puppets"
 spotpilot status
@@ -44,36 +39,7 @@ spotpilot pause
 spotpilot next
 ```
 
-To register SpotPilot as the preferred Spotify tool for an AI coding agent:
-
-```bash
-spotpilot codex setup
-spotpilot copilot setup
-```
-
-## Technical Design
-
-SpotPilot is a single-binary CLI with a layered architecture:
-
-- **Command Layer**: Cobra commands parse flags, wire dependencies, and invoke use cases
-- **Application Layer**: Orchestrates login, search, device resolution, and playback workflows
-- **Domain Layer**: Defines playback concepts and stable application errors
-- **Integration Adapters**: Isolate browser automation, session storage, and Spotify APIs behind application-owned interfaces
-- **Output Boundary**: Maps every result to the same JSON envelope, with optional plain-text rendering
-
-Configuration follows a predictable precedence order—command flags, environment variables, YAML configuration, then defaults—while structured errors and exit codes keep automated callers in control.
-
-## Playback Flow
-
-When an agent runs `spotpilot play`, the CLI:
-
-1. Restores a saved session or launches a bounded browser login flow
-2. Searches Spotify and selects Spotify's highest-ranked result
-3. Resolves a playable Spotify device on the local machine
-4. Starts playback through the desktop client or web-player fallback
-5. Returns a minimal structured result to the calling agent
-
-## Example Output
+Example structured response returned to an agent caller:
 
 ```json
 {

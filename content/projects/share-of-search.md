@@ -1,34 +1,32 @@
 ---
 title: "Share of Search / Model"
+home_summary: "Led the Share of Search engineering team within shareofmodel.ai, building FastAPI services, Prefect collection pipelines, and an SSE-streamed Google ADK agent for brand-visibility analysis."
+home_technologies: ["Python / FastAPI", "Prefect", "Google ADK", "PostgreSQL"]
 category: "client"
 employer: "Ludotech"
-description: "Competitive-intelligence product for analysing brand visibility across search engines and LLMs"
-excerpt: "A competitive-intelligence product where I led full-stack development and automated collection workflows across search engines and LLM platforms."
+description: "Brand-visibility and competitive-intelligence product within shareofmodel.ai comparing rankings across search engines and LLMs"
+excerpt: "Competitive-intelligence and brand-visibility work within shareofmodel.ai, where I led the Share of Search team across FastAPI/PostgreSQL services, Prefect collection workflows, and a streaming Google ADK agent."
 technologies: ["Python", "FastAPI", "PostgreSQL", "Prefect", "Google ADK", "React", "Docker", "Kubernetes"]
 start_date: 2024-12-01
 end_date: 2025-09-30
-my_role: "Led development of the product and designed automated workflows for collecting and presenting brand-ranking data, collaborating with data science on LLM integrations."
+my_role: "Led the Share of Search engineering team within shareofmodel.ai, owning full-stack architecture, automated Prefect workflows for collecting and presenting brand-ranking data, and LLM integration work with data science."
 cv_highlights:
-  - "Led development of a competitive-intelligence product covering search engines and LLM platforms."
-  - "Designed automated collection workflows and worked with data science on LLM integrations."
+  - "Led the Share of Search team within shareofmodel.ai (brand-visibility analysis across Google, Bing, ChatGPT, Perplexity, Gemini, and Claude) using FastAPI, PostgreSQL, Prefect, and SSE-streamed Google ADK agents."
 ---
 
-## The problem
+## Context & risk
 
-Marketing and research users needed one place to compare brand visibility across Google, Bing, their AI-assisted search experiences, and LLM products including ChatGPT, Perplexity, Gemini, and Claude.
+Within the broader `shareofmodel.ai` platform, the **Share of Search** product needed to give marketing and research users one place to compare brand visibility and rankings across Google, Bing, their AI-assisted search experiences, and LLM products including **ChatGPT, Perplexity, Gemini, and Claude**.
 
-## My contribution
+Automating collection across multiple search engines and LLM platforms introduces long-running jobs, intermittent failures, and latency profiles that cannot live inside synchronous API request paths.
 
-I led full-stack development and architecture work, designed automated workflows for collecting and presenting ranking data, and collaborated with the data-science team on LLM integrations.
+## Architecture & key tradeoffs
 
-## Engineering decisions
+- **Split synchronous APIs from orchestrated collection:** Built backend APIs with **Python, FastAPI, and PostgreSQL** while orchestrating automated brand-ranking collection pipelines asynchronously with **Prefect**.
+- **Per-user streaming agent over SSE:** Built the **React** analytics interface and used Server-Sent Events (SSE) to stream responses from a per-user agent built with **Google ADK**, keeping interactions responsive during multi-step LLM responses.
+- **Cross-functional LLM integration:** Collaborated with the data-science team to integrate LLM workflows into production services packaged and deployed with **Docker and Kubernetes**.
 
-- Built backend APIs with Python and FastAPI, backed by PostgreSQL.
-- Orchestrated collection pipelines with Prefect.
-- Combined synchronous APIs with asynchronous processing where workflows required it.
-- Used React for the analytics interface and server-sent events to stream responses from a per-user agent built with Google ADK.
-- Packaged and ran the services with Docker and Kubernetes.
+## Role & outcome
 
-## Supported result
-
-The product brought collection and visualisation for multiple search and LLM platforms into a single competitive-analysis workflow.
+- Led the **Share of Search** engineering team, owning full-stack development, backend architecture, and automated collection workflows for brand-ranking data.
+- Brought data collection and visualization across multiple search engines and LLM platforms into a single competitive-analysis workflow.
