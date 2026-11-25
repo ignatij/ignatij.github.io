@@ -7,6 +7,7 @@ Personal portfolio, technical writing, and CV generator for Ignatij Gichevski. B
 - **Frontend:** Solid.js, `@solidjs/router`, `solid-meta`
 - **Build & styling:** Vite, Tailwind CSS, custom dark editorial stylesheet ([src/index.css](src/index.css))
 - **Content:** Markdown + YAML frontmatter (`gray-matter`, `marked`, `highlight.js`)
+- **SEO & static routes:** Build-time generator ([scripts/generate-seo.mjs](scripts/generate-seo.mjs)) emits `dist/sitemap.xml` and static `dist/<route>/index.html` snapshots (HTTP `200` on GitHub Pages) alongside [public/robots.txt](public/robots.txt) and `Person` JSON-LD
 - **CV generation:** Puppeteer HTML-to-PDF pipeline ([scripts/generate-cv.js](scripts/generate-cv.js)) driven by [src/data/profile.js](src/data/profile.js) and project frontmatter
 - **Hosting:** GitHub Pages via GitHub Actions
 

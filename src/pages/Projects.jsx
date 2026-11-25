@@ -1,8 +1,8 @@
-import { Title } from "solid-meta";
 import { For, Show, createResource } from "solid-js";
 import { loadProjects } from "../utils/content";
 import { EMPLOYERS } from "../data/profile";
 import { ProjectEntry } from "../components/Entries";
+import PageMeta from "../components/PageMeta";
 
 export default function Projects() {
   const [projects] = createResource(loadProjects);
@@ -12,7 +12,11 @@ export default function Projects() {
     projects()?.filter(p => p.category !== "client" && !p.archived) || [];
 
   return <div class="container page">
-    <Title>Work — Ignatij Gichevski</Title>
+    <PageMeta
+      title="Work — Ignatij Gichevski"
+      description="Production systems built across Ludotech and Netcetera, plus selected open-source tools and libraries in Go, TypeScript, Python, and Java."
+      path="/projects"
+    />
     <header class="page-heading">
       <h1>Work</h1>
       <p>Production systems built across Ludotech and Netcetera, followed by selected open-source tools and libraries.</p>

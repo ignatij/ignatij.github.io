@@ -1,4 +1,3 @@
-import { Title } from "solid-meta";
 import { A } from "@solidjs/router";
 import { For, Show, createResource } from "solid-js";
 import { loadProjects, loadBlogPosts } from "../utils/content";
@@ -11,6 +10,7 @@ import {
 } from "../data/profile";
 import { formatYearsOfExperience } from "../utils/experience";
 import { ProjectEntry, WritingEntry } from "../components/Entries";
+import PageMeta from "../components/PageMeta";
 
 export default function Home() {
   const [projects] = createResource(loadProjects);
@@ -25,7 +25,11 @@ export default function Home() {
     (posts() || []).filter(post => post.featured !== false).slice(0, 3);
 
   return <div class="container page home">
-    <Title>{PROFILE.name} — {PROFILE.headline}</Title>
+    <PageMeta
+      title={`${PROFILE.name} — ${PROFILE.headline}`}
+      description={PROFILE.summary}
+      path="/"
+    />
     <section class="intro" aria-labelledby="intro-title">
       <img src="/avatar.png" alt="" width="104" height="104" class="avatar" />
       <div class="intro-body">

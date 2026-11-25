@@ -4,48 +4,77 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/avatar.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ignatij Gichevski — Senior Backend & Systems Engineer with 10+ years of experience designing reliable distributed and financial workflows, application security boundaries, and production AI/agent infrastructure." />
-    <meta name="keywords" content="Senior Backend Engineer, Staff Backend Engineer, Systems Engineer, Go, TypeScript, Python, PostgreSQL, distributed systems, financial workflows, application security, AI infrastructure" />
     <meta name="author" content="Ignatij Gichevski" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ignatij.github.io/" />
-    <meta property="og:title" content="Ignatij Gichevski — Senior Backend & Systems Engineer" />
-    <meta property="og:description" content="Reliable distributed and financial workflows, application security boundaries, and production AI/agent infrastructure across Go, TypeScript, Python, and PostgreSQL." />
-    
+    <meta name="keywords" content="Senior Backend Engineer, Staff Backend Engineer, Systems Engineer, Go, TypeScript, Python, PostgreSQL, distributed systems, financial workflows, application security, AI infrastructure" />
+
+    <!-- Route-specific metadata (replaced by solid-meta on client mount) -->
+    <title data-sm="">Ignatij Gichevski — Senior Backend &amp; Systems Engineer</title>
+    <meta data-sm="" name="description" content="Ignatij Gichevski — Senior Backend &amp; Systems Engineer with 10+ years of experience designing reliable distributed and financial workflows, application security boundaries, and production AI/agent infrastructure." />
+    <link data-sm="" rel="canonical" href="https://ignatij.github.io/" />
+
+    <!-- Open Graph -->
+    <meta data-sm="" property="og:type" content="website" />
+    <meta data-sm="" property="og:url" content="https://ignatij.github.io/" />
+    <meta data-sm="" property="og:title" content="Ignatij Gichevski — Senior Backend &amp; Systems Engineer" />
+    <meta data-sm="" property="og:description" content="Reliable distributed and financial workflows, application security boundaries, and production AI/agent infrastructure across Go, TypeScript, Python, and PostgreSQL." />
+    <meta data-sm="" property="og:image" content="https://ignatij.github.io/avatar.png" />
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ignatij.github.io/" />
-    <meta property="twitter:title" content="Ignatij Gichevski — Senior Backend & Systems Engineer" />
-    <meta property="twitter:description" content="Reliable distributed and financial workflows, application security boundaries, and production AI/agent infrastructure across Go, TypeScript, Python, and PostgreSQL." />
-    
+    <meta data-sm="" name="twitter:card" content="summary" />
+    <meta data-sm="" name="twitter:url" content="https://ignatij.github.io/" />
+    <meta data-sm="" name="twitter:title" content="Ignatij Gichevski — Senior Backend &amp; Systems Engineer" />
+    <meta data-sm="" name="twitter:description" content="Reliable distributed and financial workflows, application security boundaries, and production AI/agent infrastructure across Go, TypeScript, Python, and PostgreSQL." />
+    <meta data-sm="" name="twitter:image" content="https://ignatij.github.io/avatar.png" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ignatij Gichevski",
+        "jobTitle": "Senior Backend & Systems Engineer",
+        "description": "Senior Backend & Systems Engineer with 10+ years of experience designing reliable distributed and financial workflows, application security boundaries, and production AI/agent infrastructure across Go, TypeScript, Python, and PostgreSQL.",
+        "url": "https://ignatij.github.io/",
+        "image": "https://ignatij.github.io/avatar.png",
+        "sameAs": [
+          "https://github.com/ignatij",
+          "https://linkedin.com/in/ignatij"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Skopje",
+          "addressCountry": "MK"
+        },
+        "knowsAbout": [
+          "Distributed Systems",
+          "Financial Workflows",
+          "Application Security",
+          "Go",
+          "TypeScript",
+          "Python",
+          "PostgreSQL",
+          "AI and Agent Infrastructure"
+        ]
+      }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <title>Ignatij Gichevski — Senior Backend & Systems Engineer</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/index.jsx"></script>
-    
+
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
-      // This script checks to see if a redirect is present in the query string,
-      // converts it back into the correct url and adds it to the
-      // browser's history using window.history.replaceState(...),
-      // which won't cause the browser to attempt to load the new url.
-      // When the single page app is loaded further down in this file,
-      // the correct url will be waiting in the browser's history for
-      // the single page app to route accordingly.
       (function(l) {
         if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
+          var decoded = l.search.slice(1).split('&').map(function(s) {
             return s.replace(/~and~/g, '&')
           }).join('?');
           window.history.replaceState(null, null,

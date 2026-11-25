@@ -7,11 +7,15 @@ import './index.css';
 // Polyfill Buffer for browser environment
 window.Buffer = Buffer;
 
+const root = document.getElementById('root');
+// Clear any static prerendered markup before mounting the interactive Solid app
+root.innerHTML = '';
+
 render(
   () => (
     <Router>
       <App />
     </Router>
   ),
-  document.getElementById('root')
+  root
 );
