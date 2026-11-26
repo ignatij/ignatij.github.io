@@ -11,7 +11,8 @@ start_date: 2024-12-01
 end_date: 2025-09-30
 my_role: "Led the Share of Search engineering team within shareofmodel.ai, owning full-stack architecture, automated Prefect workflows for collecting and presenting brand-ranking data, and LLM integration work with data science."
 cv_highlights:
-  - "Led the Share of Search team within shareofmodel.ai (brand-visibility analysis across Google, Bing, ChatGPT, Perplexity, Gemini, and Claude) using FastAPI, PostgreSQL, Prefect, and SSE-streamed Google ADK agents."
+  - "Led the Share of Search team within shareofmodel.ai, building automated Prefect data-collection pipelines across search engines and LLM platforms (Google, Bing, ChatGPT, Perplexity, Gemini, Claude)."
+  - "Built Python/FastAPI backend services, PostgreSQL storage, and SSE-streamed Google ADK agent workflows in collaboration with data science."
 ---
 
 ## Context & risk

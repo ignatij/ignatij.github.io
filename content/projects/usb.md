@@ -2,19 +2,19 @@
 title: "USB"
 category: "client"
 employer: "Netcetera"
-description: "Shared Java authentication/authorization libraries and UI foundations unifying four hospital applications in Basel"
-excerpt: "Unification of four Basel hospital applications around reusable Java/Spring authentication, authorization, and integration libraries plus a shared Angular component system."
+description: "Shared Java authentication/authorization libraries and UI foundations unifying four hospital applications"
+excerpt: "Unification of four hospital applications around reusable Java/Spring authentication, authorization, and integration libraries plus a shared Angular component system."
 technologies: ["Java", "Spring", "TypeScript", "Angular", "PrimeNG"]
 start_date: 2021-01-01
 end_date: 2021-12-31
 my_role: "Led technical unification of four hospital applications, building reusable Java/Spring libraries for authentication, authorization, and third-party integrations alongside a shared Angular/PrimeNG component library."
 cv_highlights:
-  - "Unified four Basel hospital applications by building reusable Java/Spring authentication, authorization, and integration libraries alongside a shared Angular/PrimeNG component library."
+  - "Unified four hospital applications by building reusable Java/Spring authentication, authorization, and integration libraries alongside a shared Angular/PrimeNG component library."
 ---
 
 ## Context & risk
 
-Four separate hospital applications in Basel had diverged in both UI behavior and how each implemented authentication, authorization, and external service integrations. Duplicating security and integration logic across four healthcare codebases increases audit surface area and makes policy changes error-prone.
+Four separate hospital applications had diverged in both UI behavior and how each implemented authentication, authorization, and external service integrations. Duplicating security and integration logic across four healthcare codebases increases audit surface area and makes policy changes error-prone.
 
 ## Architecture & key tradeoffs
 

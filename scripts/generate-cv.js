@@ -32,6 +32,8 @@ const escapeHtml = (value = "") =>
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
 
+const cleanBullet = (value = "") => String(value).replace(/^\s*[•*-]\s+/, "");
+
 async function loadProjects() {
   const files = await fs.readdir(PROJECTS_DIR);
   const entries = await Promise.all(
@@ -49,9 +51,13 @@ async function loadProjects() {
 }
 
 function projectEntry(project, { openSource = false } = {}) {
-  const highlights = tailored?.highlights?.[project.slug] || project.cv_highlights || [project.my_role || project.description];
+  const highlights = (
+    tailored?.highlights?.[project.slug] ||
+    project.cv_highlights ||
+    [project.my_role || project.description]
+  ).map(cleanBullet);
   const link = openSource && project.github
-    ? `<a class="project-link" href="${escapeHtml(project.github)}">GitHub ↗</a>`
+    ? `<a class="project-link" href="${escapeHtml(project.github)}">GitHub</a>`
     : "";
   const technologies = tailored?.technologies?.[project.slug] || project.technologies;
   const tech = technologies?.length
@@ -71,11 +77,15 @@ function employerSection(employer, projectMap) {
     .filter(Boolean)
     .map((project) => projectEntry(project))
     .join("");
+  const progression = employer.progression.replaceAll("→", "->");
 
   return `<section class="employer">
     <div class="employer-heading">
-      <div><h2>${escapeHtml(employer.name)}</h2><p>${escapeHtml(employer.progression)}</p></div>
-      <span>${escapeHtml(employer.period)}</span>
+      <div class="employer-row">
+        <h2>${escapeHtml(employer.name)}</h2>
+        <span class="employer-period">${escapeHtml(employer.period)}</span>
+      </div>
+      <p class="employer-progression">${escapeHtml(progression)}</p>
     </div>
     ${tailored ? `<p class="project-label">Selected projects at ${escapeHtml(employer.name)}</p>` : ""}
     ${projects}
@@ -112,41 +122,43 @@ function buildHtml(projectMap) {
   <style>
     @page { size: A4; margin: 0; }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: #e8e8ec; color: #20212a; font-family: Arial, Helvetica, sans-serif; }
-    .page { width: 210mm; min-height: 297mm; padding: 13mm 16mm 12mm; background: #fff; page-break-after: always; }
+    html, body { margin: 0; padding: 0; background: #e8e8ec; color: #20212a; font-family: Arial, Helvetica, sans-serif; font-kerning: none; font-variant-ligatures: none; }
+    .page { width: 210mm; min-height: 297mm; padding: 11mm 15mm 10mm; background: #fff; page-break-after: always; }
     .page:last-child { page-break-after: auto; break-before: page; }
-    header { border-bottom: 1.5px solid #cc6f52; padding-bottom: 4.5mm; margin-bottom: 4.5mm; }
-    h1 { margin: 0; font-size: 25pt; line-height: 1.05; letter-spacing: -0.4px; color: #171820; }
-    .headline { margin: 1.5mm 0 2.5mm; color: #a34d34; font-size: 12pt; font-weight: 700; }
-    .contact { display: flex; flex-wrap: wrap; gap: 1.3mm 4mm; font-size: 8.7pt; color: #555762; }
+    header { border-bottom: 1.5px solid #cc6f52; padding-bottom: 3.5mm; margin-bottom: 3.5mm; }
+    h1 { margin: 0; font-size: 24pt; line-height: 1.05; letter-spacing: -0.2px; color: #171820; }
+    .headline { margin: 1.2mm 0 2mm; color: #a34d34; font-size: 11.5pt; font-weight: 700; }
+    .contact { display: flex; flex-wrap: wrap; gap: 1.2mm 4mm; font-size: 8.6pt; color: #555762; }
     a { color: #88412d; text-decoration: none; }
-    .section-label { margin: 0 0 2.5mm; color: #a34d34; text-transform: uppercase; font-size: 8.5pt; letter-spacing: 1.3px; }
-    .summary { margin: 0 0 5mm; font-size: 9.8pt; line-height: 1.42; color: #333540; }
-    .employer { margin: 0 0 4.2mm; break-inside: avoid; }
-    .employer-heading { display: flex; justify-content: space-between; gap: 8mm; border-bottom: 1px solid #dedee4; padding-bottom: 1.4mm; margin-bottom: 1.8mm; }
-    .employer-heading h2 { margin: 0; font-size: 12pt; color: #171820; }
-    .employer-heading p { margin: 0.7mm 0 0; font-size: 8.5pt; color: #a34d34; font-weight: 700; }
-    .employer-heading span { flex: 0 0 auto; font-size: 8.7pt; color: #555762; padding-top: 0.5mm; }
-    .project-label { margin: 0 0 1.5mm; font-size: 8pt; color: #555762; }
-    .project { margin: 0 0 2.5mm; break-inside: avoid; }
+    .section-label { margin: 0 0 2mm; color: #a34d34; text-transform: uppercase; font-size: 8.3pt; letter-spacing: 0.9px; }
+    .summary { margin: 0 0 3.8mm; font-size: 9.3pt; line-height: 1.38; color: #333540; }
+    .employer { margin: 0 0 3.2mm; break-inside: avoid; }
+    .employer-heading { border-bottom: 1px solid #dedee4; padding-bottom: 1.2mm; margin-bottom: 1.6mm; }
+    .employer-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8mm; }
+    .employer-heading h2 { margin: 0; font-size: 11.5pt; color: #171820; }
+    .employer-period { flex: 0 0 auto; font-size: 8.5pt; color: #555762; font-weight: 600; }
+    .employer-progression { margin: 0.6mm 0 0; font-size: 8.3pt; color: #a34d34; font-weight: 700; }
+    .project-label { margin: 0 0 1.4mm; font-size: 8pt; color: #555762; }
+    .project { margin: 0 0 2mm; break-inside: avoid; }
+    .project:last-child { margin-bottom: 0; }
     .project-heading { display: flex; align-items: baseline; gap: 2mm; }
-    .project h3 { margin: 0; font-size: 9.6pt; color: #242630; }
+    .project h3 { margin: 0; font-size: 9.3pt; color: #242630; }
     .project-link { font-size: 7.8pt; }
-    ul { margin: 0.7mm 0 0; padding-left: 4.2mm; }
-    li { margin: 0 0 0.5mm; font-size: 8.5pt; line-height: 1.28; color: #3d3f49; }
-    .tech { margin: 0.8mm 0 0; font-size: 7.5pt; line-height: 1.25; color: #666873; break-inside: avoid; }
-    .second header { margin-bottom: 6mm; }
-    .second .project { padding: 0 0 4mm; margin: 0 0 4mm; border-bottom: 1px solid #dedee4; }
-    .second .project h3 { font-size: 11pt; }
-    .second .project li { font-size: 9pt; line-height: 1.38; }
-    .second .tech { font-size: 8pt; }
+    ul { margin: 0.6mm 0 0; padding-left: 4.2mm; list-style-type: disc; }
+    li { margin: 0 0 0.4mm; font-size: 8.2pt; line-height: 1.25; color: #3d3f49; }
+    .tech { margin: 0.6mm 0 0; font-size: 7.3pt; line-height: 1.22; color: #666873; break-inside: avoid; }
+    .second .project { padding: 0 0 3.6mm; margin: 0 0 3.6mm; border-bottom: 1px solid #dedee4; }
+    .second .project:last-child { margin-bottom: 4.5mm; }
+    .second .project h3 { font-size: 10.6pt; }
+    .second .project li { font-size: 8.8pt; line-height: 1.36; }
+    .second .tech { font-size: 7.9pt; }
     .skills { margin: 0 0 5mm; }
-    .skill { display: grid; grid-template-columns: 36mm 1fr; gap: 4mm; padding: 1.5mm 0; border-bottom: 1px solid #ececf0; font-size: 8.8pt; line-height: 1.32; break-inside: avoid; }
+    .skill { display: grid; grid-template-columns: 36mm 1fr; gap: 4mm; padding: 1.5mm 0; border-bottom: 1px solid #ececf0; font-size: 8.7pt; line-height: 1.32; break-inside: avoid; }
     .skill strong { color: #292b35; }
     .skill span { color: #50525d; }
     .education { break-inside: avoid; }
     .education h3 { margin: 0 0 1mm; font-size: 10pt; }
-    .education p { margin: 0.8mm 0; font-size: 8.8pt; color: #50525d; }
+    .education p { margin: 0.8mm 0; font-size: 8.7pt; color: #50525d; }
   </style></head><body>
     <main class="page">
       ${pageHeader()}
