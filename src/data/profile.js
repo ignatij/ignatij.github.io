@@ -64,7 +64,6 @@ export const FEATURED_OPEN_SOURCE_SLUGS = [
   "spotpilot",
   "go_flow",
   "folio",
-  "dependency_management_metrics_maven_plugin",
 ];
 
 export const SKILLS = [

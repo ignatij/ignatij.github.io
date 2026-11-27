@@ -26,8 +26,8 @@ start_date: 2025-10-01
 my_role: "Lead backend architect for a greenfield investment and insurance platform (team of 5+ engineers). Designed a single-service modular monolith across 10+ bounded contexts with PostgreSQL transaction boundaries, RabbitMQ transactional outbox/inbox, Zitadel identity and authorization, envelope encryption, and four reproducible Proxmox environments via OpenTofu and Ansible."
 cv_highlights:
   - "Architected a greenfield TypeScript/Bun modular monolith (10+ bounded contexts, team of 5+ engineers) for investment/insurance lifecycles."
-  - "Built PostgreSQL transaction boundaries and self-hosted RabbitMQ transactional outbox/inbox workflows with idempotent consumers and traceable correlation context."
-  - "Designed Zitadel authorization and KEK/DEK envelope encryption, isolating external banking, e-signing, and transactional email providers behind hexagonal adapters."
+  - "Built PostgreSQL transaction boundaries and self-hosted RabbitMQ transactional outbox/inbox workflows with idempotent consumers, ensuring zero duplicate financial transactions and traceable correlation context."
+  - "Designed Zitadel authorization and KEK/DEK envelope encryption to protect sensitive PII and financial data, isolating external banking, e-signing, and transactional email providers behind hexagonal adapters."
   - "Provisioned four reproducible Proxmox environments (demo, staging, sandbox, prod) using OpenTofu and Ansible."
 ---
 
